@@ -26,7 +26,7 @@ export default function Home() {
       <section
         className="relative w-full min-h-screen flex items-center justify-start px-12 md:px-28 overflow-hidden"
         style={{
-          backgroundImage: "url('/assets/bg/hero-face-rightv3.png')",
+          backgroundImage: "url('/assets/bg/hero-face-rightv3.PNG')",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "right center",
