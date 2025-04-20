@@ -1,115 +1,102 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+import { useEffect } from "react";
+import Head from "next/head";
+import { motion } from "framer-motion";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Navbar from "../components/Navbar";
+import FeatureGrid from "../components/FeatureGrid";
+import HowItWorks from "../components/HowItWorks";
+import RealExamples from "../components/RealExamples";
+import WhyAxon from "../components/WhyAxon";
+import QuoteForm from "../components/QuoteForm";
 
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div
-      className={`${geistSans.className} ${geistMono.className} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              pages/index.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="bg-[#0B0C10] text-white min-h-screen font-sans">
+      <Head>
+        <title>Axon Automate</title>
+      </Head>
+
+      <Navbar />
+
+      {/* HERO SECTION */}
+      <section
+        className="relative w-full min-h-screen flex items-center justify-start px-12 md:px-28 overflow-hidden"
+        style={{
+          backgroundImage: "url('/assets/bg/hero-face-rightv3.png')",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "right center",
+        }}
+      >
+        {/* Bottom fade gradient */}
+        <div className="absolute bottom-0 left-0 w-full h-60 z-10 pointer-events-none" style={{
+           background: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, #0B0C10 100%)"
+        }} />
+
+        {/* Text block */}
+        <div className="relative z-20 max-w-3xl pt-28 pb-32">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-5xl md:text-7xl font-bold mb-10 leading-tight"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            You Tell Us the Problem. <br />We’ll Build the Automation.
+          </motion.h1>
+          <p className="text-xl text-gray-300 mb-10 max-w-xl">
+            Fully custom AI and workflow systems — made for real operators, not templates.
+          </p>
+          <div className="flex gap-6">
+            <a href="#quote">
+              <button className="bg-[#0FF1CE] text-black px-7 py-4 rounded-lg font-semibold hover:opacity-80 transition">
+                Get a Custom Quote
+              </button>
+            </a>
+            <a href="#examples">
+              <button className="border border-[#0FF1CE] text-[#0FF1CE] px-7 py-4 rounded-lg font-semibold hover:bg-[#0FF1CE] hover:text-black transition">
+                View Example Workflows
+              </button>
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Fade: Hero to FeatureGrid */}
+      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
+
+      <FeatureGrid />
+
+      {/* Fade: FeatureGrid to HowItWorks */}
+      <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
+
+      <div id="how">
+        <HowItWorks />
+      </div>
+
+      {/* Fade: HowItWorks to RealExamples */}
+      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
+
+      <div id="examples">
+        <RealExamples />
+      </div>
+
+      {/* Fade: RealExamples to WhyAxon */}
+      <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
+
+      <div id="why">
+        <WhyAxon />
+      </div>
+
+      {/* Fade: WhyAxon to QuoteForm */}
+      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
+
+      <div id="quote">
+        <QuoteForm />
+      </div>
     </div>
   );
 }
