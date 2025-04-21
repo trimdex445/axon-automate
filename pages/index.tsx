@@ -23,16 +23,19 @@ export default function Home() {
       <Navbar />
 
       {/* HERO SECTION */}
-      <section
-        className="relative w-full min-h-screen flex items-center justify-start px-12 md:px-28 overflow-hidden"
-        style={{
-          backgroundImage: "url('/assets/bg/hero-face-rightv3.PNG')",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "right center",
-        }}
-      >
-        {/* Bottom fade gradient */}
+      <section className="relative w-full min-h-screen flex items-center justify-start px-12 md:px-28 overflow-hidden">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('/assets/bg/hero-face-rightv3.PNG')",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "right center",
+          }}
+        />
+
+        {/* Bottom fade overlay */}
         <div
           className="absolute bottom-0 left-0 w-full h-32 pointer-events-none z-10"
           style={{
