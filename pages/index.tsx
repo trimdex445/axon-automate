@@ -69,33 +69,33 @@ export default function Home() {
       </section>
 
       {/* Fade: Hero to FeatureGrid */}
-      <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
+      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
 
       <FeatureGrid />
 
       {/* Fade: FeatureGrid to HowItWorks */}
-      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
+      <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
 
       <div id="how">
         <HowItWorks />
       </div>
 
       {/* Fade: HowItWorks to RealExamples */}
-      <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
+      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
 
       <div id="examples">
         <RealExamples />
       </div>
 
       {/* Fade: RealExamples to WhyAxon */}
-      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
+      <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
 
       <div id="why">
         <WhyAxon />
       </div>
 
       {/* Fade: WhyAxon to QuoteForm */}
-      <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
+      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
 
       <div id="quote">
         <QuoteForm />
