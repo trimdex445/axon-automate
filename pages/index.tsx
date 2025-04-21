@@ -35,14 +35,6 @@ export default function Home() {
           }}
         />
 
-        {/* Bottom fade overlay */}
-        <div
-          className="absolute bottom-0 left-0 w-full h-32 pointer-events-none z-10"
-          style={{
-            background: "linear-gradient(to bottom, rgba(11,12,16,0) 0%, #131417 100%)",
-          }}
-        />
-
         {/* Text block */}
         <div className="relative z-20 max-w-3xl pt-28 pb-32">
           <motion.h1
@@ -71,8 +63,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Fade: Hero to FeatureGrid */}
-      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
+      {/* Sharp cut: Hero to FeatureGrid */}
+      <div className="w-full h-12 bg-[#131417]" />
 
       <FeatureGrid />
 
