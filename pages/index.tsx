@@ -33,9 +33,12 @@ export default function Home() {
         }}
       >
         {/* Bottom fade gradient */}
-        <div className="absolute bottom-0 left-0 w-full h-60 z-10 pointer-events-none" style={{
-           background: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, #0B0C10 100%)"
-        }} />
+        <div
+          className="absolute bottom-0 left-0 w-full h-32 pointer-events-none z-10"
+          style={{
+            background: "linear-gradient(to bottom, rgba(11,12,16,0) 0%, #131417 100%)",
+          }}
+        />
 
         {/* Text block */}
         <div className="relative z-20 max-w-3xl pt-28 pb-32">
@@ -45,7 +48,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-7xl font-bold mb-10 leading-tight"
           >
-            You Tell Us the Problem. <br />We’ll Build the Automation.
+            You tell Us the problem. <br />We’ll build the automation.
           </motion.h1>
           <p className="text-xl text-gray-300 mb-10 max-w-xl">
             Fully custom AI and workflow systems — made for real operators, not templates.
@@ -66,33 +69,33 @@ export default function Home() {
       </section>
 
       {/* Fade: Hero to FeatureGrid */}
-      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
+      <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
 
       <FeatureGrid />
 
       {/* Fade: FeatureGrid to HowItWorks */}
-      <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
+      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
 
       <div id="how">
         <HowItWorks />
       </div>
 
       {/* Fade: HowItWorks to RealExamples */}
-      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
+      <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
 
       <div id="examples">
         <RealExamples />
       </div>
 
       {/* Fade: RealExamples to WhyAxon */}
-      <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
+      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
 
       <div id="why">
         <WhyAxon />
       </div>
 
       {/* Fade: WhyAxon to QuoteForm */}
-      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
+      <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
 
       <div id="quote">
         <QuoteForm />
