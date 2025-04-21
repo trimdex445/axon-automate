@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import Head from "next/head";
 import { motion } from "framer-motion";
 
-import Navbar from "../components/Navbar";
+import Layout from "../components/Layout";
+
 import FeatureGrid from "../components/FeatureGrid";
 import HowItWorks from "../components/HowItWorks";
 import RealExamples from "../components/RealExamples";
@@ -15,27 +15,24 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-[#0B0C10] text-white min-h-screen font-sans">
-      <Head>
-        <title>Axon Automate</title>
-      </Head>
-
-      <Navbar />
-
+    <Layout title="Axon Automation">
       {/* HERO SECTION */}
-      <section className="relative w-full min-h-screen flex items-center justify-start px-12 md:px-28 overflow-hidden">
-        {/* Background image */}
+      <section
+        className="relative w-full min-h-screen flex items-center justify-start px-12 md:px-28 overflow-hidden"
+        style={{
+          backgroundImage: "url('/assets/bg/hero-face-rightv3.PNG')",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "right center",
+        }}
+      >
         <div
-          className="absolute inset-0 z-0"
+          className="absolute bottom-0 left-0 w-full h-60 z-10 pointer-events-none"
           style={{
-            backgroundImage: "url('/assets/bg/hero-face-rightv3.PNG')",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "right center",
+            background: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, #0B0C10 100%)",
           }}
         />
 
-        {/* Text block */}
         <div className="relative z-20 max-w-3xl pt-28 pb-32">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -43,7 +40,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-7xl font-bold mb-10 leading-tight"
           >
-            You tell Us the problem. <br />We’ll build the automation.
+            You tell us the problem. <br />We’ll build the automation.
           </motion.h1>
           <p className="text-xl text-gray-300 mb-10 max-w-xl">
             Fully custom AI and workflow systems — made for real operators, not templates.
@@ -63,38 +60,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sharp cut: Hero to FeatureGrid */}
-      <div className="w-full h-12 bg-[#0B0C10]" />
-
+      {/* Fade + Sections */}
+      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
       <FeatureGrid />
-
-      {/* Fade: FeatureGrid to HowItWorks */}
       <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
-
       <div id="how">
         <HowItWorks />
       </div>
-
-      {/* Fade: HowItWorks to RealExamples */}
       <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
-
       <div id="examples">
         <RealExamples />
       </div>
-
-      {/* Fade: RealExamples to WhyAxon */}
       <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
-
       <div id="why">
         <WhyAxon />
       </div>
-
-      {/* Fade: WhyAxon to QuoteForm */}
       <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
-
       <div id="quote">
         <QuoteForm />
       </div>
-    </div>
+    </Layout>
   );
 }
