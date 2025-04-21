@@ -1,6 +1,8 @@
-import { initializeApp, getApps, getApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+// lib/firebase.ts
+import { initializeApp, getApps } from "firebase/app";
+import { getFirestore, collection, doc, setDoc } from "firebase/firestore";
 
+// Firebase config using environment variables
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -10,9 +12,8 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// ✅ Prevent duplicate initialization
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-
+// Prevent re-initializing on hot reloads
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 const db = getFirestore(app);
 
-export { db };
+export { db, collection, doc, setDoc };
