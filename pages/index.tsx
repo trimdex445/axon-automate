@@ -64,7 +64,7 @@ export default function Home() {
       </section>
 
       {/* Sharp cut: Hero to FeatureGrid */}
-      <div className="w-full h-12 bg-[#131417]" />
+      <div className="w-full h-12 bg-[#0B0C10]" />
 
       <FeatureGrid />
 
