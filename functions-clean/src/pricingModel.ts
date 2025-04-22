@@ -90,3 +90,43 @@ export const pricingModel = {
     notes: "Automates client welcome flow: sends doc pack, sets calendar, adds to CRM."
   }
 };
+
+// 🧠 Matching Function
+export function getPricingForWorkflow(details: string) {
+  const lower = details.toLowerCase();
+
+  const keywords: { key: keyof typeof pricingModel; terms: string[] }[] = [
+    { key: "email_autoresponder", terms: ["email", "auto-reply", "gmail"] },
+    { key: "crm_syncer", terms: ["crm", "contact", "lead", "hubspot"] },
+    { key: "booking_workflow", terms: ["calendar", "booking", "job", "schedule", "sms"] },
+    { key: "full_dashboard_builder", terms: ["dashboard", "kpi", "report", "power bi"] },
+    { key: "invoice_followup", terms: ["invoice", "xero", "payment", "reminder"] },
+    { key: "onboarding_sequence", terms: ["onboarding", "welcome", "crm", "client", "sequence"] },
+  ];
+
+  for (const { key, terms } of keywords) {
+    if (terms.some(term => lower.includes(term))) {
+      return {
+        id: key,
+        ...pricingModel[key]
+      };
+    }
+  }
+
+  return {
+    id: "unknown",
+    name: "Unmatched Workflow",
+    tier: "custom",
+    basePrice: "TBD",
+    estDevCost: "TBD",
+    expectedMargin: "TBD",
+    time: "TBD",
+    hosting: true,
+    tools: [],
+    requiresSupport: true,
+    supportRecommended: true,
+    apiRiskLevel: "unknown",
+    fixFeeLikely: true,
+    notes: "No direct match found. Needs manual review."
+  };
+}
