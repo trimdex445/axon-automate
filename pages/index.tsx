@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 
 import FeatureGrid from "../components/FeatureGrid";
 import HowItWorks from "../components/HowItWorks";
-import RealExamples from "../components/RealExamples";
+import RealExamplesSection from "../components/RealExamplesSection"; // ✅ Updated import
 import WhyAxon from "../components/WhyAxon";
 import QuoteForm from "../components/QuoteForm";
 
@@ -69,7 +69,7 @@ export default function Home() {
       </div>
       <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
       <div id="examples">
-        <RealExamples />
+        <RealExamplesSection /> {/* ✅ Updated component */}
       </div>
       <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
       <div id="why">
