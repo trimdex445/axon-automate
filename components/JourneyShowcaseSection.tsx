@@ -17,12 +17,12 @@ export default function JourneyShowcaseSection() {
       </motion.h2>
 
       <div className="grid grid-cols-1 gap-12 max-w-5xl mx-auto">
-        {/* 1. Real Estate Describer Bot */}
+        {/* Real Estate Describer Bot */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="bg-[#1A1A1A] rounded-xl p-6 md:p-8 shadow-md hover:scale-[1.02] hover:shadow-lg transition duration-200"
+          className="rounded-2xl ring-1 ring-[#2a2a2a] shadow-lg hover:shadow-2xl transition-shadow duration-300"
         >
           <JourneyMap
             title="Real Estate Describer Bot"
@@ -37,12 +37,12 @@ export default function JourneyShowcaseSection() {
           />
         </motion.div>
 
-        {/* 2. Content Outline Generator */}
+        {/* Content Outline Generator */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-[#1A1A1A] rounded-xl p-6 md:p-8 shadow-md hover:scale-[1.02] hover:shadow-lg transition duration-200"
+          className="rounded-2xl ring-1 ring-[#2a2a2a] shadow-lg hover:shadow-2xl transition-shadow duration-300"
         >
           <JourneyMap
             title="Content Outline Generator"
@@ -57,12 +57,12 @@ export default function JourneyShowcaseSection() {
           />
         </motion.div>
 
-        {/* 3. Tradie Job Scheduler */}
+        {/* Tradie Job Scheduler */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="bg-[#1A1A1A] rounded-xl p-6 md:p-8 shadow-md hover:scale-[1.02] hover:shadow-lg transition duration-200"
+          className="rounded-2xl ring-1 ring-[#2a2a2a] shadow-lg hover:shadow-2xl transition-shadow duration-300"
         >
           <JourneyMap
             title="Tradie Job Scheduling"
@@ -77,12 +77,12 @@ export default function JourneyShowcaseSection() {
           />
         </motion.div>
 
-        {/* 4. Support Ticket Responder */}
+        {/* Support Ticket Responder */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="bg-[#1A1A1A] rounded-xl p-6 md:p-8 shadow-md hover:scale-[1.02] hover:shadow-lg transition duration-200"
+          className="rounded-2xl ring-1 ring-[#2a2a2a] shadow-lg hover:shadow-2xl transition-shadow duration-300"
         >
           <JourneyMap
             title="Support Ticket Responder"
