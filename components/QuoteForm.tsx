@@ -4,7 +4,16 @@ import { collection, doc, setDoc, Timestamp } from "firebase/firestore";
 import { db } from "../lib/firebase";
 
 export default function QuoteForm() {
-  const [form, setForm] = useState({ name: "", email: "", details: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    details: "",
+    package: "",
+    wantsSupport: "",
+    hostingNeeds: "",
+    timeline: ""
+  });
+
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -16,14 +25,20 @@ export default function QuoteForm() {
       const uniqueId = `${idPrefix}-${Date.now()}`;
 
       await setDoc(doc(db, "quotes", uniqueId), {
-        name: form.name,
-        email: form.email,
-        details: form.details,
+        ...form,
         createdAt: Timestamp.now(),
       });
 
       setStatus("success");
-      setForm({ name: "", email: "", details: "" });
+      setForm({
+        name: "",
+        email: "",
+        details: "",
+        package: "",
+        wantsSupport: "",
+        hostingNeeds: "",
+        timeline: ""
+      });
     } catch (err) {
       console.error("Error submitting form:", err);
       setStatus("error");
@@ -63,9 +78,7 @@ export default function QuoteForm() {
           </div>
 
           <div>
-            <label className="block mb-2 text-lg font-medium">
-              What would you like to automate?
-            </label>
+            <label className="block mb-2 text-lg font-medium">What would you like to automate?</label>
             <textarea
               required
               rows={5}
@@ -74,6 +87,65 @@ export default function QuoteForm() {
               className="w-full p-4 rounded-md bg-[#1F1F1F] text-white placeholder-gray-400 border border-transparent focus:outline-none focus:ring-2 focus:ring-[#0FF1CE]"
               placeholder="Describe your current workflow or the task you'd like to automate..."
             ></textarea>
+          </div>
+
+          <div>
+            <label className="block mb-2 text-lg font-medium">Which package best matches your needs?</label>
+            <select
+              required
+              value={form.package}
+              onChange={(e) => setForm({ ...form, package: e.target.value })}
+              className="w-full p-4 rounded-md bg-[#1F1F1F] text-white border border-[#333]"
+            >
+              <option value="">Select a package</option>
+              <option value="essentials">🟢 Essentials – $400–$600</option>
+              <option value="smart">🟡 Smart Workflow – $700–$950</option>
+              <option value="custom">🔴 Custom Systems – $1500+</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block mb-2 text-lg font-medium">Would you like monthly maintenance & support?</label>
+            <select
+              required
+              value={form.wantsSupport}
+              onChange={(e) => setForm({ ...form, wantsSupport: e.target.value })}
+              className="w-full p-4 rounded-md bg-[#1F1F1F] text-white border border-[#333]"
+            >
+              <option value="">Select an option</option>
+              <option value="yes">Yes, I'd like ongoing support</option>
+              <option value="no">No, just a one-off build</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block mb-2 text-lg font-medium">Do you think this automation will require hosting?</label>
+            <select
+              required
+              value={form.hostingNeeds}
+              onChange={(e) => setForm({ ...form, hostingNeeds: e.target.value })}
+              className="w-full p-4 rounded-md bg-[#1F1F1F] text-white border border-[#333]"
+            >
+              <option value="">Select an option</option>
+              <option value="yes">Yes, ongoing API or hosting will be needed</option>
+              <option value="no">No, it's a self-contained tool</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block mb-2 text-lg font-medium">What's your timeline like?</label>
+            <select
+              required
+              value={form.timeline}
+              onChange={(e) => setForm({ ...form, timeline: e.target.value })}
+              className="w-full p-4 rounded-md bg-[#1F1F1F] text-white border border-[#333]"
+            >
+              <option value="">Select a timeline</option>
+              <option value="asap">ASAP (1–3 days)</option>
+              <option value="soon">Within 1–2 weeks</option>
+              <option value="flexible">No rush – flexible</option>
+            </select>
           </div>
 
           <div className="flex justify-center pt-4">

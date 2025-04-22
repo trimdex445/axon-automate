@@ -12,27 +12,13 @@ const node_fetch_1 = __importDefault(require("node-fetch"));
 const firestore_2 = require("firebase-functions/v2/firestore");
 const params_1 = require("firebase-functions/params");
 const firebase_functions_1 = require("firebase-functions");
-const pricingModel_1 = require("./pricingModel");
 // 🔐 Secure secrets
 exports.OPENAI_API_KEY = (0, params_1.defineSecret)("OPENAI_API_KEY");
 exports.TELEGRAM_BOT_TOKEN = (0, params_1.defineSecret)("TELEGRAM_BOT_TOKEN");
+// ✅ Safe to hardcode this one
 const TELEGRAM_CHAT_ID_VALUE = "7971913812";
 (0, app_1.initializeApp)();
 const db = (0, firestore_1.getFirestore)();
-function matchWorkflow(details) {
-    const text = details.toLowerCase();
-    if (text.includes("invoice") && text.includes("follow"))
-        return pricingModel_1.pricingModel.invoice_follow_up;
-    if (text.includes("calendar") || text.includes("booking"))
-        return pricingModel_1.pricingModel.booking_workflow;
-    if (text.includes("crm") && text.includes("sync"))
-        return pricingModel_1.pricingModel.crm_sync;
-    if (text.includes("ticket") || text.includes("support"))
-        return pricingModel_1.pricingModel.support_bot;
-    if (text.includes("form") && text.includes("sheet"))
-        return pricingModel_1.pricingModel.form_sheet_bot;
-    return null;
-}
 exports.onNewQuoteClean = (0, firestore_2.onDocumentCreated)({
     region: "australia-southeast1",
     document: "quotes/{docId}",
@@ -43,29 +29,22 @@ exports.onNewQuoteClean = (0, firestore_2.onDocumentCreated)({
     if (!snap)
         return;
     const data = snap.data();
-    const { name, email, details } = data;
-    const matchedWorkflow = matchWorkflow(details);
-    const isLargeScope = details.length > 500 || details.includes("multi") || details.includes("system") || details.includes("integration");
-    let workflowSummary = "";
-    let quoteType = "repeatable";
-    let requiresDiscovery = false;
-    if (matchedWorkflow) {
-        workflowSummary = `\nMatched Workflow Type: ${matchedWorkflow.name}\nTools: ${matchedWorkflow.tools.join(", ")}\nTime Estimate: ${matchedWorkflow.time}\nHosting Required: ${matchedWorkflow.hosting ? "Yes" : "No"}\nMonthly Fee: $${matchedWorkflow.monthly}\nBase Price: $${matchedWorkflow.basePrice}\nNotes: ${matchedWorkflow.notes}`;
-    }
-    else {
-        workflowSummary = `\nNo exact workflow match. Infer type and suggest quote based on similar examples. Base prices range from $400 to $900 depending on complexity.`;
-        quoteType = "custom";
-        requiresDiscovery = isLargeScope;
-    }
-    const openai = new openai_1.default({
-        apiKey: exports.OPENAI_API_KEY.value(),
-    });
+    const { name, email, details, package: tier, wantsSupport, hostingNeeds, timeline } = data;
+    const openai = new openai_1.default({ apiKey: exports.OPENAI_API_KEY.value() });
     const prompt = `
-A client submitted the following automation request:
+Client Details:
+Name: ${name}
+Email: ${email}
+
+Submitted Automation Request:
 """
 ${details}
 """
-${workflowSummary}
+
+Package Tier: ${tier}
+Wants Support: ${wantsSupport}
+Hosting Required: ${hostingNeeds}
+Timeline: ${timeline}
 
 1. INTERNAL (for Axon team use only):
 - Roadmap of steps and tools
@@ -117,8 +96,9 @@ Return this as JSON:
         firebase_functions_1.logger.error("Raw response:", response);
         return;
     }
-    await db.collection("plans").doc(event.params.docId).set(Object.assign(Object.assign({}, parsed.internal), { matchedWorkflow: (matchedWorkflow === null || matchedWorkflow === void 0 ? void 0 : matchedWorkflow.name) || null, tier: (matchedWorkflow === null || matchedWorkflow === void 0 ? void 0 : matchedWorkflow.tier) || null, expectedMargin: (matchedWorkflow === null || matchedWorkflow === void 0 ? void 0 : matchedWorkflow.expectedMargin) || null, quoteType,
-        requiresDiscovery, relatedQuoteId: event.params.docId, createdAt: new Date() }));
+    await db.collection("plans").doc(event.params.docId).set(Object.assign(Object.assign({}, parsed.internal), { relatedQuoteId: event.params.docId, createdAt: new Date(), quotePackage: tier, wantsSupport,
+        hostingNeeds,
+        timeline }));
     await db.collection("email_drafts").doc(event.params.docId).set({
         name,
         email,
@@ -128,7 +108,18 @@ Return this as JSON:
         status: "draft",
     });
     const TELEGRAM_BOT_TOKEN_VALUE = exports.TELEGRAM_BOT_TOKEN.value();
-    const telegramText = `📥 *New Quote from ${name}*\n\n🧠 *Roadmap:* ${parsed.internal.roadmap || "N/A"}\n🛠️ *Tools:* ${parsed.internal.tools || "-"}\n💰 *Cost:* ${parsed.internal.cost || "-"} | Profit: ${parsed.internal.profit || "-"}\n⏳ *Time:* ${parsed.internal.time || "-"}\n✅ *Feasibility:* ${parsed.internal.feasibility || "-"}`;
+    const telegramText = `📥 *New Quote from ${name}*
+
+📦 *Package:* ${tier}
+💬 *Support:* ${wantsSupport}
+🔌 *Hosting:* ${hostingNeeds}
+🕒 *Timeline:* ${timeline}
+
+🧠 *Roadmap:* ${parsed.internal.roadmap || "N/A"}
+🛠️ *Tools:* ${parsed.internal.tools || "-"}
+💰 *Cost:* ${parsed.internal.cost || "-"} | Profit: ${parsed.internal.profit || "-"}
+⏳ *Time:* ${parsed.internal.time || "-"}
+✅ *Feasibility:* ${parsed.internal.feasibility || "-"}`;
     await (0, node_fetch_1.default)(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN_VALUE}/sendMessage`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
