@@ -2,23 +2,23 @@ import { motion } from "framer-motion";
 
 const examples = [
   {
-    title: "🏘️ Real Estate Describer Bot",
-    description: "Auto-generates listing descriptions from raw input — converts 3x better than standard templates.",
+    title: "🏘️ Listing Description Workflow",
+    description: "Automatically generates real estate listings from raw property inputs like features and room count.",
     benefit: "Saves ~3 hours/week per agent",
   },
   {
-    title: "📰 Content Outline Generator",
-    description: "Scrapes trending news and drafts outlines. Used by media companies to speed up ideation.",
+    title: "📰 Content Ideation Workflow",
+    description: "Scans trends and auto-drafts outlines and headlines for social, blogs, or news articles.",
     benefit: "Saves 8+ hours weekly",
   },
   {
-    title: "📅 Tradie Job Scheduler",
-    description: "Books jobs, confirms with clients by SMS, and updates a shared job sheet.",
+    title: "📅 Job Booking Workflow",
+    description: "Auto-schedules trades or service jobs, confirms by SMS, and updates internal sheets.",
     benefit: "Eliminates 95% of admin call-backs",
   },
   {
-    title: "📨 Support Ticket Responder",
-    description: "Auto-replies to common tickets using past data and GPT logic. Escalates only unique issues.",
+    title: "📨 Support Response Workflow",
+    description: "Handles common tickets using historical replies and logic trees — only escalates new issues.",
     benefit: "Handled 70% of tickets automatically",
   },
 ];
@@ -35,7 +35,7 @@ export default function RealExamplesSection() {
         transition={{ duration: 0.6 }}
         className="text-4xl md:text-5xl font-bold text-center mb-20"
       >
-        Real Examples
+        Workflow Examples
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8">

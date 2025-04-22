@@ -40,11 +40,11 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-4xl sm:text-5xl md:text-7xl font-bold mb-8 leading-snug md:leading-tight"
           >
-            You tell us the problem. <br />We’ll build the automation.
+            Crush busywork. <br />Automate your workflow.
           </motion.h1>
 
           <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-xl leading-relaxed">
-            Fully custom AI and workflow systems — made for real operators, not templates.
+            We turn inefficient processes into seamless automated workflows.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
@@ -55,7 +55,7 @@ export default function Home() {
             </a>
             <a href="#examples">
               <button className="w-full sm:w-auto border border-[#0FF1CE] text-[#0FF1CE] px-7 py-4 rounded-lg font-semibold hover:bg-[#0FF1CE] hover:text-black transition">
-                View Example Workflows
+                View Workflow Examples
               </button>
             </a>
           </div>

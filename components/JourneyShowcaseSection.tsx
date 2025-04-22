@@ -13,11 +13,11 @@ export default function JourneyShowcaseSection() {
         transition={{ duration: 0.6 }}
         className="text-4xl md:text-5xl font-bold text-center mb-20"
       >
-        Journey Maps
+        Workflow Journeys
       </motion.h2>
 
       <div className="grid grid-cols-1 gap-12 max-w-5xl mx-auto">
-        {/* Real Estate Describer Bot */}
+        {/* Listing Description Workflow */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,19 +25,19 @@ export default function JourneyShowcaseSection() {
           className="rounded-2xl ring-1 ring-[#2a2a2a] shadow-lg hover:shadow-2xl transition-shadow duration-300"
         >
           <JourneyMap
-            title="Real Estate Describer Bot"
-            problem="Agents spend too much time manually writing listing descriptions."
+            title="Listing Description Workflow"
+            problem="Writing property listings is time-consuming and inconsistent without an automated workflow."
             steps={[
               { icon: "📥", title: "Input Raw Data", description: "Agent submits address, key features, and room info." },
               { icon: "✍️", title: "AI Drafts Copy", description: "Bot generates clean, sales-friendly description instantly." },
               { icon: "🔁", title: "Edit or Accept", description: "Agent can tweak the copy or approve it directly." },
             ]}
-            outcome="Get consistent, compelling listings in seconds — no more blank page stress."
+            outcome="Consistent, compelling listings created in seconds."
             pricing="One-Off"
           />
         </motion.div>
 
-        {/* Content Outline Generator */}
+        {/* Content Ideation Workflow */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,19 +45,19 @@ export default function JourneyShowcaseSection() {
           className="rounded-2xl ring-1 ring-[#2a2a2a] shadow-lg hover:shadow-2xl transition-shadow duration-300"
         >
           <JourneyMap
-            title="Content Outline Generator"
-            problem="Writers waste time ideating headlines and outlines for trending topics."
+            title="Content Ideation Workflow"
+            problem="Writers waste hours researching trends and structuring posts manually."
             steps={[
               { icon: "🌐", title: "Scan Trends", description: "Bot monitors trending news, Reddit, or Twitter topics." },
               { icon: "🧠", title: "Generate Outline", description: "Creates a structured post/article outline using GPT." },
               { icon: "💡", title: "Suggest Headlines", description: "Provides 3-5 clickable headline options." },
             ]}
-            outcome="Jumpstart content creation with ready-to-use outlines and titles."
+            outcome="Fast-tracked ideation process for writers and marketers."
             pricing="Monthly Plan"
           />
         </motion.div>
 
-        {/* Tradie Job Scheduler */}
+        {/* Job Booking Workflow */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,19 +65,19 @@ export default function JourneyShowcaseSection() {
           className="rounded-2xl ring-1 ring-[#2a2a2a] shadow-lg hover:shadow-2xl transition-shadow duration-300"
         >
           <JourneyMap
-            title="Tradie Job Scheduling"
-            problem="Manual booking and follow-up eats up hours every week."
+            title="Job Booking Workflow"
+            problem="Service teams spend hours coordinating bookings manually."
             steps={[
               { icon: "📩", title: "Client Requests", description: "Form or chatbot receives job request." },
               { icon: "📅", title: "Auto-Schedule", description: "Job booked into Google Calendar automatically." },
               { icon: "✅", title: "Confirm & Sync", description: "Client receives confirmation + internal sheet updated." },
             ]}
-            outcome="No more admin back-and-forth. Clients are booked and confirmed automatically."
+            outcome="95% of back-and-forth removed — clients are booked and confirmed automatically."
             pricing="Monthly Plan"
           />
         </motion.div>
 
-        {/* Support Ticket Responder */}
+        {/* Support Response Workflow */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,14 +85,14 @@ export default function JourneyShowcaseSection() {
           className="rounded-2xl ring-1 ring-[#2a2a2a] shadow-lg hover:shadow-2xl transition-shadow duration-300"
         >
           <JourneyMap
-            title="Support Ticket Responder"
-            problem="Reps are overwhelmed answering the same support queries over and over."
+            title="Support Response Workflow"
+            problem="Support reps are overloaded with repeat tickets that could be automated."
             steps={[
               { icon: "📩", title: "New Ticket Received", description: "Bot scans subject and message body." },
-              { icon: "🤖", title: "Find Similar Past Replies", description: "Uses vector search or logic tree." },
-              { icon: "📤", title: "Send Response or Escalate", description: "Automatically replies or flags edge cases." },
+              { icon: "🤖", title: "Find Similar Replies", description: "Uses vector search or logic tree to suggest answers." },
+              { icon: "📤", title: "Send or Escalate", description: "Automatically replies or flags edge cases." },
             ]}
-            outcome="Free up support staff by handling 70% of tickets automatically."
+            outcome="Reps handle only the edge cases — the rest is automatic."
             pricing="Monthly Plan"
           />
         </motion.div>
