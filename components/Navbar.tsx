@@ -13,18 +13,20 @@ export default function Navbar() {
 
       {/* Right Nav Items */}
       <ul className="flex gap-6 text-sm md:text-base font-medium text-gray-300">
-      <li><a href="#solutions" className="hover:text-white transition">Solutions</a></li>
         <li>
-          <a href="#how" className="hover:text-white transition">How It Works</a>
+          <a href="/#solutions" className="hover:text-white transition">Solutions</a>
         </li>
         <li>
-          <a href="#examples" className="hover:text-white transition">Examples</a>
+          <a href="/#how" className="hover:text-white transition">How It Works</a>
         </li>
         <li>
-          <a href="#why" className="hover:text-white transition">Why Axon</a>
+          <a href="/#examples" className="hover:text-white transition">Examples</a>
         </li>
         <li>
-          <a href="#quote" className="hover:text-white transition">Quote</a>
+          <a href="/#journeys" className="hover:text-white transition">Journeys</a>
+        </li>
+        <li>
+          <a href="/#quote" className="hover:text-white transition">Quote</a>
         </li>
       </ul>
     </nav>
