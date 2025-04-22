@@ -5,6 +5,7 @@ import fetch from "node-fetch";
 import { onDocumentCreated } from "firebase-functions/v2/firestore";
 import { defineSecret } from "firebase-functions/params";
 import { logger } from "firebase-functions";
+import { getPricingForWorkflow } from "./pricingModel";
 
 // 🔐 Secure secrets
 export const OPENAI_API_KEY = defineSecret("OPENAI_API_KEY");
@@ -12,9 +13,6 @@ export const TELEGRAM_BOT_TOKEN = defineSecret("TELEGRAM_BOT_TOKEN");
 
 const TELEGRAM_CHAT_ID_VALUE = "7971913812";
 const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1364127256670244904/14v6bkcUxV12UQIC3tI901FqGK5Ukn8Y-rXAkv5FZaQ8zf8tPpsPj6K34jnjWQrVwXtN";
-
-// 🧠 Import pricing logic
-import { getPricingForWorkflow } from "./pricingModel";
 
 initializeApp();
 const db = getFirestore();
@@ -50,8 +48,12 @@ export const onNewQuoteClean = onDocumentCreated({
 
   const { name, email, details, package: selectedPackage, wantsSupport, hostingNeeds, timeline } = data;
 
-  // Match a pricing category
+  // 🎯 Match a pricing category
   const matchedPricing = getPricingForWorkflow(details);
+  const priceText =
+    matchedPricing && matchedPricing.basePrice !== "TBD"
+      ? `$${matchedPricing.basePrice}`
+      : "TBD";
 
   const openai = new OpenAI({ apiKey: OPENAI_API_KEY.value() });
 
@@ -68,22 +70,20 @@ Client selections:
 - Timeline: ${timeline}
 
 Internal pricing model match:
-${JSON.stringify(matchedPricing, null, 2)}
+- Workflow: ${matchedPricing.name}
+- Tier: ${matchedPricing.tier}
+- Base Price: ${priceText}
+- Dev Cost: ${matchedPricing.estDevCost || "N/A"}
+- Estimated Margin: ${matchedPricing.expectedMargin || "N/A"}
+- Estimated Time: ${matchedPricing.time || "N/A"}
+- Hosting: ${matchedPricing.hosting ? "Yes" : "No"}
+- Tools: ${matchedPricing.tools.join(", ")}
+- Support Recommended: ${matchedPricing.supportRecommended ? "Yes" : "No"}
 
-1. INTERNAL (for Axon team use only):
-- Roadmap of steps and tools
-- Estimated cost (use internal model for consistency)
-- Hosting notes, delivery time, and profit range
-- Feasibility rating
-- Any notes for the team
+❗ Please base the cost in your response on the model above.
+❗ If price is "TBD", state it as such. Do not suggest $3000+ prices unless explicitly indicated.
 
-2. CLIENT-FACING REPLY (store as draft only):
-- Friendly confirmation it's doable
-- Light outline (no tech jargon)
-- General cost estimate + hosting or support info
-- Be short, clean, and clear
-
-Return as:
+Return:
 {
   "internal": {
     "roadmap": "...",
@@ -118,7 +118,6 @@ Return as:
     return;
   }
 
-  // 🔄 Save internal plan to Firestore
   await db.collection("plans").doc(event.params.docId).set({
     ...parsed.internal,
     matchedPricing,
@@ -126,7 +125,6 @@ Return as:
     createdAt: new Date(),
   });
 
-  // 💌 Save email draft
   await db.collection("email_drafts").doc(event.params.docId).set({
     name,
     email,
@@ -148,12 +146,11 @@ Return as:
 
 🧠 *Roadmap:* ${parsed.internal.roadmap || "N/A"}
 🛠️ *Tools:* ${parsed.internal.tools || "-"}
-💰 *Cost:* ${parsed.internal.cost || "-"} | Profit: ${parsed.internal.profit || "-"}
+💰 *Cost:* ${parsed.internal.cost || "TBD"} | Profit: ${parsed.internal.profit || "-"}
 ⏳ *Time:* ${parsed.internal.time || "-"}
 ✅ *Feasibility:* ${parsed.internal.feasibility || "-"}
 `;
 
-  // 📲 Telegram
   await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN_VALUE}/sendMessage`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -164,6 +161,5 @@ Return as:
     }),
   });
 
-  // 🖥 Discord
   await sendDiscordMessage(sharedMessage);
 });

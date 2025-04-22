@@ -11,13 +11,12 @@ const node_fetch_1 = __importDefault(require("node-fetch"));
 const firestore_2 = require("firebase-functions/v2/firestore");
 const params_1 = require("firebase-functions/params");
 const firebase_functions_1 = require("firebase-functions");
+const pricingModel_1 = require("./pricingModel");
 // 🔐 Secure secrets
 exports.OPENAI_API_KEY = (0, params_1.defineSecret)("OPENAI_API_KEY");
 exports.TELEGRAM_BOT_TOKEN = (0, params_1.defineSecret)("TELEGRAM_BOT_TOKEN");
 const TELEGRAM_CHAT_ID_VALUE = "7971913812";
 const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1364127256670244904/14v6bkcUxV12UQIC3tI901FqGK5Ukn8Y-rXAkv5FZaQ8zf8tPpsPj6K34jnjWQrVwXtN";
-// 🧠 Import pricing logic
-const pricingModel_1 = require("./pricingModel");
 (0, app_1.initializeApp)();
 const db = (0, firestore_1.getFirestore)();
 const sendDiscordMessage = async (message) => {
@@ -41,8 +40,11 @@ exports.onNewQuoteClean = (0, firestore_2.onDocumentCreated)({
         return;
     const data = snap.data();
     const { name, email, details, package: selectedPackage, wantsSupport, hostingNeeds, timeline } = data;
-    // Match a pricing category
+    // 🎯 Match a pricing category
     const matchedPricing = (0, pricingModel_1.getPricingForWorkflow)(details);
+    const priceText = matchedPricing && matchedPricing.basePrice !== "TBD"
+        ? `$${matchedPricing.basePrice}`
+        : "TBD";
     const openai = new openai_1.default({ apiKey: exports.OPENAI_API_KEY.value() });
     const prompt = `
 A client submitted the following automation request:
@@ -57,22 +59,20 @@ Client selections:
 - Timeline: ${timeline}
 
 Internal pricing model match:
-${JSON.stringify(matchedPricing, null, 2)}
+- Workflow: ${matchedPricing.name}
+- Tier: ${matchedPricing.tier}
+- Base Price: ${priceText}
+- Dev Cost: ${matchedPricing.estDevCost || "N/A"}
+- Estimated Margin: ${matchedPricing.expectedMargin || "N/A"}
+- Estimated Time: ${matchedPricing.time || "N/A"}
+- Hosting: ${matchedPricing.hosting ? "Yes" : "No"}
+- Tools: ${matchedPricing.tools.join(", ")}
+- Support Recommended: ${matchedPricing.supportRecommended ? "Yes" : "No"}
 
-1. INTERNAL (for Axon team use only):
-- Roadmap of steps and tools
-- Estimated cost (use internal model for consistency)
-- Hosting notes, delivery time, and profit range
-- Feasibility rating
-- Any notes for the team
+❗ Please base the cost in your response on the model above.
+❗ If price is "TBD", state it as such. Do not suggest $3000+ prices unless explicitly indicated.
 
-2. CLIENT-FACING REPLY (store as draft only):
-- Friendly confirmation it's doable
-- Light outline (no tech jargon)
-- General cost estimate + hosting or support info
-- Be short, clean, and clear
-
-Return as:
+Return:
 {
   "internal": {
     "roadmap": "...",
@@ -105,9 +105,7 @@ Return as:
         firebase_functions_1.logger.error("Raw response:", response);
         return;
     }
-    // 🔄 Save internal plan to Firestore
     await db.collection("plans").doc(event.params.docId).set(Object.assign(Object.assign({}, parsed.internal), { matchedPricing, relatedQuoteId: event.params.docId, createdAt: new Date() }));
-    // 💌 Save email draft
     await db.collection("email_drafts").doc(event.params.docId).set({
         name,
         email,
@@ -127,11 +125,10 @@ Return as:
 
 🧠 *Roadmap:* ${parsed.internal.roadmap || "N/A"}
 🛠️ *Tools:* ${parsed.internal.tools || "-"}
-💰 *Cost:* ${parsed.internal.cost || "-"} | Profit: ${parsed.internal.profit || "-"}
+💰 *Cost:* ${parsed.internal.cost || "TBD"} | Profit: ${parsed.internal.profit || "-"}
 ⏳ *Time:* ${parsed.internal.time || "-"}
 ✅ *Feasibility:* ${parsed.internal.feasibility || "-"}
 `;
-    // 📲 Telegram
     await (0, node_fetch_1.default)(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN_VALUE}/sendMessage`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -141,7 +138,6 @@ Return as:
             parse_mode: "Markdown",
         }),
     });
-    // 🖥 Discord
     await sendDiscordMessage(sharedMessage);
 });
 //# sourceMappingURL=index.js.map
