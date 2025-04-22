@@ -1,10 +1,12 @@
-// components/PricingSection.tsx
 import { motion } from "framer-motion";
 import { FaWrench, FaCalendarAlt, FaUndo } from "react-icons/fa";
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="py-32 px-6 md:px-24 bg-[#0B0C10] text-white">
+    <section
+      id="pricing"
+      className="py-32 px-6 md:px-24 text-white bg-gradient-to-b from-[#0B0C10] to-[#131417]"
+    >
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
