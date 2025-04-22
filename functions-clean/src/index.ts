@@ -1,5 +1,3 @@
-// Updated for Sydney region (australia-southeast1) and 2nd Gen Functions with Secrets
-
 import { initializeApp } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import OpenAI from "openai";
@@ -14,9 +12,22 @@ export const TELEGRAM_BOT_TOKEN = defineSecret("TELEGRAM_BOT_TOKEN");
 
 // ✅ Safe to hardcode this one
 const TELEGRAM_CHAT_ID_VALUE = "7971913812";
+const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1364127256670244904/14v6bkcUxV12UQIC3tI901FqGK5Ukn8Y-rXAkv5FZaQ8zf8tPpsPj6K34jnjWQrVwXtN"; // Your Discord webhook URL
 
 initializeApp();
 const db = getFirestore();
+
+// Function to send a message to Discord
+const sendDiscordMessage = async (message: string) => {
+  await fetch(DISCORD_WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      content: message, // Customize the message format
+      username: "Axon Bot", // Optional: customize the bot's name
+    }),
+  });
+};
 
 export const onNewQuoteClean = onDocumentCreated({
   region: "australia-southeast1",
@@ -30,56 +41,50 @@ export const onNewQuoteClean = onDocumentCreated({
     name: string;
     email: string;
     details: string;
-    package: string;
+    selectedPackage: string;
     wantsSupport: string;
     hostingNeeds: string;
     timeline: string;
   };
 
-  const { name, email, details, package: tier, wantsSupport, hostingNeeds, timeline } = data;
+  const { name, email, details, selectedPackage, wantsSupport, hostingNeeds, timeline } = data;
 
-  const openai = new OpenAI({ apiKey: OPENAI_API_KEY.value() });
+  const openai = new OpenAI({
+    apiKey: OPENAI_API_KEY.value(),
+  });
 
   const prompt = `
-Client Details:
-Name: ${name}
-Email: ${email}
+    A client submitted the following automation request:
+    """
+    ${details}
+    """
 
-Submitted Automation Request:
-"""
-${details}
-"""
+    1. INTERNAL (for Axon team use only):
+    - Roadmap of steps and tools
+    - Estimated cost, hosting, time, and profit
+    - Feasibility rating
+    - Any internal notes
 
-Package Tier: ${tier}
-Wants Support: ${wantsSupport}
-Hosting Required: ${hostingNeeds}
-Timeline: ${timeline}
+    2. CLIENT-FACING REPLY (stored as a draft):
+    - Friendly confirmation that it's doable
+    - Vague possible solution
+    - General price range and optional hosting subscription
+    - Leave exact process/solution out
 
-1. INTERNAL (for Axon team use only):
-- Roadmap of steps and tools
-- Estimated cost, hosting, time, and profit
-- Feasibility rating
-- Any internal notes
-
-2. CLIENT-FACING REPLY (stored as a draft):
-- Friendly confirmation that it's doable
-- Vague possible solution
-- General price range and optional hosting subscription
-- Leave exact process/solution out
-
-Return this as JSON:
-{
-  "internal": {
-    "roadmap": "...",
-    "tools": "...",
-    "cost": "...",
-    "profit": "...",
-    "time": "...",
-    "feasibility": "...",
-    "notes": "..."
-  },
-  "publicReply": "..."
-}`;
+    Return this as JSON:
+    {
+      "internal": {
+        "roadmap": "...",
+        "tools": "...",
+        "cost": "...",
+        "profit": "...",
+        "time": "...",
+        "feasibility": "...",
+        "notes": "..."
+      },
+      "publicReply": "..."
+    }
+  `;
 
   const completion = await openai.chat.completions.create({
     model: "gpt-4",
@@ -111,10 +116,6 @@ Return this as JSON:
     ...parsed.internal,
     relatedQuoteId: event.params.docId,
     createdAt: new Date(),
-    quotePackage: tier,
-    wantsSupport,
-    hostingNeeds,
-    timeline,
   });
 
   await db.collection("email_drafts").doc(event.params.docId).set({
@@ -128,19 +129,9 @@ Return this as JSON:
 
   const TELEGRAM_BOT_TOKEN_VALUE = TELEGRAM_BOT_TOKEN.value();
 
-  const telegramText = `📥 *New Quote from ${name}*
+  const telegramText = `📥 *New Quote from ${name}*\n\n🧠 *Roadmap:* ${parsed.internal.roadmap || "N/A"}\n🛠️ *Tools:* ${parsed.internal.tools || "-"}\n💰 *Cost:* ${parsed.internal.cost || "-"} | Profit: ${parsed.internal.profit || "-"}\n⏳ *Time:* ${parsed.internal.time || "-"}\n✅ *Feasibility:* ${parsed.internal.feasibility || "-"}`;
 
-📦 *Package:* ${tier}
-💬 *Support:* ${wantsSupport}
-🔌 *Hosting:* ${hostingNeeds}
-🕒 *Timeline:* ${timeline}
-
-🧠 *Roadmap:* ${parsed.internal.roadmap || "N/A"}
-🛠️ *Tools:* ${parsed.internal.tools || "-"}
-💰 *Cost:* ${parsed.internal.cost || "-"} | Profit: ${parsed.internal.profit || "-"}
-⏳ *Time:* ${parsed.internal.time || "-"}
-✅ *Feasibility:* ${parsed.internal.feasibility || "-"}`;
-
+  // Send message to Telegram
   await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN_VALUE}/sendMessage`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -150,4 +141,9 @@ Return this as JSON:
       parse_mode: "Markdown",
     }),
   });
+
+  // Send message to Discord
+  const discordMessage = `📥 New Quote from ${name}\n\nPackage: ${selectedPackage}\nTimeline: ${timeline}\nSupport: ${wantsSupport}\nHosting: ${hostingNeeds}\nDetails: ${details}`;
+  
+  await sendDiscordMessage(discordMessage); // This sends the same message to Discord
 });
