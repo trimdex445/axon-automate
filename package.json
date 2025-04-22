@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy:functions": "cd functions-clean && npm run build && cd .. && firebase deploy --only functions"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
