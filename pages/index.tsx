@@ -76,11 +76,11 @@ export default function Home() {
       <div id="journeys">
         <JourneyShowcaseSection />
       </div>
-      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
+      <div className="w-full h-24 bg-gradient-to-b from-[#121417] to-[#0B0C10]" />
       <div id="why">
         <WhyAxon />
       </div>
-      <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
+      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
       <div id="quote">
         <QuoteForm />
       </div>
