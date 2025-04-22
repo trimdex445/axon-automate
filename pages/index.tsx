@@ -72,7 +72,7 @@ export default function Home() {
       <div id="examples">
         <RealExamplesSection />
       </div>
-      <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
+      <div className="w-full h-24 bg-gradient-to-b from-[#121417] to-[#0B0C10]" />
       <div id="journeys">
         <JourneyShowcaseSection />
       </div>
