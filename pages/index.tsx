@@ -5,7 +5,8 @@ import Layout from "../components/Layout";
 
 import FeatureGrid from "../components/FeatureGrid";
 import HowItWorks from "../components/HowItWorks";
-import RealExamplesSection from "../components/RealExamplesSection"; // ✅ Updated import
+import RealExamplesSection from "../components/RealExamplesSection";
+import JourneyShowcaseSection from "../components/JourneyShowcaseSection"; // ✅ New section
 import WhyAxon from "../components/WhyAxon";
 import QuoteForm from "../components/QuoteForm";
 
@@ -69,9 +70,13 @@ export default function Home() {
       </div>
       <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
       <div id="examples">
-        <RealExamplesSection /> {/* ✅ Updated component */}
+        <RealExamplesSection />
       </div>
       <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
+      <div id="journeys">
+        <JourneyShowcaseSection />
+      </div>
+      <div className="w-full h-24 bg-gradient-to-b from-[#121417] to-[#0B0C10]" />
       <div id="why">
         <WhyAxon />
       </div>

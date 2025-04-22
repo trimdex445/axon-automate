@@ -27,7 +27,7 @@ export default function RealExamplesSection() {
   return (
     <section
       id="examples"
-      className="min-h-screen py-32 px-6 md:px-24 bg-[#0B0C10] bg-gradient-to-b from-[#0B0C10] to-[#121417] text-white"
+      className="min-h-screen py-32 px-6 md:px-24 bg-[#0B0C10] bg-gradient-to-b from-[#131417] to-[#0B0C10] text-white"
     >
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
