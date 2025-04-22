@@ -1,72 +1,101 @@
+// components/PricingSection.tsx
 import { motion } from "framer-motion";
+import { FaWrench, FaCalendarAlt, FaUndo } from "react-icons/fa";
 
 export default function PricingSection() {
   return (
-    <section
-      id="pricing"
-      className="min-h-screen py-32 px-6 md:px-24 bg-[#0B0C10] text-white"
-    >
+    <section id="pricing" className="py-32 px-6 md:px-24 bg-[#0B0C10] text-white">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl md:text-5xl font-bold text-center mb-12"
+        className="text-4xl md:text-5xl font-bold text-center mb-20"
       >
         Pricing & Plans
       </motion.h2>
 
-      <p className="text-center text-gray-300 max-w-3xl mx-auto mb-16">
-        All automations are custom-built. The prices below are typical ranges based on past work.
-        Your final quote may vary depending on scope, hosting, and support needs.
-      </p>
-
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        {/* Essentials Package */}
-        <div className="bg-[#1A1A1A] rounded-xl p-8 shadow-md hover:shadow-lg transition">
-          <h3 className="text-2xl font-semibold mb-2">🟢 Essentials</h3>
-          <p className="text-gray-300 mb-4">$400–$600 estimated</p>
-          <ul className="list-disc list-inside text-gray-400 space-y-1 mb-4">
-            <li>Simple one-off automations</li>
-            <li>No hosting or ongoing fees</li>
-            <li>Delivered with handoff guide</li>
-          </ul>
-          <p className="text-sm text-gray-500">💬 Final pricing is tailored per quote.</p>
-        </div>
-
-        {/* Smart Workflow Package */}
-        <div className="bg-[#1A1A1A] rounded-xl p-8 shadow-md hover:shadow-lg transition">
-          <h3 className="text-2xl font-semibold mb-2">🟡 Smart Workflow</h3>
-          <p className="text-gray-300 mb-4">$700–$950 estimated</p>
-          <ul className="list-disc list-inside text-gray-400 space-y-1 mb-4">
-            <li>Multi-step or API-powered builds</li>
-            <li>May require hosting or GPT usage</li>
-            <li>Optional support upgrade</li>
-          </ul>
-          <p className="text-sm text-gray-500">💬 Final pricing is tailored per quote.</p>
-        </div>
-
-        {/* Custom Systems Package */}
-        <div className="bg-[#1A1A1A] rounded-xl p-8 shadow-md hover:shadow-lg transition">
-          <h3 className="text-2xl font-semibold mb-2">🔴 Custom Systems</h3>
-          <p className="text-gray-300 mb-4">Starts from $1,500</p>
-          <ul className="list-disc list-inside text-gray-400 space-y-1 mb-4">
-            <li>Scoped & designed via discovery call</li>
-            <li>Tailored tools and integrations</li>
-            <li>Support/hosting discussed on call</li>
-          </ul>
-          <p className="text-sm text-gray-500">💬 Final pricing is scoped individually.</p>
-        </div>
+        {[
+          {
+            color: "green",
+            title: "Essentials",
+            price: "$400–$600 estimated",
+            bullets: [
+              "Simple one-off automations",
+              "No hosting or ongoing fees",
+              "Delivered with handoff guide",
+            ],
+            note: "Final pricing is tailored per quote.",
+          },
+          {
+            color: "yellow",
+            title: "Smart Workflow",
+            price: "$700–$950 estimated",
+            bullets: [
+              "Multi-step or API-powered builds",
+              "May require hosting or GPT usage",
+              "Optional support upgrade",
+            ],
+            note: "Final pricing is tailored per quote.",
+          },
+          {
+            color: "red",
+            title: "Custom Systems",
+            price: "Starts from $1,500",
+            bullets: [
+              "Scoped & designed via discovery call",
+              "Tailored tools and integrations",
+              "Support/hosting discussed on call",
+            ],
+            note: "Final pricing is scoped individually.",
+          },
+        ].map((plan, i) => (
+          <motion.div
+            key={plan.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.2, duration: 0.6 }}
+            className="bg-[#1A1A1A] border border-[#2a2a2a] rounded-xl p-6 md:p-8 shadow-md transition hover:scale-[1.02] hover:shadow-lg duration-200"
+          >
+            <h3 className={`text-2xl font-bold mb-4 text-${plan.color}-400`}>
+              ● {plan.title}
+            </h3>
+            <p className="text-lg font-semibold mb-4">{plan.price}</p>
+            <ul className="text-gray-300 space-y-2 mb-4">
+              {plan.bullets.map((b, idx) => (
+                <li key={idx}>• {b}</li>
+              ))}
+            </ul>
+            <p className="text-sm text-gray-400 flex items-center gap-2">
+              🗨 {plan.note}
+            </p>
+          </motion.div>
+        ))}
       </div>
 
       {/* Fixes & Maintenance */}
-      <div className="bg-[#1A1A1A] rounded-xl p-8 md:p-10 text-gray-300 text-sm">
-        <h4 className="text-xl font-semibold text-white mb-4">🔧 Fixes & Maintenance</h4>
-        <ul className="list-disc list-inside space-y-1">
-          <li>🔁 Fixes for broken APIs or workflows: $60–$120 depending on complexity</li>
-          <li>📆 Maintenance Plan: $29–$49/month — includes monthly checks, API patches, and light edits</li>
-          <li>💸 Refunds offered only for failed delivery or scope breach — not for post-delivery preference changes</li>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-[#1A1A1A] border border-[#2a2a2a] rounded-xl p-6 md:p-8 shadow-md"
+      >
+        <h3 className="text-2xl font-bold mb-4">🛠 Fixes & Maintenance</h3>
+        <ul className="text-gray-300 space-y-3 text-sm md:text-base">
+          <li className="flex items-start gap-2">
+            <FaWrench className="text-[#0FF1CE] mt-1" />
+            Fixes for broken APIs or workflows: <strong>$60–$120</strong> depending on complexity
+          </li>
+          <li className="flex items-start gap-2">
+            <FaCalendarAlt className="text-[#0FF1CE] mt-1" />
+            Maintenance Plan: <strong>$29–$49/month</strong> — includes monthly checks, API patches, and light edits
+          </li>
+          <li className="flex items-start gap-2">
+            <FaUndo className="text-[#0FF1CE] mt-1" />
+            Refunds offered only for failed delivery or scope breach — not for post-delivery preference changes
+          </li>
         </ul>
-      </div>
+      </motion.div>
     </section>
   );
 }

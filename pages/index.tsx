@@ -1,14 +1,13 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-
 import Layout from "../components/Layout";
 
 import FeatureGrid from "../components/FeatureGrid";
 import HowItWorks from "../components/HowItWorks";
-import RealExamples from "../components/RealExamples";
+import RealExamples from "../components/RealExamplesSection";
 import JourneyShowcaseSection from "../components/JourneyShowcaseSection";
-import WhyAxon from "../components/WhyAxon";
 import PricingSection from "../components/PricingSection";
+import WhyAxon from "../components/WhyAxon";
 import QuoteForm from "../components/QuoteForm";
 
 export default function Home() {
@@ -34,7 +33,6 @@ export default function Home() {
             background: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, #0B0C10 100%)",
           }}
         />
-
         <div className="relative z-20 max-w-3xl pt-28 pb-32">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -42,10 +40,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-7xl font-bold mb-10 leading-tight"
           >
-            We turn inefficient processes<br />into seamless automated workflows.
+            We turn inefficiency into automation. <br />Seamless workflows that scale with you.
           </motion.h1>
           <p className="text-xl text-gray-300 mb-10 max-w-xl">
-            Axon isn’t just a tool — it’s your automation partner. We scope, build, and manage AI-powered systems for small businesses that save time, reduce error, and never break silently.
+            Axon builds smart systems for small businesses — saving time, reducing errors, and never breaking silently.
           </p>
           <div className="flex gap-6">
             <a href="#quote">
@@ -77,15 +75,15 @@ export default function Home() {
       <div id="journeys">
         <JourneyShowcaseSection />
       </div>
-      <div className="w-full h-24 bg-gradient-to-b from-[#121417] to-[#0B0C10]" />
-      <div id="why">
-        <WhyAxon />
-      </div>
       <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
       <div id="pricing">
         <PricingSection />
       </div>
       <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
+      <div id="why">
+        <WhyAxon />
+      </div>
+      <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
       <div id="quote">
         <QuoteForm />
       </div>
