@@ -19,6 +19,7 @@ export default function Navbar() {
         <li><a href="/#examples" className="hover:text-white transition">Examples</a></li>
         <li><a href="/#journeys" className="hover:text-white transition">Journeys</a></li>
         <li><a href="/#pricing" className="hover:text-white transition">Pricing</a></li>
+        <li><a href="/#calculator" className="hover:text-white transition">Calculator</a></li>
         <li><a href="/#quote" className="hover:text-white transition">Quote</a></li>
       </ul>
 
@@ -40,6 +41,7 @@ export default function Navbar() {
             <li><a onClick={() => setMenuOpen(false)} href="/#examples" className="hover:text-white transition">Examples</a></li>
             <li><a onClick={() => setMenuOpen(false)} href="/#journeys" className="hover:text-white transition">Journeys</a></li>
             <li><a onClick={() => setMenuOpen(false)} href="/#pricing" className="hover:text-white transition">Pricing</a></li>
+            <li><a onClick={() => setMenuOpen(false)} href="/#calculator" className="hover:text-white transition">Calculator</a></li>
             <li><a onClick={() => setMenuOpen(false)} href="/#quote" className="hover:text-white transition">Quote</a></li>
           </ul>
         </div>

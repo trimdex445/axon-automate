@@ -7,6 +7,7 @@ import HowItWorks from "../components/HowItWorks";
 import RealExamples from "../components/RealExamplesSection";
 import JourneyShowcaseSection from "../components/JourneyShowcaseSection";
 import PricingSection from "../components/PricingSection";
+import HoursSavedCalculator from "../components/HoursSavedCalculator";
 import WhyAxon from "../components/WhyAxon";
 import QuoteForm from "../components/QuoteForm";
 
@@ -40,10 +41,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-7xl font-bold mb-10 leading-tight"
           >
-            We turn inefficiency into automation. <br />Seamless workflows that scale with you.
+            We turn inefficient processes <br /> into seamless automated workflows.
           </motion.h1>
           <p className="text-xl text-gray-300 mb-10 max-w-xl">
-            Axon builds smart systems for small businesses — saving time, reducing errors, and never breaking silently.
+            Fully custom AI and workflow systems — made for real operators, not templates.
           </p>
           <div className="flex gap-6">
             <a href="#quote">
@@ -80,12 +81,16 @@ export default function Home() {
         <PricingSection />
       </div>
       <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
-      <div id="why">
-        <WhyAxon />
+      <div id="calculator">
+        <HoursSavedCalculator />
       </div>
       <div className="w-full h-24 bg-gradient-to-b from-[#0B0C10] to-[#131417]" />
       <div id="quote">
         <QuoteForm />
+      </div>
+      <div className="w-full h-24 bg-gradient-to-b from-[#131417] to-[#0B0C10]" />
+      <div id="why">
+        <WhyAxon />
       </div>
     </Layout>
   );
