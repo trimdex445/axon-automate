@@ -1,9 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
 
 body {
   @apply bg-axon-background text-axon-text;
-  font-family: 'Inter', sans-serif;
+  @apply font-satoshi;
   scroll-behavior: smooth;
 }

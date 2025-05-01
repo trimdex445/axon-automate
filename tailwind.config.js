@@ -13,7 +13,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'], // you can load Inter via Google Fonts if you like
+        satoshi: ['"Satoshi"', 'sans-serif'], // ✅ Add this line
+        sans: ['"Satoshi"', 'sans-serif'],    // ✅ Optionally override default
       },
     },
   },

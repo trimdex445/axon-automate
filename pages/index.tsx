@@ -16,7 +16,7 @@ export default function Home() {
           </a>
         </div>
         <div className="flex justify-center">
-          <Image src="/assets/hero-machine.png" alt="Automation Machine" width={500} height={500} className="object-contain" priority />
+          <Image src="\assets\bg\assets2Ftask_01jt5j0nnhfvtrzkbt9vff57422F1746090928_img_0.png" alt="Automation Machine" width={500} height={500} className="object-contain" priority />
         </div>
       </section>
 
