@@ -25,7 +25,7 @@ export default function Home() {
         </div>
         <div className="relative -top-25 -left-8 scale-140">
           <Image
-              src="/assets/hero-machine.png"
+              src="\assets2Ftask_01jt5j0nnhfvtrzkbt9vff57422F1746090928_img_0.png"
               alt="Automation Machine"
               width={500}
               height={500}

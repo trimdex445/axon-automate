@@ -13,9 +13,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        satoshi: ['"Satoshi"', 'sans-serif'], // ✅ Add this line
-        sans: ['"Satoshi"', 'sans-serif'],    // ✅ Optionally override default
-      },
+        satoshi: ['Satoshi', 'sans-serif'],
+      }
     },
   },
   plugins: [],
