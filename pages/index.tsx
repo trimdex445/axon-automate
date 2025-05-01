@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Layout from '../components/Layout';
-import '../styles/globals.css'
 import {
   Wrench,
   HeartPulse,
