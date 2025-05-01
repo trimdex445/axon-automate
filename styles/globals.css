@@ -1,11 +1,9 @@
-/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  font-size: 20px; /* Increases base font size from 16px to 20px */
-}
-html {
+body {
+  @apply bg-axon-background text-axon-text;
+  font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
 }
