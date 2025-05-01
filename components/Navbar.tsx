@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import '../styles/globals.css'
-
 export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-[#fff0d5] text-[#04253e] border-b border-[#e5d8b8] backdrop-blur-md bg-opacity-90">
