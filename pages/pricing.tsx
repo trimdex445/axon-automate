@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import { Check, X, Crown } from 'lucide-react';
+import { Check, X, Crown, Sparkle, Star } from 'lucide-react';
 
 const Feature = ({ label, available }: { label: string; available: boolean }) => (
   <li className="flex items-start gap-2">
@@ -20,9 +20,12 @@ export default function Pricing() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {/* Simple Automations */}
-          <div className="border border-[#e5d8b8] rounded-xl bg-white/50 p-6 shadow hover:shadow-lg transition duration-300">
-            <h2 className="text-xl font-bold mb-2 text-[#04253e]">Simple Automations</h2>
-            <p className="mb-4 text-sm opacity-80">For quick, low-complexity automations that solve single problems.</p>
+          <div className="border-2 border-[#04253e] rounded-xl bg-white/50 p-6 shadow-md hover:shadow-xl hover:scale-[1.02] transition duration-300">
+            <div className="flex justify-center mb-2 text-[#04253e]">
+              <Sparkle className="w-6 h-6" />
+            </div>
+            <h2 className="text-xl font-bold mb-2 text-center text-[#04253e]">Simple Automations</h2>
+            <p className="mb-4 text-sm opacity-80 text-center">For quick, low-complexity automations that solve single problems.</p>
             <div className="text-center font-semibold mb-6 text-[#04253e]">NZD $150–$300</div>
 
             <ul className="space-y-2 mb-6">
@@ -39,9 +42,12 @@ export default function Pricing() {
           </div>
 
           {/* End-to-End Automations */}
-          <div className="border-2 border-[#04253e] rounded-xl bg-white/50 p-6 shadow hover:shadow-lg transition duration-300 scale-[1.01]">
-            <h2 className="text-xl font-bold mb-2 text-[#04253e]">End-to-End Automations</h2>
-            <p className="mb-4 text-sm opacity-80">For complex, multi-system automations across databases, APIs, and logic.</p>
+          <div className="border-2 border-[#04253e] rounded-xl bg-white p-6 shadow-md hover:shadow-xl hover:scale-[1.02] transition duration-300">
+            <div className="flex justify-center mb-2 text-[#04253e]">
+              <Star className="w-6 h-6" />
+            </div>
+            <h2 className="text-xl font-bold mb-2 text-center text-[#04253e]">End-to-End Automations</h2>
+            <p className="mb-4 text-sm opacity-80 text-center">For complex, multi-system automations across databases, APIs, and logic.</p>
             <div className="text-center font-semibold mb-6 text-[#04253e]">NZD $1,000–$5,000</div>
 
             <ul className="space-y-2 mb-6">
@@ -58,12 +64,14 @@ export default function Pricing() {
           </div>
 
           {/* Business Systems Redesign */}
-          <div className="border-2 border-[#04253e] rounded-xl bg-white/50 p-6 shadow hover:shadow-lg transition duration-300">
-            <h2 className="text-xl font-bold mb-2 text-[#04253e] flex items-center justify-center gap-2">
-              <Crown className="text-[#04253e] w-5 h-5" />
+          <div className="border-2 border-[#04253e] rounded-xl bg-white p-6 shadow-md hover:shadow-xl hover:scale-[1.02] transition duration-300">
+            <div className="flex justify-center mb-2 text-[#04253e]">
+              <Crown className="w-6 h-6" />
+            </div>
+            <h2 className="text-xl font-bold mb-2 text-center text-[#04253e] flex items-center justify-center gap-2">
               Business Systems Redesign
             </h2>
-            <p className="mb-4 text-sm opacity-80">Full advisory and implementation to rebuild your business with automation in mind.</p>
+            <p className="mb-4 text-sm opacity-80 text-center">Full advisory and implementation to rebuild your business with automation in mind.</p>
             <div className="text-center font-semibold mb-6 text-[#04253e]">Contact for Pricing</div>
 
             <ul className="space-y-2 mb-6">
