@@ -1,5 +1,14 @@
 import Image from 'next/image';
 import Layout from '../components/Layout';
+import '../styles/globals.css'
+import {
+  Wrench,
+  HeartPulse,
+  FileText,
+  Utensils,
+  ShoppingCart,
+  Brush,
+} from 'lucide-react';
 
 export default function Home() {
   return (
@@ -12,11 +21,18 @@ export default function Home() {
             Axon Automate builds custom AI and workflow automation solutions tailored for small businesses and solo operators.
           </p>
           <a href="#why" className="inline-block bg-[#04253e] text-[#fff0d5] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-            Learn Why
+            Learn How
           </a>
         </div>
-        <div className="flex justify-center">
-          <Image src="\assets\bg\assets2Ftask_01jt5j0nnhfvtrzkbt9vff57422F1746090928_img_0.png" alt="Automation Machine" width={500} height={500} className="object-contain" priority />
+        <div className="relative -top-25 -left-8 scale-140">
+          <Image
+              src="/assets/hero-machine.png"
+              alt="Automation Machine"
+              width={500}
+              height={500}
+              className="object-contain"
+              priority
+          />
         </div>
       </section>
 
@@ -30,15 +46,87 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Examples */}
-      <section id="examples" className="py-28">
-        <h2 className="text-4xl font-bold mb-10">Real Examples</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="p-6 bg-white/50 border border-[#e5d8b8] rounded-xl shadow"><h4 className="font-semibold mb-2">Quote Builder</h4><p className="opacity-80">Auto-generates PDFs and sends responses instantly.</p></div>
-          <div className="p-6 bg-white/50 border border-[#e5d8b8] rounded-xl shadow"><h4 className="font-semibold mb-2">Follow-Up Bot</h4><p className="opacity-80">Detects leads and follows up via email.</p></div>
-          <div className="p-6 bg-white/50 border border-[#e5d8b8] rounded-xl shadow"><h4 className="font-semibold mb-2">Smart Scheduling</h4><p className="opacity-80">Books clients into your calendar automatically.</p></div>
+            {/* Industries We Automate */}
+      <section id="industries" className="py-28">
+        <h2 className="text-4xl font-bold mb-6 text-center">Industries We Automate</h2>
+        <p className="text-center text-lg opacity-80 mb-16">
+          From lawn care to law firms — if your business has a repeatable process, we can probably automate it. Here's a taste:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-6xl mx-auto text-[#04253e]">
+          {/* Trades & Services */}
+          <div className="flex flex-col items-center text-center">
+            <Wrench className="w-12 h-12 mb-4 text-[#04253e]" />
+            <h3 className="font-semibold text-lg mb-2">Trades & Services</h3>
+            <ul className="text-sm opacity-80 space-y-1">
+              <li>• Auto-generate quotes from job forms</li>
+              <li>• Auto-book appointments into your calendar</li>
+              <li>• Send follow-up reminders to clients</li>
+            </ul>
+          </div>
+
+          {/* Health & Wellness */}
+          <div className="flex flex-col items-center text-center">
+            <HeartPulse className="w-12 h-12 mb-4 text-[#04253e]" />
+            <h3 className="font-semibold text-lg mb-2">Health & Wellness</h3>
+            <ul className="text-sm opacity-80 space-y-1">
+              <li>• New client onboarding automation</li>
+              <li>• Class reminder emails/SMS</li>
+              <li>• Payment tracking + auto receipts</li>
+            </ul>
+          </div>
+
+          {/* Legal & Finance */}
+          <div className="flex flex-col items-center text-center">
+            <FileText className="w-12 h-12 mb-4 text-[#04253e]" />
+            <h3 className="font-semibold text-lg mb-2">Legal & Finance</h3>
+            <ul className="text-sm opacity-80 space-y-1">
+              <li>• Contract auto-filling from forms</li>
+              <li>• Smart task tracking for case files</li>
+              <li>• Weekly status summaries</li>
+            </ul>
+          </div>
+
+          {/* Hospitality */}
+          <div className="flex flex-col items-center text-center">
+            <Utensils className="w-12 h-12 mb-4 text-[#04253e]" />
+            <h3 className="font-semibold text-lg mb-2">Hospitality</h3>
+            <ul className="text-sm opacity-80 space-y-1">
+              <li>• Shift scheduling + staff notifications</li>
+              <li>• Weekly sales reports to your inbox</li>
+              <li>• Auto-reply to reservation requests</li>
+            </ul>
+          </div>
+
+          {/* Ecommerce */}
+          <div className="flex flex-col items-center text-center">
+            <ShoppingCart className="w-12 h-12 mb-4 text-[#04253e]" />
+            <h3 className="font-semibold text-lg mb-2">Ecommerce</h3>
+            <ul className="text-sm opacity-80 space-y-1">
+              <li>• Order → invoice → delivery chain</li>
+              <li>• Abandoned cart follow-ups</li>
+              <li>• Daily revenue tracking</li>
+            </ul>
+          </div>
+
+          {/* Creative Agencies */}
+          <div className="flex flex-col items-center text-center">
+            <Brush className="w-12 h-12 mb-4 text-[#04253e]" />
+            <h3 className="font-semibold text-lg mb-2">Creative Agencies</h3>
+            <ul className="text-sm opacity-80 space-y-1">
+              <li>• Intake form → project brief creation</li>
+              <li>• Approval workflows for drafts</li>
+              <li>• Client status reports auto-generated</li>
+            </ul>
+          </div>
         </div>
+
+        <p className="text-center text-sm mt-12 opacity-70">
+          Not listed? No problem — we tailor solutions to any industry.
+        </p>
       </section>
+
+
 
       {/* CTA */}
       <section className="py-28 text-center">

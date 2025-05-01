@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import { Check, X } from 'lucide-react';
+import { Check, X, Crown } from 'lucide-react';
 
 const Feature = ({ label, available }: { label: string; available: boolean }) => (
   <li className="flex items-start gap-2">
@@ -23,7 +23,7 @@ export default function Pricing() {
           <div className="border border-[#e5d8b8] rounded-xl bg-white/50 p-6 shadow hover:shadow-lg transition duration-300">
             <h2 className="text-xl font-bold mb-2 text-[#04253e]">Simple Automations</h2>
             <p className="mb-4 text-sm opacity-80">For quick, low-complexity automations that solve single problems.</p>
-            <div className="bg-[#04253e] text-[#fff0d5] font-semibold text-center py-2 rounded mb-6">NZD $150–$300</div>
+            <div className="text-center font-semibold mb-6 text-[#04253e]">NZD $150–$300</div>
 
             <ul className="space-y-2 mb-6">
               <Feature label="Single input → single output flows" available />
@@ -38,11 +38,11 @@ export default function Pricing() {
             <button className="w-full bg-[#04253e] text-[#fff0d5] py-2 rounded font-semibold hover:opacity-90 transition">Get Started</button>
           </div>
 
-          {/* End-to-End Automations (Recommended) */}
-          <div className="border-2 border-[#04253e] rounded-xl bg-[#fff7e3] p-6 shadow-lg scale-[1.02] hover:scale-[1.03] transition duration-300">
+          {/* End-to-End Automations */}
+          <div className="border-2 border-[#04253e] rounded-xl bg-white/50 p-6 shadow hover:shadow-lg transition duration-300 scale-[1.01]">
             <h2 className="text-xl font-bold mb-2 text-[#04253e]">End-to-End Automations</h2>
             <p className="mb-4 text-sm opacity-80">For complex, multi-system automations across databases, APIs, and logic.</p>
-            <div className="bg-[#04253e] text-[#fff0d5] font-semibold text-center py-2 rounded mb-6">NZD $1,000–$5,000</div>
+            <div className="text-center font-semibold mb-6 text-[#04253e]">NZD $1,000–$5,000</div>
 
             <ul className="space-y-2 mb-6">
               <Feature label="Multi-system integrations" available />
@@ -57,11 +57,14 @@ export default function Pricing() {
             <button className="w-full bg-[#04253e] text-[#fff0d5] py-2 rounded font-semibold hover:opacity-90 transition">Book Consultation</button>
           </div>
 
-          {/* Business Redesign */}
-          <div className="border border-[#e5d8b8] rounded-xl bg-white/50 p-6 shadow hover:shadow-lg transition duration-300">
-            <h2 className="text-xl font-bold mb-2 text-[#04253e]">Business Systems Redesign</h2>
+          {/* Business Systems Redesign */}
+          <div className="border-2 border-[#04253e] rounded-xl bg-white/50 p-6 shadow hover:shadow-lg transition duration-300">
+            <h2 className="text-xl font-bold mb-2 text-[#04253e] flex items-center justify-center gap-2">
+              <Crown className="text-[#04253e] w-5 h-5" />
+              Business Systems Redesign
+            </h2>
             <p className="mb-4 text-sm opacity-80">Full advisory and implementation to rebuild your business with automation in mind.</p>
-            <div className="bg-[#04253e] text-[#fff0d5] font-semibold text-center py-2 rounded mb-6">Contact for Pricing</div>
+            <div className="text-center font-semibold mb-6 text-[#04253e]">Contact for Pricing</div>
 
             <ul className="space-y-2 mb-6">
               <Feature label="Automation consulting" available />
