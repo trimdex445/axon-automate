@@ -13,7 +13,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        satoshi: ['Satoshi', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
       }
     },
   },
