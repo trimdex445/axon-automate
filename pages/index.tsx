@@ -23,7 +23,7 @@ export default function Home() {
             Learn How
           </a>
         </div>
-        <div className="relative -top-25 -left-8 scale-140">
+        <div className="relative -top-40 -right-8 scale-250">
           <Image
               src="/assets/bg/assets2Ftask_01jt5j0nnhfvtrzkbt9vff57422F1746090928_img_0.png"
               alt="Automation Machine"

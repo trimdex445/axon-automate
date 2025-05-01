@@ -1,9 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://api.fontshare.com/v2/css?f[]=Satoshi@400,500,700&display=swap');
 
 body {
-  @apply font-sans bg-axon-background text-axon-text;
+  @apply font-serif bg-axon-background text-axon-text;
   scroll-behavior: smooth;
 }
