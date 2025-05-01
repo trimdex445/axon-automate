@@ -1,8 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
 
 body {
-  @apply font-serif bg-axon-background text-axon-text;
+  @apply font-sans bg-axon-background text-axon-text;
   scroll-behavior: smooth;
 }
