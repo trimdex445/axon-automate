@@ -1,4 +1,16 @@
 import Layout from '../components/Layout';
+import { Check, X } from 'lucide-react';
+
+const Feature = ({ label, available }: { label: string; available: boolean }) => (
+  <li className="flex items-start gap-2">
+    {available ? (
+      <Check className="text-green-600 w-5 h-5 mt-1" />
+    ) : (
+      <X className="text-red-400 w-5 h-5 mt-1" />
+    )}
+    <span className="text-sm">{label}</span>
+  </li>
+);
 
 export default function Pricing() {
   return (
@@ -8,54 +20,60 @@ export default function Pricing() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {/* Simple Automations */}
-          <div className="border border-[#e5d8b8] rounded-xl bg-white/50 p-6 shadow">
+          <div className="border border-[#e5d8b8] rounded-xl bg-white/50 p-6 shadow hover:shadow-lg transition duration-300">
             <h2 className="text-xl font-bold mb-2 text-[#04253e]">Simple Automations</h2>
             <p className="mb-4 text-sm opacity-80">For quick, low-complexity automations that solve single problems.</p>
             <div className="bg-[#04253e] text-[#fff0d5] font-semibold text-center py-2 rounded mb-6">NZD $150–$300</div>
 
-            <ul className="space-y-2 text-sm">
-              <li>✅ Single input → single output flows</li>
-              <li>✅ Form-to-email / sheet syncs</li>
-              <li>✅ Triggered follow-ups</li>
-              <li>✅ Basic data formatting</li>
-              <li>❌ API integrations</li>
-              <li>❌ OAuth flows</li>
-              <li>❌ Strategy consultation</li>
+            <ul className="space-y-2 mb-6">
+              <Feature label="Single input → single output flows" available />
+              <Feature label="Form-to-email / sheet syncs" available />
+              <Feature label="Triggered follow-ups" available />
+              <Feature label="Basic data formatting" available />
+              <Feature label="API integrations" available={false} />
+              <Feature label="OAuth flows" available={false} />
+              <Feature label="Strategy consultation" available={false} />
             </ul>
+
+            <button className="w-full bg-[#04253e] text-[#fff0d5] py-2 rounded font-semibold hover:opacity-90 transition">Get Started</button>
           </div>
 
-          {/* End-to-End Automations */}
-          <div className="border border-[#e5d8b8] rounded-xl bg-white/50 p-6 shadow">
+          {/* End-to-End Automations (Recommended) */}
+          <div className="border-2 border-[#04253e] rounded-xl bg-[#fff7e3] p-6 shadow-lg scale-[1.02] hover:scale-[1.03] transition duration-300">
             <h2 className="text-xl font-bold mb-2 text-[#04253e]">End-to-End Automations</h2>
-            <p className="mb-4 text-sm opacity-80">Designed for full business processes across tools, APIs, and logic layers.</p>
+            <p className="mb-4 text-sm opacity-80">For complex, multi-system automations across databases, APIs, and logic.</p>
             <div className="bg-[#04253e] text-[#fff0d5] font-semibold text-center py-2 rounded mb-6">NZD $1,000–$5,000</div>
 
-            <ul className="space-y-2 text-sm">
-              <li>✅ Multi-system integrations</li>
-              <li>✅ OAuth logins, database syncing</li>
-              <li>✅ Email parsing / dynamic routing</li>
-              <li>✅ Embedded logic + dashboards</li>
-              <li>✅ Multi-step pipelines</li>
-              <li>❌ Business architecture redesign</li>
-              <li>❌ Long-term advisory</li>
+            <ul className="space-y-2 mb-6">
+              <Feature label="Multi-system integrations" available />
+              <Feature label="OAuth logins, database syncing" available />
+              <Feature label="Email parsing / dynamic routing" available />
+              <Feature label="Embedded logic + dashboards" available />
+              <Feature label="Multi-step pipelines" available />
+              <Feature label="Business architecture redesign" available={false} />
+              <Feature label="Long-term advisory" available={false} />
             </ul>
+
+            <button className="w-full bg-[#04253e] text-[#fff0d5] py-2 rounded font-semibold hover:opacity-90 transition">Book Consultation</button>
           </div>
 
           {/* Business Redesign */}
-          <div className="border border-[#e5d8b8] rounded-xl bg-white/50 p-6 shadow">
+          <div className="border border-[#e5d8b8] rounded-xl bg-white/50 p-6 shadow hover:shadow-lg transition duration-300">
             <h2 className="text-xl font-bold mb-2 text-[#04253e]">Business Systems Redesign</h2>
-            <p className="mb-4 text-sm opacity-80">A complete rework of your business’s digital systems, strategy, and automation design.</p>
+            <p className="mb-4 text-sm opacity-80">Full advisory and implementation to rebuild your business with automation in mind.</p>
             <div className="bg-[#04253e] text-[#fff0d5] font-semibold text-center py-2 rounded mb-6">Contact for Pricing</div>
 
-            <ul className="space-y-2 text-sm">
-              <li>✅ Automation consulting</li>
-              <li>✅ Database design & normalisation</li>
-              <li>✅ Data strategy / visibility audit</li>
-              <li>✅ Long-term optimisation plan</li>
-              <li>✅ Full rebuild of digital stack</li>
-              <li>✅ Custom API/backend dev (if needed)</li>
-              <li>✅ Dedicated support & training</li>
+            <ul className="space-y-2 mb-6">
+              <Feature label="Automation consulting" available />
+              <Feature label="Database design & normalisation" available />
+              <Feature label="Data strategy / visibility audit" available />
+              <Feature label="Long-term optimisation plan" available />
+              <Feature label="Full rebuild of digital stack" available />
+              <Feature label="Custom API/backend dev (if needed)" available />
+              <Feature label="Dedicated support & training" available />
             </ul>
+
+            <button className="w-full bg-[#04253e] text-[#fff0d5] py-2 rounded font-semibold hover:opacity-90 transition">Contact Us</button>
           </div>
         </div>
       </section>
