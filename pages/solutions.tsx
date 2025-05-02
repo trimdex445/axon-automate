@@ -86,7 +86,7 @@ export default function SolutionsPage() {
 
   return (
     <Layout>
-      <section className="py-20 px-4" style={{ backgroundColor: '#fff0d5' }}>
+      <section className="py-20 px-4 bg-[#fff0d5]">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl font-extrabold text-[#04253e] mb-2 tracking-tight">What We Automate</h1>
           <p className="text-lg text-[#04253e] max-w-2xl mx-auto font-medium">
@@ -116,18 +116,20 @@ export default function SolutionsPage() {
               <div
                 key={idx}
                 onClick={() => setSelectedCard({ title, description })}
-                className={`${bgColors[selectedIndustry]} cursor-pointer p-6 min-h-[250px] rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition duration-300 ease-in-out hover:scale-[1.02]`}
+                className={`relative ${bgColors[selectedIndustry]} cursor-pointer p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-all`}
               >
-                {tag && (
-                  <span className="text-xs font-semibold text-[#04253e] bg-[#eaf4ff] rounded-full px-2 py-0.5 mb-2 inline-block">
-                    {tag}
-                  </span>
-                )}
-                <div className="flex items-center justify-center w-10 h-10 mb-3 bg-[#edf2f7] rounded-full">
-                  <Icon className="text-[#04253e] w-5 h-5" />
+                <div className="flex items-start justify-between mb-4">
+                  <div className="bg-[#edf2f7] text-[#04253e] w-10 h-10 flex items-center justify-center rounded-full">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  {tag && (
+                    <span className="text-xs font-semibold bg-[#04253e] text-white px-2 py-0.5 rounded-md">
+                      {tag}
+                    </span>
+                  )}
                 </div>
-                <h4 className="text-base font-bold text-[#04253e] uppercase tracking-wide mb-1">{title}</h4>
-                <p className="text-[15px] text-gray-700 leading-relaxed">{description}</p>
+                <h4 className="text-md font-bold text-[#04253e] mb-2 leading-snug uppercase">{title}</h4>
+                <p className="text-sm text-gray-700 leading-relaxed">{description}</p>
               </div>
             ))}
           </div>
