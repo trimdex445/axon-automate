@@ -16,16 +16,17 @@ import {
 } from 'lucide-react';
 import { useState, Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
+import { motion } from 'framer-motion';
 
 const industryTabs = ['General', 'Health & Wellness', 'Legal & Finance', 'Hospitality', 'Ecommerce', 'Creative Agencies'];
 
-const bgColors: Record<string, string> = {
-  General: 'bg-[#fef9f2]',
-  'Health & Wellness': 'bg-[#f0fff4]',
-  'Legal & Finance': 'bg-[#f8f9fc]',
-  Hospitality: 'bg-[#f0f9ff]',
-  Ecommerce: 'bg-[#fffaf0]',
-  'Creative Agencies': 'bg-[#f5f0ff]',
+const borderColors: Record<string, string> = {
+  General: 'border-[#04253e]',
+  'Health & Wellness': 'border-[#26a69a]',
+  'Legal & Finance': 'border-[#5e35b1]',
+  Hospitality: 'border-[#1e88e5]',
+  Ecommerce: 'border-[#fb8c00]',
+  'Creative Agencies': 'border-[#d81b60]',
 };
 
 const allSolutions: Record<string, { icon: any; title: string; description: string; tag?: string }[]> = {
@@ -113,10 +114,14 @@ export default function SolutionsPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left">
             {solutions.map(({ icon: Icon, title, description, tag }, idx) => (
-              <div
+              <motion.div
                 key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                viewport={{ once: true }}
                 onClick={() => setSelectedCard({ title, description })}
-                className={`relative ${bgColors[selectedIndustry]} cursor-pointer p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-all`}
+                className={`relative bg-white cursor-pointer p-6 rounded-xl border ${borderColors[selectedIndustry]} hover:shadow-2xl hover:-translate-y-1 transition-transform duration-200`}
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="bg-[#edf2f7] text-[#04253e] w-10 h-10 flex items-center justify-center rounded-full">
@@ -130,7 +135,7 @@ export default function SolutionsPage() {
                 </div>
                 <h4 className="text-md font-bold text-[#04253e] mb-2 leading-snug uppercase">{title}</h4>
                 <p className="text-sm text-gray-700 leading-relaxed">{description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
 
