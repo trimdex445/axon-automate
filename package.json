@@ -10,6 +10,7 @@
     "deploy:functions": "cd functions-clean && npm run build && cd .. && firebase deploy --only functions"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.2",
     "@vercel/analytics": "^1.5.0",
     "dotenv": "^16.5.0",
     "firebase": "^11.6.0",
