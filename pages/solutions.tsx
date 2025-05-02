@@ -13,7 +13,14 @@ import {
   Activity,
   CheckSquare,
   X,
+  Sparkles,
+  Repeat,
+  Send,
+  Plug,
+  BarChart3,
+  Brain,
 } from 'lucide-react';
+
 import { useState, Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -79,7 +86,6 @@ const allSolutions: Record<string, { icon: any; title: string; description: stri
     { icon: CalendarClock, title: 'Weekly Content Calendar Sync', description: 'Auto-push campaign deadlines or content calendars to everyone’s Google Cal.', tag: 'Schedule Sync' },
   ],
 };
-
 export default function SolutionsPage() {
   const [selectedIndustry, setSelectedIndustry] = useState('General');
   const [selectedCard, setSelectedCard] = useState<null | { title: string; description: string }>(null);
@@ -94,13 +100,43 @@ export default function SolutionsPage() {
             Explore some of our most powerful workflow automations — and filter by industry to see what's possible.
           </p>
 
+          {/* SOLUTION TYPES */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-20 mt-12">
+            {[
+              { icon: Brain, title: 'Agents', description: 'AI bots that reply, sort messages, and act on logic or data' },
+              { icon: Repeat, title: 'Workflows', description: 'Step-by-step task automations triggered by events or forms' },
+              { icon: Send, title: 'Automations', description: 'Trigger emails, texts, or status updates automatically' },
+              { icon: Plug, title: 'Integrations', description: 'Connect tools like Airtable, Gmail, Xero, Notion, and more' },
+              { icon: BarChart3, title: 'Dashboards', description: 'Auto-generated reports and real-time views of key metrics' },
+              { icon: Sparkles, title: 'AI Tools', description: 'Use GPT to classify, summarise, and auto-reply based on input' },
+            ].map(({ icon: Icon, title, description }, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                className="bg-white border border-[#e5d8b8] hover:shadow-xl hover:-translate-y-1 transition duration-300 ease-in-out rounded-xl p-6 text-left cursor-default"
+              >
+                <div className="mb-3 bg-[#edf2f7] text-[#04253e] w-10 h-10 flex items-center justify-center rounded-full">
+                  <Icon className="w-5 h-5" />
+                </div>
+                <h4 className="text-lg font-semibold text-[#04253e] mb-1">{title}</h4>
+                <p className="text-sm text-gray-700 leading-relaxed">{description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* INDUSTRY FILTER TABS */}
           <div className="flex flex-wrap justify-center gap-4 mt-8 mb-10">
             {industryTabs.map((industry) => (
               <button
                 key={industry}
                 onClick={() => setSelectedIndustry(industry)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all border ${
-                  selectedIndustry === industry ? 'bg-[#04253e] text-white border-[#04253e]' : 'bg-white text-[#04253e] border-gray-300 hover:bg-gray-100'
+                  selectedIndustry === industry
+                    ? 'bg-[#04253e] text-white border-[#04253e]'
+                    : 'bg-white text-[#04253e] border-gray-300 hover:bg-gray-100'
                 }`}
               >
                 {industry}
@@ -109,9 +145,11 @@ export default function SolutionsPage() {
           </div>
 
           <p className="text-sm text-gray-600 mb-10">
-            These are common workflows we build for <span className="font-semibold text-[#04253e]">{selectedIndustry}</span> businesses.
+            These are common workflows we build for{' '}
+            <span className="font-semibold text-[#04253e]">{selectedIndustry}</span> businesses.
           </p>
 
+          {/* INDUSTRY SOLUTIONS GRID */}
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedIndustry}
@@ -148,9 +186,12 @@ export default function SolutionsPage() {
             </motion.div>
           </AnimatePresence>
 
+          {/* CTA */}
           <div className="mt-20 text-center">
             <h3 className="text-xl font-semibold text-[#04253e] mb-2">Looking for something else?</h3>
-            <p className="text-gray-600 mb-4">We build completely custom workflows too — just tell us what you're trying to automate.</p>
+            <p className="text-gray-600 mb-4">
+              We build completely custom workflows too — just tell us what you're trying to automate.
+            </p>
             <a href="/contact">
               <button className="bg-[#04253e] text-white py-2 px-6 rounded-md hover:bg-[#021722] transition">
                 Book a Free Consultation
@@ -159,19 +200,43 @@ export default function SolutionsPage() {
           </div>
         </div>
 
+        {/* MODAL */}
         <Transition show={!!selectedCard} as={Fragment}>
           <Dialog onClose={() => setSelectedCard(null)} className="relative z-50">
-            <Transition.Child as={Fragment} enter="transition-opacity duration-200" enterFrom="opacity-0" enterTo="opacity-100" leave="transition-opacity duration-200" leaveFrom="opacity-100" leaveTo="opacity-0">
+            <Transition.Child
+              as={Fragment}
+              enter="transition-opacity duration-200"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="transition-opacity duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
               <div className="fixed inset-0 bg-black bg-opacity-30" />
             </Transition.Child>
             <div className="fixed inset-0 flex items-center justify-center p-4">
-              <Transition.Child as={Fragment} enter="transition-transform duration-200" enterFrom="scale-95 opacity-0" enterTo="scale-100 opacity-100" leave="transition-transform duration-200" leaveFrom="scale-100 opacity-100" leaveTo="scale-95 opacity-0">
+              <Transition.Child
+                as={Fragment}
+                enter="transition-transform duration-200"
+                enterFrom="scale-95 opacity-0"
+                enterTo="scale-100 opacity-100"
+                leave="transition-transform duration-200"
+                leaveFrom="scale-100 opacity-100"
+                leaveTo="scale-95 opacity-0"
+              >
                 <Dialog.Panel className="bg-white rounded-xl max-w-md w-full shadow-xl relative p-6">
-                  <button onClick={() => setSelectedCard(null)} className="absolute top-3 right-3 text-gray-400 hover:text-gray-600">
+                  <button
+                    onClick={() => setSelectedCard(null)}
+                    className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+                  >
                     <X className="w-5 h-5" />
                   </button>
-                  <Dialog.Title className="text-xl font-semibold text-[#04253e] mb-2">{selectedCard?.title}</Dialog.Title>
-                  <Dialog.Description className="text-sm text-gray-700">{selectedCard?.description}</Dialog.Description>
+                  <Dialog.Title className="text-xl font-semibold text-[#04253e] mb-2">
+                    {selectedCard?.title}
+                  </Dialog.Title>
+                  <Dialog.Description className="text-sm text-gray-700">
+                    {selectedCard?.description}
+                  </Dialog.Description>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
