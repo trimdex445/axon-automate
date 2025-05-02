@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import { useState, Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const industryTabs = ['General', 'Health & Wellness', 'Legal & Finance', 'Hospitality', 'Ecommerce', 'Creative Agencies'];
 
@@ -112,32 +112,41 @@ export default function SolutionsPage() {
             These are common workflows we build for <span className="font-semibold text-[#04253e]">{selectedIndustry}</span> businesses.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left">
-            {solutions.map(({ icon: Icon, title, description, tag }, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-                viewport={{ once: true }}
-                onClick={() => setSelectedCard({ title, description })}
-                className={`relative bg-white cursor-pointer p-6 rounded-xl border ${borderColors[selectedIndustry]} hover:shadow-2xl hover:-translate-y-1 transition-transform duration-200`}
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="bg-[#edf2f7] text-[#04253e] w-10 h-10 flex items-center justify-center rounded-full">
-                    <Icon className="w-5 h-5" />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={selectedIndustry}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left"
+            >
+              {solutions.map(({ icon: Icon, title, description, tag }, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: idx * 0.05 }}
+                  viewport={{ once: true }}
+                  onClick={() => setSelectedCard({ title, description })}
+                  className={`relative bg-white cursor-pointer p-6 min-h-[250px] rounded-xl border ${borderColors[selectedIndustry]} hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out`}
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="bg-[#edf2f7] text-[#04253e] w-10 h-10 flex items-center justify-center rounded-full">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    {tag && (
+                      <span className="text-xs font-semibold bg-[#04253e] text-white px-2 py-0.5 rounded-md">
+                        {tag}
+                      </span>
+                    )}
                   </div>
-                  {tag && (
-                    <span className="text-xs font-semibold bg-[#04253e] text-white px-2 py-0.5 rounded-md">
-                      {tag}
-                    </span>
-                  )}
-                </div>
-                <h4 className="text-md font-bold text-[#04253e] mb-2 leading-snug uppercase">{title}</h4>
-                <p className="text-sm text-gray-700 leading-relaxed">{description}</p>
-              </motion.div>
-            ))}
-          </div>
+                  <h4 className="text-md font-bold text-[#04253e] mb-2 leading-snug uppercase">{title}</h4>
+                  <p className="text-sm text-gray-700 leading-relaxed">{description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
 
           <div className="mt-20 text-center">
             <h3 className="text-xl font-semibold text-[#04253e] mb-2">Looking for something else?</h3>
