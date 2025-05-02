@@ -1,93 +1,94 @@
-import Layout from '../components/Layout';
-import { Check, X, Crown, Sparkle, Star } from 'lucide-react';
-
-const Feature = ({ label, available }: { label: string; available: boolean }) => (
-  <li className="flex items-start gap-2">
-    {available ? (
-      <Check className="text-green-600 w-5 h-5 mt-1" />
-    ) : (
-      <X className="text-red-400 w-5 h-5 mt-1" />
-    )}
-    <span className="text-sm">{label}</span>
-  </li>
-);
+import { Check, X, Crown, Sparkles, Settings } from 'lucide-react';
 
 export default function Pricing() {
   return (
-    <Layout>
-      <section className="py-16">
-        <h1 className="text-4xl font-bold mb-12 text-center">Pricing Options</h1>
+    <section className="bg-[#fff0d5] py-20 px-4">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-4xl font-bold text-[#04253e] mb-4">Pricing Options</h2>
+        <p className="text-lg text-gray-600 mb-12">
+          Choose a package that fits your automation goals.
+        </p>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Simple Automations */}
-          <div className="border-2 border-[#04253e] rounded-xl bg-white/50 p-6 shadow-md hover:shadow-xl hover:scale-[1.02] transition duration-300">
-            <div className="flex justify-center mb-2 text-[#04253e]">
-              <Sparkle className="w-6 h-6" />
+          <div className="relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm flex flex-col justify-between">
+            <div>
+              <div className="text-xs uppercase tracking-widest text-gray-500 mb-2 flex justify-center items-center">
+                <Sparkles className="w-4 h-4 mr-2" />
+                Simple Automations
+              </div>
+              <div className="text-2xl font-bold text-[#04253e] mb-1">NZD $150–$300</div>
+              <div className="text-sm text-gray-500 mb-6">One-off mini automations</div>
+
+              <ul className="text-sm text-gray-700 space-y-2 text-left">
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> Single input → single output</li>
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> Form-to-email / sheet syncs</li>
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> Triggered follow-ups</li>
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> Basic data formatting</li>
+                <li className="flex items-center"><X className="text-red-500 mr-2" /> API integrations</li>
+                <li className="flex items-center"><X className="text-red-500 mr-2" /> OAuth flows</li>
+                <li className="flex items-center"><X className="text-red-500 mr-2" /> Strategy consultation</li>
+              </ul>
             </div>
-            <h2 className="text-xl font-bold mb-2 text-center text-[#04253e]">Simple Automations</h2>
-            <p className="mb-4 text-sm opacity-80 text-center">For quick, low-complexity automations that solve single problems.</p>
-            <div className="text-center font-semibold mb-6 text-[#04253e]">NZD $150–$300</div>
-
-            <ul className="space-y-2 mb-6">
-              <Feature label="Single input → single output flows" available />
-              <Feature label="Form-to-email / sheet syncs" available />
-              <Feature label="Triggered follow-ups" available />
-              <Feature label="Basic data formatting" available />
-              <Feature label="API integrations" available={false} />
-              <Feature label="OAuth flows" available={false} />
-              <Feature label="Strategy consultation" available={false} />
-            </ul>
-
-            <button className="w-full bg-[#04253e] text-[#fff0d5] py-2 rounded font-semibold hover:opacity-90 transition">Get Started</button>
+            <button className="mt-6 bg-[#04253e] text-white py-2 px-4 rounded-md hover:bg-[#021722] transition-all">
+              Get Started
+            </button>
           </div>
 
           {/* End-to-End Automations */}
-          <div className="border-2 border-[#04253e] rounded-xl bg-white p-6 shadow-md hover:shadow-xl hover:scale-[1.02] transition duration-300">
-            <div className="flex justify-center mb-2 text-[#04253e]">
-              <Star className="w-6 h-6" />
+          <div className="relative bg-white border-2 border-[#04253e] rounded-2xl p-8 shadow-lg flex flex-col justify-between scale-[1.03] z-10">
+            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#04253e] text-white text-xs px-3 py-1 rounded-full uppercase tracking-wide font-semibold">
+              Most popular
             </div>
-            <h2 className="text-xl font-bold mb-2 text-center text-[#04253e]">End-to-End Automations</h2>
-            <p className="mb-4 text-sm opacity-80 text-center">For complex, multi-system automations across databases, APIs, and logic.</p>
-            <div className="text-center font-semibold mb-6 text-[#04253e]">NZD $1,000–$5,000</div>
+            <div>
+              <div className="text-xs uppercase tracking-widest text-[#04253e] mb-2 flex justify-center items-center font-semibold">
+                <Settings className="w-4 h-4 mr-2" />
+                End-to-End Automations
+              </div>
+              <div className="text-2xl font-bold text-[#04253e] mb-1">NZD $1,000–$5,000</div>
+              <div className="text-sm text-gray-500 mb-6">Multi-system & logic-rich workflows</div>
 
-            <ul className="space-y-2 mb-6">
-              <Feature label="Multi-system integrations" available />
-              <Feature label="OAuth logins, database syncing" available />
-              <Feature label="Email parsing / dynamic routing" available />
-              <Feature label="Embedded logic + dashboards" available />
-              <Feature label="Multi-step pipelines" available />
-              <Feature label="Business architecture redesign" available={false} />
-              <Feature label="Long-term advisory" available={false} />
-            </ul>
-
-            <button className="w-full bg-[#04253e] text-[#fff0d5] py-2 rounded font-semibold hover:opacity-90 transition">Book Consultation</button>
+              <ul className="text-sm text-gray-700 space-y-2 text-left">
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> Multi-system integrations</li>
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> OAuth logins / DB syncing</li>
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> Email parsing / routing</li>
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> Embedded dashboards</li>
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> Multi-step pipelines</li>
+                <li className="flex items-center"><X className="text-red-500 mr-2" /> Business architecture redesign</li>
+                <li className="flex items-center"><X className="text-red-500 mr-2" /> Long-term advisory</li>
+              </ul>
+            </div>
+            <button className="mt-6 bg-[#04253e] text-white py-2 px-4 rounded-md hover:bg-[#021722] transition-all">
+              Book Consultation
+            </button>
           </div>
 
           {/* Business Systems Redesign */}
-          <div className="border-2 border-[#04253e] rounded-xl bg-white p-6 shadow-md hover:shadow-xl hover:scale-[1.02] transition duration-300">
-            <div className="flex justify-center mb-2 text-[#04253e]">
-              <Crown className="w-6 h-6" />
+          <div className="relative bg-white border border-yellow-400 rounded-2xl p-8 shadow-md flex flex-col justify-between">
+            <div>
+              <div className="text-xs uppercase tracking-widest text-yellow-600 mb-2 flex justify-center items-center font-semibold">
+                <Crown className="w-4 h-4 mr-2" />
+                Business Systems Redesign
+              </div>
+              <div className="text-lg font-bold text-[#04253e] mb-1">Contact for Pricing</div>
+              <div className="text-sm text-gray-500 mb-6">Full rebuild & strategy-led delivery</div>
+
+              <ul className="text-sm text-gray-700 space-y-2 text-left">
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> Automation consulting</li>
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> DB design & normalisation</li>
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> Visibility audit & strategy</li>
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> Optimisation roadmap</li>
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> Digital stack rebuild</li>
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> Custom APIs / backend</li>
+                <li className="flex items-center"><Check className="text-green-500 mr-2" /> Ongoing support & training</li>
+              </ul>
             </div>
-            <h2 className="text-xl font-bold mb-2 text-center text-[#04253e] flex items-center justify-center gap-2">
-              Business Systems Redesign
-            </h2>
-            <p className="mb-4 text-sm opacity-80 text-center">Full advisory and implementation to rebuild your business with automation in mind.</p>
-            <div className="text-center font-semibold mb-6 text-[#04253e]">Contact for Pricing</div>
-
-            <ul className="space-y-2 mb-6">
-              <Feature label="Automation consulting" available />
-              <Feature label="Database design & normalisation" available />
-              <Feature label="Data strategy / visibility audit" available />
-              <Feature label="Long-term optimisation plan" available />
-              <Feature label="Full rebuild of digital stack" available />
-              <Feature label="Custom API/backend dev (if needed)" available />
-              <Feature label="Dedicated support & training" available />
-            </ul>
-
-            <button className="w-full bg-[#04253e] text-[#fff0d5] py-2 rounded font-semibold hover:opacity-90 transition">Contact Us</button>
+            <button className="mt-6 bg-yellow-500 text-black py-2 px-4 rounded-md hover:bg-yellow-600 transition-all">
+              Contact Us
+            </button>
           </div>
         </div>
-      </section>
-    </Layout>
+      </div>
+    </section>
   );
 }
