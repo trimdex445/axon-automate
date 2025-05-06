@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Layout from "../components/Layout";
 import {
@@ -10,20 +12,36 @@ import {
 } from "lucide-react";
 import dynamic from "next/dynamic";
 
-const HeroBackground = dynamic(() => import("@/components/HeroBackground"), {
+const Lottie = dynamic(() => import("lottie-react"), {
   ssr: false,
 });
+
+import animationData from "../public/assets/lotties/Bluedots.json";
 
 export default function Home() {
   return (
     <Layout>
       {/* Hero */}
       <section
-        className="min-h-screen grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-[#fdf6ee]"
+        className="relative min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden bg-[#fdf6ee]"
         id="hero"
       >
-        {/* Left column: text */}
-        <div className="px-6 md:px-12">
+        {/* Lottie Background */}
+        <div className="absolute inset-0 z-0">
+          <Lottie
+            animationData={animationData}
+            loop
+            autoplay
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </div>
+
+        {/* Hero text */}
+        <div className="px-6 md:px-12 z-10 w-full md:w-1/2">
           <h1 className="text-5xl font-bold mb-6">
             We turn inefficient processes into seamless automated workflows.
           </h1>
@@ -39,14 +57,11 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Right column: Lottie animation */}
-        <div className="relative h-[400px] md:h-full">
-          <HeroBackground />
-        </div>
+        <div className="hidden md:block w-1/2 h-full" />
       </section>
 
       {/* Value Prop Trio */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#fff0d5]" id="why">
         <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
           <h2 className="text-4xl font-bold mb-16 text-[#04253e]">How We Help</h2>
 
@@ -108,7 +123,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Industries We Automate */}
+      {/* Industries */}
       <section id="industries" className="py-28">
         <h2 className="text-4xl font-bold mb-6 text-center">
           Industries We Automate
