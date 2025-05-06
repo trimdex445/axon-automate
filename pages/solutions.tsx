@@ -1,3 +1,4 @@
+// pages/solutions.tsx
 import Layout from '@/components/Layout';
 import {
   MailCheck,
@@ -8,7 +9,6 @@ import {
   ClipboardList,
   Settings2,
   AlertCircle,
-  Briefcase,
   ShoppingCart,
   Activity,
   CheckSquare,
@@ -19,13 +19,20 @@ import {
   Plug,
   BarChart3,
   Brain,
+  Brush
 } from 'lucide-react';
-
 import { useState, Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const industryTabs = ['General', 'Health & Wellness', 'Legal & Finance', 'Hospitality', 'Ecommerce', 'Creative Agencies'];
+const industryTabs = [
+  'General',
+  'Health & Wellness',
+  'Legal & Finance',
+  'Hospitality',
+  'Ecommerce',
+  'Creative Agencies',
+];
 
 const borderColors: Record<string, string> = {
   General: 'border-[#04253e]',
@@ -86,6 +93,7 @@ const allSolutions: Record<string, { icon: any; title: string; description: stri
     { icon: CalendarClock, title: 'Weekly Content Calendar Sync', description: 'Auto-push campaign deadlines or content calendars to everyone’s Google Cal.', tag: 'Schedule Sync' },
   ],
 };
+
 export default function SolutionsPage() {
   const [selectedIndustry, setSelectedIndustry] = useState('General');
   const [selectedCard, setSelectedCard] = useState<null | { title: string; description: string }>(null);
@@ -95,13 +103,13 @@ export default function SolutionsPage() {
     <Layout>
       <section className="py-20 px-4 bg-[#fff0d5]">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl font-extrabold text-[#04253e] mb-2 tracking-tight">What We Automate</h1>
-          <p className="text-lg text-[#04253e] max-w-2xl mx-auto font-medium">
-            Explore some of our most powerful workflow automations — and filter by industry to see what's possible.
+          <h1 className="text-5xl font-extrabold text-[#04253e] mb-4 tracking-tight">Types of Solutions</h1>
+          <p className="text-lg text-[#04253e] max-w-2xl mx-auto font-medium mb-12">
+            We design solutions that combine AI agents, custom workflows, dashboards, and app integrations.
           </p>
 
-          {/* SOLUTION TYPES */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-20 mt-12">
+          {/* Type Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-20">
             {[
               { icon: Brain, title: 'Agents', description: 'AI bots that reply, sort messages, and act on logic or data' },
               { icon: Repeat, title: 'Workflows', description: 'Step-by-step task automations triggered by events or forms' },
@@ -116,7 +124,7 @@ export default function SolutionsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="bg-white border border-[#e5d8b8] hover:shadow-xl hover:-translate-y-1 transition duration-300 ease-in-out rounded-xl p-6 text-left cursor-default"
+                className="bg-white border border-[#e5d8b8] hover:shadow-xl hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out rounded-xl p-6 text-left"
               >
                 <div className="mb-3 bg-[#edf2f7] text-[#04253e] w-10 h-10 flex items-center justify-center rounded-full">
                   <Icon className="w-5 h-5" />
@@ -127,16 +135,18 @@ export default function SolutionsPage() {
             ))}
           </div>
 
-          {/* INDUSTRY FILTER TABS */}
-          <div className="flex flex-wrap justify-center gap-4 mt-8 mb-10">
+          <h2 className="text-4xl font-extrabold text-[#04253e] mb-6">By Industry Use Case</h2>
+          <p className="text-[#04253e] text-md font-medium mb-10">
+            Explore common automations we've built across industries — or use them as a starting point.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
             {industryTabs.map((industry) => (
               <button
                 key={industry}
                 onClick={() => setSelectedIndustry(industry)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all border ${
-                  selectedIndustry === industry
-                    ? 'bg-[#04253e] text-white border-[#04253e]'
-                    : 'bg-white text-[#04253e] border-gray-300 hover:bg-gray-100'
+                  selectedIndustry === industry ? 'bg-[#04253e] text-white border-[#04253e]' : 'bg-white text-[#04253e] border-gray-300 hover:bg-gray-100'
                 }`}
               >
                 {industry}
@@ -144,12 +154,6 @@ export default function SolutionsPage() {
             ))}
           </div>
 
-          <p className="text-sm text-gray-600 mb-10">
-            These are common workflows we build for{' '}
-            <span className="font-semibold text-[#04253e]">{selectedIndustry}</span> businesses.
-          </p>
-
-          {/* INDUSTRY SOLUTIONS GRID */}
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedIndustry}
@@ -157,7 +161,7 @@ export default function SolutionsPage() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
             >
               {solutions.map(({ icon: Icon, title, description, tag }, idx) => (
                 <motion.div
@@ -165,9 +169,8 @@ export default function SolutionsPage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: idx * 0.05 }}
-                  viewport={{ once: true }}
+                  className={`relative bg-white p-6 rounded-xl border ${borderColors[selectedIndustry]} hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out`}
                   onClick={() => setSelectedCard({ title, description })}
-                  className={`relative bg-white cursor-pointer p-6 min-h-[250px] rounded-xl border ${borderColors[selectedIndustry]} hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out`}
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="bg-[#edf2f7] text-[#04253e] w-10 h-10 flex items-center justify-center rounded-full">
@@ -185,58 +188,22 @@ export default function SolutionsPage() {
               ))}
             </motion.div>
           </AnimatePresence>
-
-          {/* CTA */}
-          <div className="mt-20 text-center">
-            <h3 className="text-xl font-semibold text-[#04253e] mb-2">Looking for something else?</h3>
-            <p className="text-gray-600 mb-4">
-              We build completely custom workflows too — just tell us what you're trying to automate.
-            </p>
-            <a href="/contact">
-              <button className="bg-[#04253e] text-white py-2 px-6 rounded-md hover:bg-[#021722] transition">
-                Book a Free Consultation
-              </button>
-            </a>
-          </div>
         </div>
 
-        {/* MODAL */}
+        {/* Modal */}
         <Transition show={!!selectedCard} as={Fragment}>
           <Dialog onClose={() => setSelectedCard(null)} className="relative z-50">
-            <Transition.Child
-              as={Fragment}
-              enter="transition-opacity duration-200"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="transition-opacity duration-200"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
+            <Transition.Child as={Fragment} enter="transition-opacity duration-200" enterFrom="opacity-0" enterTo="opacity-100" leave="transition-opacity duration-200" leaveFrom="opacity-100" leaveTo="opacity-0">
               <div className="fixed inset-0 bg-black bg-opacity-30" />
             </Transition.Child>
             <div className="fixed inset-0 flex items-center justify-center p-4">
-              <Transition.Child
-                as={Fragment}
-                enter="transition-transform duration-200"
-                enterFrom="scale-95 opacity-0"
-                enterTo="scale-100 opacity-100"
-                leave="transition-transform duration-200"
-                leaveFrom="scale-100 opacity-100"
-                leaveTo="scale-95 opacity-0"
-              >
+              <Transition.Child as={Fragment} enter="transition-transform duration-200" enterFrom="scale-95 opacity-0" enterTo="scale-100 opacity-100" leave="transition-transform duration-200" leaveFrom="scale-100 opacity-100" leaveTo="scale-95 opacity-0">
                 <Dialog.Panel className="bg-white rounded-xl max-w-md w-full shadow-xl relative p-6">
-                  <button
-                    onClick={() => setSelectedCard(null)}
-                    className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
-                  >
+                  <button onClick={() => setSelectedCard(null)} className="absolute top-3 right-3 text-gray-400 hover:text-gray-600">
                     <X className="w-5 h-5" />
                   </button>
-                  <Dialog.Title className="text-xl font-semibold text-[#04253e] mb-2">
-                    {selectedCard?.title}
-                  </Dialog.Title>
-                  <Dialog.Description className="text-sm text-gray-700">
-                    {selectedCard?.description}
-                  </Dialog.Description>
+                  <Dialog.Title className="text-xl font-semibold text-[#04253e] mb-2">{selectedCard?.title}</Dialog.Title>
+                  <Dialog.Description className="text-sm text-gray-700">{selectedCard?.description}</Dialog.Description>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
