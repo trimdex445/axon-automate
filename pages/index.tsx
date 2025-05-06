@@ -35,15 +35,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Axon */}
-      <section id="why" className="py-28">
-        <h2 className="text-4xl font-bold mb-10">Why Axon?</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div><h3 className="text-xl font-semibold mb-2">Custom-Built Solutions</h3><p className="opacity-80">We build from scratch based on your needs.</p></div>
-          <div><h3 className="text-xl font-semibold mb-2">One-Time or Ongoing</h3><p className="opacity-80">Choose fixed builds or subscription plans.</p></div>
-          <div><h3 className="text-xl font-semibold mb-2">Human-Focused</h3><p className="opacity-80">Simple, jargon-free automation.</p></div>
+      {/* Value Prop Trio */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
+          <h2 className="text-4xl font-bold mb-16 text-[#04253e]">How We Help</h2>
+
+          <div className="grid md:grid-cols-3 gap-12">
+            {/* 1. Automate Real Work */}
+            <div className="group transition-transform hover:scale-105 duration-300 ease-in-out">
+              <div className="h-44 mb-6 flex items-center justify-center">
+                <img
+                  src="/assets/illustrations/automation.svg"
+                  alt="Automate Work"
+                  className="h-full object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-[#04253e]">
+                Automate Real Work
+              </h3>
+              <p className="text-sm text-gray-700 opacity-80">
+                We streamline actual tasks — not just alerts. From dispatching to auto-replies.
+              </p>
+            </div>
+
+            {/* 2. Seamless Integration */}
+            <div className="group transition-transform hover:scale-105 duration-300 ease-in-out">
+              <div className="h-44 mb-6 flex items-center justify-center">
+                <img
+                  src="/assets/illustrations/tools.svg"
+                  alt="Integration"
+                  className="h-full object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-[#04253e]">
+                Seamless Integration
+              </h3>
+              <p className="text-sm text-gray-700 opacity-80">
+                Gmail, Airtable, Xero, Notion and more — connected and working together.
+              </p>
+            </div>
+
+            {/* 3. Human + AI Harmony */}
+            <div className="group transition-transform hover:scale-105 duration-300 ease-in-out">
+              <div className="h-44 mb-6 flex items-center justify-center">
+                <img
+                  src="/assets/illustrations/teamwork.svg"
+                  alt="Human AI"
+                  className="h-full object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-[#04253e]">
+                Human + AI Harmony
+              </h3>
+              <p className="text-sm text-gray-700 opacity-80">
+                We blend automation with human workflows — so nothing gets lost in translation.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
+
 
             {/* Industries We Automate */}
       <section id="industries" className="py-28">
