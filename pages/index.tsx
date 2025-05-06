@@ -27,7 +27,7 @@ export default function Home() {
         id="hero"
       >
         {/* Lottie Background */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-transparent pointer-events-none">
           <Lottie
             animationData={animationData}
             loop
@@ -35,7 +35,13 @@ export default function Home() {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              background: "transparent",
+            }}
+            rendererSettings={{
+              preserveAspectRatio: "xMidYMid slice",
+              clearCanvas: true,
+              progressiveLoad: true,
+              hideOnTransparent: true,
             }}
           />
         </div>
@@ -46,8 +52,7 @@ export default function Home() {
             We turn inefficient processes into seamless automated workflows.
           </h1>
           <p className="text-lg opacity-80 mb-6">
-            Axon Automate builds custom AI and workflow automation solutions
-            tailored for small businesses and solo operators.
+            Axon Automate builds custom AI and workflow automation solutions tailored for small businesses and solo operators.
           </p>
           <a
             href="#why"
