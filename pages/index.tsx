@@ -37,14 +37,9 @@ export default function Home() {
               height: "100%",
               background: "transparent",
             }}
-            rendererSettings={{
-              preserveAspectRatio: "xMidYMid slice",
-              clearCanvas: true,
-              progressiveLoad: true,
-              hideOnTransparent: true,
-            }}
           />
         </div>
+
 
         {/* Hero text */}
         <div className="px-6 md:px-12 z-10 w-full md:w-1/2">
