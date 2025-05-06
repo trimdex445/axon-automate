@@ -4,10 +4,10 @@ import { Check, X, Crown, Sparkles, Settings } from 'lucide-react';
 export default function PricingPage() {
   return (
     <Layout>
-      <section className="bg-[#fff0d5] py-20 px-4">
+      <section className="bg-[#fff0d5] py-12 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-[#04253e] mb-4">Pricing Options</h2>
-          <p className="text-lg text-gray-600 mb-12">
+          <h2 className="text-5xl font-extrabold text-[#04253e] mb-4 tracking-tight">Pricing Options</h2>
+          <p className="text-lg text-[#04253e] max-w-2xl mx-auto font-medium mb-12">
             Choose a package that fits your automation goals.
           </p>
 
