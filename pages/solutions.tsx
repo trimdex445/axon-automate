@@ -101,7 +101,7 @@ export default function SolutionsPage() {
 
   return (
     <Layout>
-      <section className="py-20 px-4 bg-[#fff0d5]">
+      <section className="py-12 px-4 bg-[#fff0d5]">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl font-extrabold text-[#04253e] mb-4 tracking-tight">Types of Solutions</h1>
           <p className="text-lg text-[#04253e] max-w-2xl mx-auto font-medium mb-12">
