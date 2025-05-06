@@ -1,29 +1,26 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#04253e] text-white mt-24 overflow-hidden min-h-[300px]">
-      {/* SVG Background */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/assets/bg/layered-peaks-haikei.svg"
+    <footer className="relative bg-[#04253e] text-white pt-32 pb-8 mt-24 overflow-hidden">
+      {/* Wave SVG at top */}
+      <div className="absolute top-0 left-0 w-full -translate-y-full">
+        <img
+          src="/assets/bg/layered-peaks-haikei.svg" // ✅ Make sure this path is correct
           alt="Footer Wave"
-          layout="fill"
-          objectFit="cover"
-          priority
+          className="w-full h-auto"
         />
       </div>
 
-      {/* Content inside wave */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-16 py-24 text-center text-sm text-white">
+      {/* Footer Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-16 text-center">
         <div className="mb-4 space-x-6">
-          <Link href="/">Home</Link>
-          <Link href="/solutions">Solutions</Link>
-          <Link href="/pricing">Pricing</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/" className="hover:underline">Home</Link>
+          <Link href="/solutions" className="hover:underline">Solutions</Link>
+          <Link href="/pricing" className="hover:underline">Pricing</Link>
+          <Link href="/contact" className="hover:underline">Contact</Link>
         </div>
-        <p>© {new Date().getFullYear()} Axon Automate. All rights reserved.</p>
+        <p className="text-sm opacity-80">© {new Date().getFullYear()} Axon Automate. All rights reserved.</p>
       </div>
     </footer>
   );

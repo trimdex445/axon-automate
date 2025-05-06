@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import Layout from '../components/Layout';
+import Image from "next/image";
+import Layout from "../components/Layout";
 import {
   Wrench,
   HeartPulse,
@@ -7,31 +7,41 @@ import {
   Utensils,
   ShoppingCart,
   Brush,
-} from 'lucide-react';
+} from "lucide-react";
+import dynamic from "next/dynamic";
+
+const HeroBackground = dynamic(() => import("@/components/HeroBackground"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="min-h-screen grid grid-cols-1 md:grid-cols-2 gap-10 items-center" id="hero">
-        <div>
-          <h1 className="text-5xl font-bold mb-6">We turn inefficient processes into seamless automated workflows.</h1>
+      <section
+        className="min-h-screen grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-[#fdf6ee]"
+        id="hero"
+      >
+        {/* Left column: text */}
+        <div className="px-6 md:px-12">
+          <h1 className="text-5xl font-bold mb-6">
+            We turn inefficient processes into seamless automated workflows.
+          </h1>
           <p className="text-lg opacity-80 mb-6">
-            Axon Automate builds custom AI and workflow automation solutions tailored for small businesses and solo operators.
+            Axon Automate builds custom AI and workflow automation solutions
+            tailored for small businesses and solo operators.
           </p>
-          <a href="#why" className="inline-block bg-[#04253e] text-[#fff0d5] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+          <a
+            href="#why"
+            className="inline-block bg-[#04253e] text-[#fff0d5] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+          >
             Learn How
           </a>
         </div>
-        <div className="relative -top-40 -right-8 scale-800">
-          <Image
-              src="/assets/bg/assets2Ftask_01jt5j0nnhfvtrzkbt9vff57422F1746090928_img_0.png"
-              alt="Automation Machine"
-              width={500}
-              height={500}
-              className="object-contain"
-              priority
-          />
+
+        {/* Right column: Lottie animation */}
+        <div className="relative h-[400px] md:h-full">
+          <HeroBackground />
         </div>
       </section>
 
@@ -54,7 +64,8 @@ export default function Home() {
                 Automate Real Work
               </h3>
               <p className="text-sm text-gray-700 opacity-80">
-                We streamline actual tasks — not just alerts. From dispatching to auto-replies.
+                We streamline actual tasks — not just alerts. From dispatching to
+                auto-replies.
               </p>
             </div>
 
@@ -71,7 +82,8 @@ export default function Home() {
                 Seamless Integration
               </h3>
               <p className="text-sm text-gray-700 opacity-80">
-                Gmail, Airtable, Xero, Notion and more — connected and working together.
+                Gmail, Airtable, Xero, Notion and more — connected and working
+                together.
               </p>
             </div>
 
@@ -88,19 +100,22 @@ export default function Home() {
                 Human + AI Harmony
               </h3>
               <p className="text-sm text-gray-700 opacity-80">
-                We blend automation with human workflows — so nothing gets lost in translation.
+                We blend automation with human workflows — so nothing gets lost in
+                translation.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-
-            {/* Industries We Automate */}
+      {/* Industries We Automate */}
       <section id="industries" className="py-28">
-        <h2 className="text-4xl font-bold mb-6 text-center">Industries We Automate</h2>
+        <h2 className="text-4xl font-bold mb-6 text-center">
+          Industries We Automate
+        </h2>
         <p className="text-center text-lg opacity-80 mb-16">
-          From lawn care to law firms — if your business has a repeatable process, we can probably automate it. Here's a taste:
+          From lawn care to law firms — if your business has a repeatable
+          process, we can probably automate it. Here's a taste:
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-6xl mx-auto text-[#04253e]">
@@ -176,13 +191,18 @@ export default function Home() {
         </p>
       </section>
 
-
-
       {/* CTA */}
       <section className="py-28 text-center">
-        <h2 className="text-4xl font-bold mb-6">Ready to automate your workflow?</h2>
-        <p className="text-lg opacity-80 mb-6">Get started with a tailored quote.</p>
-        <a href="/contact" className="inline-block bg-[#04253e] text-[#fff0d5] px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition">
+        <h2 className="text-4xl font-bold mb-6">
+          Ready to automate your workflow?
+        </h2>
+        <p className="text-lg opacity-80 mb-6">
+          Get started with a tailored quote.
+        </p>
+        <a
+          href="/contact"
+          className="inline-block bg-[#04253e] text-[#fff0d5] px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition"
+        >
           Request a Quote
         </a>
       </section>
