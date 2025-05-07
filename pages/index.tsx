@@ -141,7 +141,7 @@ export default function Home() {
         {/* Row 1 - L to R */}
         <div className="overflow-hidden w-full flex justify-center">
           <div className="flex gap-6 animate-slide-infinite w-max">
-            {icons.slice(0, 6).concat(icons.slice(0, 6)).map((icon: string, index: number) => (
+            {icons.slice(0, 22).concat(icons.slice(0, 22)).map((icon: string, index: number) => (
               <div key={`row1-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md">
                 <Image
                   src={`/assets/icons/${icon}`}
@@ -158,7 +158,7 @@ export default function Home() {
         {/* Row 2 - R to L */}
         <div className="overflow-hidden w-full flex justify-center mt-6">
           <div className="flex gap-6 animate-slide-infinite-reverse w-max">
-            {icons.slice(6, 12).concat(icons.slice(6, 12)).map((icon: string, index: number) => (
+            {icons.slice(0, 22).concat(icons.slice(0, 22)).map((icon: string, index: number) => (
               <div key={`row2-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md">
                 <Image
                   src={`/assets/icons/${icon}`}
