@@ -1,12 +1,12 @@
-import Link from 'next/link';
+import Link from 'next/link'; 
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#04253e] text-white pt-32 pb-8 mt-24 overflow-hidden">
+    <footer className="relative bg-[#04253e] text-white pt-24 pb-8 mt-24 overflow-hidden">
       {/* Wave SVG at top */}
-      <div className="absolute top-0 left-0 w-full -translate-y-full">
+      <div className="absolute top-[-80px] left-0 w-full">
         <img
-          src="/assets/bg/layered-peaks-haikei.svg" // ✅ Make sure this path is correct
+          src="/assets/bg/layered-peaks-haikei.svg"
           alt="Footer Wave"
           className="w-full h-auto"
         />
@@ -14,7 +14,7 @@ export default function Footer() {
 
       {/* Footer Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-16 text-center">
-        <div className="mb-4 space-x-6">
+        <div className="mb-4 flex flex-wrap justify-center gap-6 text-sm">
           <Link href="/" className="hover:underline">Home</Link>
           <Link href="/solutions" className="hover:underline">Solutions</Link>
           <Link href="/pricing" className="hover:underline">Pricing</Link>
