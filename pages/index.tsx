@@ -13,7 +13,7 @@ import {
 import dynamic from "next/dynamic";
 
 const icons: string[] = [
-  "icon1.png", "icon2.svg", "icon3.svg", "icon4.svg", "icon5.svg", "icon6.png", "icon7.svg", "icon8.png", "icon9.png", "icon10.svg", "icon11.svg", "icon12.svg", "icon13.svg", "icon14.svg", "icon15.svg", "icon23.svg", "icon24.svg", "icon16.svg", "icon17.svg", "icon18.scg", "icon19.svg", "icon20.svg", "icon21.svg", "icon22.svg",
+  "icon1.png", "icon2.svg", "icon3.svg", "icon4.svg", "icon5.svg", "icon6.png", "icon7.svg", "icon8.png", "icon9.png", "icon10.svg", "icon11.svg", "icon12.svg", "icon13.svg", "icon14.svg", "icon15.svg", "icon23.svg", "icon24.svg", "icon16.svg", "icon17.svg", "icon18.svg", "icon19.svg", "icon20.svg", "icon21.svg", "icon22.svg",
   "icon13.svg", "icon14.svg", "icon15.svg", "icon23.svg", "icon24.svg", "icon16.svg", "icon17.svg", "icon18.svg", "icon19.svg", "icon20.svg", "icon21.svg", "icon22.svg", "icon7.svg", "icon8.png", "icon9.png", "icon10.svg", "icon11.svg", "icon12.svg","icon1.png", "icon2.svg", "icon3.svg", "icon4.svg", "icon5.svg", "icon6.png",
 ];
 
@@ -129,7 +129,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative bg-[#04253e] py-16 overflow-hidden text-center">
+      <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#04253e] py-16 overflow-hidden text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-[#fff0d5] mb-8">
           Plug AI into your tools — <span className="text-orange-400">400+ integrations</span>
         </h2>
@@ -139,36 +139,40 @@ export default function Home() {
         <div className="pointer-events-none absolute top-0 right-0 w-24 h-full z-10 bg-gradient-to-l from-[#04253e] to-transparent" />
 
         {/* Row 1 - L to R */}
-        <div className="overflow-hidden w-full flex justify-center">
-          <div className="flex gap-6 animate-slide-infinite w-max">
-            {icons.slice(0, 22).concat(icons.slice(0, 22)).map((icon: string, index: number) => (
-              <div key={`row1-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md">
-                <Image
-                  src={`/assets/icons/${icon}`}
-                  width={32}
-                  height={32}
-                  className="object-contain"
-                  alt={`integration-${index}`}
-                />
-              </div>
-            ))}
+        <div className="overflow-hidden w-full">
+          <div className="relative w-full">
+            <div className="absolute top-0 left-0 flex gap-6 animate-marquee w-max">
+              {[...icons, ...icons].map((icon: string, index: number) => (
+                <div key={`row1-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md">
+                  <Image
+                    src={`/assets/icons/${icon}`}
+                    width={32}
+                    height={32}
+                    className="object-contain"
+                    alt={`integration-${index}`}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Row 2 - R to L */}
-        <div className="overflow-hidden w-full flex justify-center mt-6">
-          <div className="flex gap-6 animate-slide-infinite-reverse w-max">
-            {icons.slice(0, 22).concat(icons.slice(0, 22)).map((icon: string, index: number) => (
-              <div key={`row2-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md">
-                <Image
-                  src={`/assets/icons/${icon}`}
-                  width={32}
-                  height={32}
-                  className="object-contain"
-                  alt={`integration-${index + 6}`}
-                />
-              </div>
-            ))}
+        <div className="overflow-hidden w-full mt-6">
+          <div className="relative w-full">
+            <div className="absolute top-0 left-0 flex gap-6 animate-marquee-reverse w-max">
+              {[...icons, ...icons].map((icon: string, index: number) => (
+                <div key={`row2-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md">
+                  <Image
+                    src={`/assets/icons/${icon}`}
+                    width={32}
+                    height={32}
+                    className="object-contain"
+                    alt={`integration-${index}`}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
