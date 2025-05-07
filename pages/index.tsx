@@ -129,44 +129,47 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative bg-[#120c1c] py-12 overflow-hidden">
-        <div className="text-center mb-6">
-          <h2 className="text-2xl md:text-3xl font-semibold text-white">
-            Plug AI into your own data & <span className="text-orange-400">over 400 integrations</span>
-          </h2>
-        </div>
+      <section className="relative bg-[#04253e] py-16 overflow-hidden text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#fff0d5] mb-8">
+          Plug AI into your tools — <span className="text-orange-400">400+ integrations</span>
+        </h2>
 
-        {/* Fade masks */}
-        <div className="pointer-events-none absolute top-0 left-0 w-24 h-full z-10 bg-gradient-to-r from-[#120c1c] to-transparent" />
-        <div className="pointer-events-none absolute top-0 right-0 w-24 h-full z-10 bg-gradient-to-l from-[#120c1c] to-transparent" />
+        {/* Fade edges */}
+        <div className="pointer-events-none absolute top-0 left-0 w-24 h-full z-10 bg-gradient-to-r from-[#04253e] to-transparent" />
+        <div className="pointer-events-none absolute top-0 right-0 w-24 h-full z-10 bg-gradient-to-l from-[#04253e] to-transparent" />
 
         {/* Row 1 - L to R */}
-        <div className="flex gap-6 animate-slide-infinite w-max">
-          {icons.slice(0, 6).concat(icons.slice(0, 6)).map((icon, index) => (
-            <div key={`row1-${index}`} className="min-w-[48px] h-12 p-2 bg-white rounded-md shadow">
-              <Image
-                src={`/assets/icons/${icon}`}
-                width={32}
-                height={32}
-                className="object-contain"
-                alt={`integration-${index}`}
-              />
-            </div>
-          ))}
+        <div className="overflow-hidden w-full flex justify-center">
+          <div className="flex gap-6 animate-slide-infinite w-max">
+            {icons.slice(0, 6).concat(icons.slice(0, 6)).map((icon: string, index: number) => (
+              <div key={`row1-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md">
+                <Image
+                  src={`/assets/icons/${icon}`}
+                  width={32}
+                  height={32}
+                  className="object-contain"
+                  alt={`integration-${index}`}
+                />
+              </div>
+            ))}
+          </div>
         </div>
+
         {/* Row 2 - R to L */}
-        <div className="flex gap-6 animate-slide-infinite-reverse w-max mt-6">
-          {icons.slice(6, 12).concat(icons.slice(6, 12)).map((icon, index) => (
-            <div key={`row2-${index}`} className="min-w-[48px] h-12 p-2 bg-white rounded-md shadow">
-              <Image
-                src={`/assets/icons/${icon}`}
-                width={32}
-                height={32}
-                className="object-contain"
-                alt={`integration-${index + 6}`}
-              />
-            </div>
-          ))}
+        <div className="overflow-hidden w-full flex justify-center mt-6">
+          <div className="flex gap-6 animate-slide-infinite-reverse w-max">
+            {icons.slice(6, 12).concat(icons.slice(6, 12)).map((icon: string, index: number) => (
+              <div key={`row2-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md">
+                <Image
+                  src={`/assets/icons/${icon}`}
+                  width={32}
+                  height={32}
+                  className="object-contain"
+                  alt={`integration-${index + 6}`}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
