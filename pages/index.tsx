@@ -12,6 +12,12 @@ import {
 } from "lucide-react";
 import dynamic from "next/dynamic";
 
+const icons: string[] = [
+  "icon1.png", "icon2.svg", "icon3.svg", "icon4.svg", "icon5.svg", "icon6.png",
+  "icon7.svg", "icon8.png", "icon9.png", "icon10.svg", "icon11.svg", "icon12.svg",
+];
+
+
 const Lottie = dynamic(() => import("lottie-react"), {
   ssr: false,
 });
@@ -122,6 +128,48 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="relative bg-[#120c1c] py-12 overflow-hidden">
+        <div className="text-center mb-6">
+          <h2 className="text-2xl md:text-3xl font-semibold text-white">
+            Plug AI into your own data & <span className="text-orange-400">over 400 integrations</span>
+          </h2>
+        </div>
+
+        {/* Fade masks */}
+        <div className="pointer-events-none absolute top-0 left-0 w-24 h-full z-10 bg-gradient-to-r from-[#120c1c] to-transparent" />
+        <div className="pointer-events-none absolute top-0 right-0 w-24 h-full z-10 bg-gradient-to-l from-[#120c1c] to-transparent" />
+
+        {/* Row 1 - L to R */}
+        <div className="flex gap-6 animate-slide-infinite w-max">
+          {icons.slice(0, 6).concat(icons.slice(0, 6)).map((icon, index) => (
+            <div key={`row1-${index}`} className="min-w-[48px] h-12 p-2 bg-white rounded-md shadow">
+              <Image
+                src={`/assets/icons/${icon}`}
+                width={32}
+                height={32}
+                className="object-contain"
+                alt={`integration-${index}`}
+              />
+            </div>
+          ))}
+        </div>
+        {/* Row 2 - R to L */}
+        <div className="flex gap-6 animate-slide-infinite-reverse w-max mt-6">
+          {icons.slice(6, 12).concat(icons.slice(6, 12)).map((icon, index) => (
+            <div key={`row2-${index}`} className="min-w-[48px] h-12 p-2 bg-white rounded-md shadow">
+              <Image
+                src={`/assets/icons/${icon}`}
+                width={32}
+                height={32}
+                className="object-contain"
+                alt={`integration-${index + 6}`}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
 
       {/* Industries */}
       <section id="industries" className="py-28">

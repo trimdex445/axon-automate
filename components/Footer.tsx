@@ -6,7 +6,7 @@ export default function Footer() {
       {/* Wave SVG at top */}
       <div className="absolute -top-1 left-0 w-full z-0">
         <img
-          src="/assets/bg/footer-wave.png"
+          src="/assets/bg/footer-wave-fixed.svg"
           alt="Footer Wave"
           className="w-full h-[100px] object-cover"
         />
