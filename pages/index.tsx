@@ -139,43 +139,40 @@ export default function Home() {
         <div className="pointer-events-none absolute top-0 right-0 w-24 h-full z-10 bg-gradient-to-l from-[#04253e] to-transparent" />
 
         {/* Row 1 - L to R */}
-        <div className="overflow-hidden w-full">
-          <div className="relative w-full">
-            <div className="absolute top-0 left-0 flex gap-6 animate-marquee w-max">
-              {[...icons, ...icons].map((icon: string, index: number) => (
-                <div key={`row1-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md">
-                  <Image
-                    src={`/assets/icons/${icon}`}
-                    width={32}
-                    height={32}
-                    className="object-contain"
-                    alt={`integration-${index}`}
-                  />
-                </div>
-              ))}
-            </div>
+        <div className="overflow-hidden w-full h-20 relative">
+          <div className="flex gap-6 animate-marquee absolute left-0 top-0 w-max">
+            {[...icons, ...icons].map((icon: string, index: number) => (
+              <div key={`row1-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md">
+                <Image
+                  src={`/assets/icons/${icon}`}
+                  width={32}
+                  height={32}
+                  className="object-contain"
+                  alt={`integration-${index}`}
+                />
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Row 2 - R to L */}
-        <div className="overflow-hidden w-full mt-6">
-          <div className="relative w-full">
-            <div className="absolute top-0 left-0 flex gap-6 animate-marquee-reverse w-max">
-              {[...icons, ...icons].map((icon: string, index: number) => (
-                <div key={`row2-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md">
-                  <Image
-                    src={`/assets/icons/${icon}`}
-                    width={32}
-                    height={32}
-                    className="object-contain"
-                    alt={`integration-${index}`}
-                  />
-                </div>
-              ))}
-            </div>
+        <div className="overflow-hidden w-full h-20 relative mt-6">
+          <div className="flex gap-6 animate-marquee-reverse absolute left-0 top-0 w-max">
+            {[...icons, ...icons].map((icon: string, index: number) => (
+              <div key={`row2-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md">
+                <Image
+                  src={`/assets/icons/${icon}`}
+                  width={32}
+                  height={32}
+                  className="object-contain"
+                  alt={`integration-${index}`}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
 
 
       {/* Industries */}
