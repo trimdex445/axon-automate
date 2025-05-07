@@ -4,11 +4,11 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#04253e] text-white pt-24 pb-8 mt-24 overflow-hidden">
       {/* Wave SVG at top */}
-      <div className="absolute top-[-80px] left-0 w-full">
+      <div className="absolute -top-16 left-0 w-full z-0">
         <img
           src="/assets/bg/layered-peaks-haikei.svg"
           alt="Footer Wave"
-          className="w-full h-auto"
+          className="w-full h-[100px] object-cover"
         />
       </div>
 
