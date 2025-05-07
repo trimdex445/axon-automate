@@ -2,11 +2,11 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#04253e] text-white pt-24 pb-8 mt-24 overflow-hidden">
+    <footer className="relative bg-[#04253e] text-white pt-32 pb-8 mt-24 overflow-hidden">
       {/* Wave SVG at top */}
-      <div className="absolute -top-16 left-0 w-full z-0">
+      <div className="absolute -top-1 left-0 w-full z-0">
         <img
-          src="/assets/bg/layered-peaks-haikei.svg"
+          src="/assets/bg/footer-wave.svg"
           alt="Footer Wave"
           className="w-full h-[100px] object-cover"
         />
