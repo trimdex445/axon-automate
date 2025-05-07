@@ -142,12 +142,12 @@ export default function Home() {
         <div className="overflow-hidden w-full h-20 relative">
           <div className="flex gap-6 animate-marquee absolute left-0 top-0 w-max">
             {[...icons, ...icons].map((icon: string, index: number) => (
-              <div key={`row1-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md">
+              <div key={`row1-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md flex items-center justify-center">
                 <Image
                   src={`/assets/icons/${icon}`}
                   width={32}
                   height={32}
-                  className="object-contain"
+                  className="object-contain max-h-full max-w-full"
                   alt={`integration-${index}`}
                 />
               </div>
@@ -159,12 +159,12 @@ export default function Home() {
         <div className="overflow-hidden w-full h-20 relative mt-6">
           <div className="flex gap-6 animate-marquee-reverse absolute left-0 top-0 w-max">
             {[...icons, ...icons].map((icon: string, index: number) => (
-              <div key={`row2-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md">
+              <div key={`row2-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md flex items-center justify-center">
                 <Image
                   src={`/assets/icons/${icon}`}
                   width={32}
                   height={32}
-                  className="object-contain"
+                  className="object-contain max-h-full max-w-full"
                   alt={`integration-${index}`}
                 />
               </div>
@@ -172,6 +172,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
 
 
