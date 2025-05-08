@@ -27,7 +27,7 @@ export default function Home() {
       >
 
         {/* SVG Background */}
-        <div className="absolute top-0 right-[-50px] z-0 pointer-events-none">
+        <div className="absolute top-0 right-[-25px] z-0 pointer-events-none">
           <img
             src="/assets/illustrations/server-animate.svg"
             alt="Animated Background"
