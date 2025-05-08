@@ -29,7 +29,7 @@ export default function Home() {
     <Layout>
       {/* Hero */}
         <section
-          className="relative min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden bg-[#fff0d5]"
+          className="relative w-full aspect-[16/9] md:aspect-auto md:min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden bg-[#fff0d5]"
           id="hero"
         >
           {/* Lottie Background */}
@@ -65,64 +65,65 @@ export default function Home() {
   </section>
 
       {/* Value Prop Trio */}
-      <section className="py-28 bg-[#fff0d5]" id="why">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
-          <h2 className="text-5xl font-bold mb-20 text-[#04253e]">How We Help</h2>
+  <section className="py-28 bg-[#fff0d5]" id="why">
+    <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
+      <h2 className="text-5xl font-bold mb-20 text-[#04253e]">How We Help</h2>
 
-          <div className="grid md:grid-cols-3 gap-16">
-            {/* 1. Automate Real Work */}
-            <div className="group transition-transform hover:scale-105 duration-300 ease-in-out">
-              <div className="h-60 mb-8 flex items-center justify-center">
-                <img
-                  src="/assets/illustrations/automation.svg"
-                  alt="Automate Work"
-                  className="h-full object-contain"
-                />
-              </div>
-              <h3 className="text-2xl font-semibold mb-3 text-[#04253e]">
-                Automate Real Work
-              </h3>
-              <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
-                We streamline actual tasks — not just alerts. From dispatching to auto-replies.
-              </p>
-            </div>
-
-            {/* 2. Seamless Integration */}
-            <div className="group transition-transform hover:scale-105 duration-300 ease-in-out">
-              <div className="h-60 mb-8 flex items-center justify-center">
-                <img
-                  src="/assets/illustrations/tools.svg"
-                  alt="Integration"
-                  className="h-full object-contain"
-                />
-              </div>
-              <h3 className="text-2xl font-semibold mb-3 text-[#04253e]">
-                Seamless Integration
-              </h3>
-              <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
-                Gmail, Airtable, Xero, Notion and more — connected and working together.
-              </p>
-            </div>
-
-            {/* 3. Human + AI Harmony */}
-            <div className="group transition-transform hover:scale-105 duration-300 ease-in-out">
-              <div className="h-60 mb-8 flex items-center justify-center">
-                <img
-                  src="/assets/illustrations/teamwork.svg"
-                  alt="Human AI"
-                  className="h-full object-contain"
-                />
-              </div>
-              <h3 className="text-2xl font-semibold mb-3 text-[#04253e]">
-                Human + AI Harmony
-              </h3>
-              <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
-                We blend automation with human workflows — so nothing gets lost in translation.
-              </p>
-            </div>
+      <div className="grid md:grid-cols-3 gap-8">
+        {/* 1. Automate Real Work */}
+        <div className="bg-white rounded-xl shadow-md p-8 transition-transform hover:scale-105 duration-300 ease-in-out">
+          <div className="h-60 mb-8 flex items-center justify-center">
+            <img
+              src="/assets/illustrations/automation.svg"
+              alt="Automate Work"
+              className="h-full object-contain"
+            />
           </div>
+          <h3 className="text-2xl font-semibold mb-3 text-[#04253e]">
+            Automate Real Work
+          </h3>
+          <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
+            We streamline actual tasks — not just alerts. From dispatching to auto-replies.
+          </p>
         </div>
-      </section>
+
+        {/* 2. Seamless Integration */}
+        <div className="bg-white rounded-xl shadow-md p-8 transition-transform hover:scale-105 duration-300 ease-in-out">
+          <div className="h-60 mb-8 flex items-center justify-center">
+            <img
+              src="/assets/illustrations/tools.svg"
+              alt="Integration"
+              className="h-full object-contain"
+            />
+          </div>
+          <h3 className="text-2xl font-semibold mb-3 text-[#04253e]">
+            Seamless Integration
+          </h3>
+          <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
+            Gmail, Airtable, Xero, Notion and more — connected and working together.
+          </p>
+        </div>
+
+        {/* 3. Human + AI Harmony */}
+        <div className="bg-white rounded-xl shadow-md p-8 transition-transform hover:scale-105 duration-300 ease-in-out">
+          <div className="h-60 mb-8 flex items-center justify-center">
+            <img
+              src="/assets/illustrations/teamwork.svg"
+              alt="Human AI"
+              className="h-full object-contain"
+            />
+          </div>
+          <h3 className="text-2xl font-semibold mb-3 text-[#04253e]">
+            Human + AI Harmony
+          </h3>
+          <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
+            We blend automation with human workflows — so nothing gets lost in translation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
 
       <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#04253e] py-16 overflow-hidden text-center">
@@ -173,20 +174,19 @@ export default function Home() {
 
 
       {/* Industries */}
-      <section id="industries" className="py-28">
-        <h2 className="text-4xl font-bold mb-6 text-center">
+      <section id="industries" className="py-28 bg-[#fff0d5]">
+        <h2 className="text-5xl font-bold text-center text-[#04253e] mb-6">
           Industries We Automate
         </h2>
-        <p className="text-center text-lg opacity-80 mb-16">
-          From lawn care to law firms — if your business has a repeatable
-          process, we can probably automate it. Here's a taste:
+        <p className="text-center text-lg text-[#04253e] opacity-80 mb-16 max-w-2xl mx-auto">
+          From lawn care to law firms — if your business has a repeatable process, we can probably automate it. Here's a taste:
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-6xl mx-auto text-[#04253e]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto text-[#04253e]">
           {/* Trades & Services */}
-          <div className="flex flex-col items-center text-center">
-            <Wrench className="w-12 h-12 mb-4 text-[#04253e]" />
-            <h3 className="font-semibold text-lg mb-2">Trades & Services</h3>
+          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+            <Wrench className="w-10 h-10 mx-auto mb-4" />
+            <h3 className="font-semibold text-lg mb-3">Trades & Services</h3>
             <ul className="text-sm opacity-80 space-y-1">
               <li>• Auto-generate quotes from job forms</li>
               <li>• Auto-book appointments into your calendar</li>
@@ -195,9 +195,9 @@ export default function Home() {
           </div>
 
           {/* Health & Wellness */}
-          <div className="flex flex-col items-center text-center">
-            <HeartPulse className="w-12 h-12 mb-4 text-[#04253e]" />
-            <h3 className="font-semibold text-lg mb-2">Health & Wellness</h3>
+          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+            <HeartPulse className="w-10 h-10 mx-auto mb-4" />
+            <h3 className="font-semibold text-lg mb-3">Health & Wellness</h3>
             <ul className="text-sm opacity-80 space-y-1">
               <li>• New client onboarding automation</li>
               <li>• Class reminder emails/SMS</li>
@@ -206,9 +206,9 @@ export default function Home() {
           </div>
 
           {/* Legal & Finance */}
-          <div className="flex flex-col items-center text-center">
-            <FileText className="w-12 h-12 mb-4 text-[#04253e]" />
-            <h3 className="font-semibold text-lg mb-2">Legal & Finance</h3>
+          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+            <FileText className="w-10 h-10 mx-auto mb-4" />
+            <h3 className="font-semibold text-lg mb-3">Legal & Finance</h3>
             <ul className="text-sm opacity-80 space-y-1">
               <li>• Contract auto-filling from forms</li>
               <li>• Smart task tracking for case files</li>
@@ -217,9 +217,9 @@ export default function Home() {
           </div>
 
           {/* Hospitality */}
-          <div className="flex flex-col items-center text-center">
-            <Utensils className="w-12 h-12 mb-4 text-[#04253e]" />
-            <h3 className="font-semibold text-lg mb-2">Hospitality</h3>
+          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+            <Utensils className="w-10 h-10 mx-auto mb-4" />
+            <h3 className="font-semibold text-lg mb-3">Hospitality</h3>
             <ul className="text-sm opacity-80 space-y-1">
               <li>• Shift scheduling + staff notifications</li>
               <li>• Weekly sales reports to your inbox</li>
@@ -228,9 +228,9 @@ export default function Home() {
           </div>
 
           {/* Ecommerce */}
-          <div className="flex flex-col items-center text-center">
-            <ShoppingCart className="w-12 h-12 mb-4 text-[#04253e]" />
-            <h3 className="font-semibold text-lg mb-2">Ecommerce</h3>
+          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+            <ShoppingCart className="w-10 h-10 mx-auto mb-4" />
+            <h3 className="font-semibold text-lg mb-3">Ecommerce</h3>
             <ul className="text-sm opacity-80 space-y-1">
               <li>• Order → invoice → delivery chain</li>
               <li>• Abandoned cart follow-ups</li>
@@ -239,9 +239,9 @@ export default function Home() {
           </div>
 
           {/* Creative Agencies */}
-          <div className="flex flex-col items-center text-center">
-            <Brush className="w-12 h-12 mb-4 text-[#04253e]" />
-            <h3 className="font-semibold text-lg mb-2">Creative Agencies</h3>
+          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+            <Brush className="w-10 h-10 mx-auto mb-4" />
+            <h3 className="font-semibold text-lg mb-3">Creative Agencies</h3>
             <ul className="text-sm opacity-80 space-y-1">
               <li>• Intake form → project brief creation</li>
               <li>• Approval workflows for drafts</li>
@@ -254,6 +254,7 @@ export default function Home() {
           Not listed? No problem — we tailor solutions to any industry.
         </p>
       </section>
+
 
       {/* CTA */}
       <section className="py-28 text-center">
