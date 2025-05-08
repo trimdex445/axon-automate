@@ -9,37 +9,33 @@ import {
   Utensils,
   ShoppingCart,
   Brush,
+  Check,
 } from "lucide-react";
-import dynamic from "next/dynamic";
 
 const icons: string[] = [
   "icon1.png", "icon2.svg", "icon3.svg", "icon4.svg", "icon5.svg", "icon6.png", "icon7.svg", "icon8.png", "icon9.png", "icon10.svg", "icon11.svg", "icon12.svg", "icon13.svg", "icon14.svg", "icon15.svg", "icon23.svg", "icon24.svg", "icon16.svg", "icon17.svg", "icon18.svg", "icon19.svg", "icon20.svg", "icon21.svg", "icon22.svg",
   "icon13.svg", "icon14.svg", "icon15.svg", "icon23.svg", "icon24.svg", "icon16.svg", "icon17.svg", "icon18.svg", "icon19.svg", "icon20.svg", "icon21.svg", "icon22.svg", "icon7.svg", "icon8.png", "icon9.png", "icon10.svg", "icon11.svg", "icon12.svg","icon1.png", "icon2.svg", "icon3.svg", "icon4.svg", "icon5.svg", "icon6.png",
 ];
 
-
-const Lottie = dynamic(() => import("lottie-react"), {
-  ssr: false,
-});
-
-import animationData from "../public/assets/lotties/Bluedots2.json";
-
 export default function Home() {
   return (
     <Layout>
       {/* Hero */}
       <section
-        className="relative w-full aspect-[16/9] md:aspect-auto md:min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden bg-[#fff0d5]"
+        className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden bg-[#fff0d5]"
         id="hero"
       >
-        {/* SVG Background */}
-        <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none flex items-center justify-center">
+
+        {/* SVG Pic */}
+        <div className="absolute top-0 left-0 z-0 pointer-events-none">
           <img
-            src="/assets/illustrations/your-animation.svg"
+            src="/assets/illustrations/server-animate.svg"
             alt="Animated Background"
-            className="w-full h-full object-cover"
+            className="w-[300px] md:w-[600px] h-auto" // ⬅️ Adjust width as needed
           />
         </div>
+
+
 
         {/* Hero text */}
         <div className="px-6 md:px-12 z-10 w-full md:w-1/2">
@@ -175,79 +171,88 @@ export default function Home() {
         <h2 className="text-5xl font-bold text-center text-[#04253e] mb-6">
           Industries We Automate
         </h2>
-        <p className="text-center text-lg text-[#04253e] opacity-80 mb-16 max-w-2xl mx-auto">
+        <p className="text-center text-lg text-[#04253e]/80 mb-16 max-w-2xl mx-auto">
           From lawn care to law firms — if your business has a repeatable process, we can probably automate it. Here's a taste:
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto text-[#04253e]">
-          {/* Trades & Services */}
-          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
-            <Wrench className="w-10 h-10 mx-auto mb-4" />
-            <h3 className="font-semibold text-lg mb-3">Trades & Services</h3>
-            <ul className="text-sm opacity-80 space-y-1">
-              <li>• Auto-generate quotes from job forms</li>
-              <li>• Auto-book appointments into your calendar</li>
-              <li>• Send follow-up reminders to clients</li>
-            </ul>
-          </div>
-
-          {/* Health & Wellness */}
-          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
-            <HeartPulse className="w-10 h-10 mx-auto mb-4" />
-            <h3 className="font-semibold text-lg mb-3">Health & Wellness</h3>
-            <ul className="text-sm opacity-80 space-y-1">
-              <li>• New client onboarding automation</li>
-              <li>• Class reminder emails/SMS</li>
-              <li>• Payment tracking + auto receipts</li>
-            </ul>
-          </div>
-
-          {/* Legal & Finance */}
-          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
-            <FileText className="w-10 h-10 mx-auto mb-4" />
-            <h3 className="font-semibold text-lg mb-3">Legal & Finance</h3>
-            <ul className="text-sm opacity-80 space-y-1">
-              <li>• Contract auto-filling from forms</li>
-              <li>• Smart task tracking for case files</li>
-              <li>• Weekly status summaries</li>
-            </ul>
-          </div>
-
-          {/* Hospitality */}
-          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
-            <Utensils className="w-10 h-10 mx-auto mb-4" />
-            <h3 className="font-semibold text-lg mb-3">Hospitality</h3>
-            <ul className="text-sm opacity-80 space-y-1">
-              <li>• Shift scheduling + staff notifications</li>
-              <li>• Weekly sales reports to your inbox</li>
-              <li>• Auto-reply to reservation requests</li>
-            </ul>
-          </div>
-
-          {/* Ecommerce */}
-          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
-            <ShoppingCart className="w-10 h-10 mx-auto mb-4" />
-            <h3 className="font-semibold text-lg mb-3">Ecommerce</h3>
-            <ul className="text-sm opacity-80 space-y-1">
-              <li>• Order → invoice → delivery chain</li>
-              <li>• Abandoned cart follow-ups</li>
-              <li>• Daily revenue tracking</li>
-            </ul>
-          </div>
-
-          {/* Creative Agencies */}
-          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
-            <Brush className="w-10 h-10 mx-auto mb-4" />
-            <h3 className="font-semibold text-lg mb-3">Creative Agencies</h3>
-            <ul className="text-sm opacity-80 space-y-1">
-              <li>• Intake form → project brief creation</li>
-              <li>• Approval workflows for drafts</li>
-              <li>• Client status reports auto-generated</li>
-            </ul>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {[
+            {
+              icon: <Wrench className="w-6 h-6 text-[#04253e]" />,
+              title: "Trades & Services",
+              items: [
+                "Auto-generate quotes from job forms",
+                "Auto-book appointments into your calendar",
+                "Send follow-up reminders to clients"
+              ]
+            },
+            {
+              icon: <HeartPulse className="w-6 h-6 text-[#04253e]" />,
+              title: "Health & Wellness",
+              items: [
+                "New client onboarding automation",
+                "Class reminder emails/SMS",
+                "Payment tracking + auto receipts"
+              ]
+            },
+            {
+              icon: <FileText className="w-6 h-6 text-[#04253e]" />,
+              title: "Legal & Finance",
+              items: [
+                "Contract auto-filling from forms",
+                "Smart task tracking for case files",
+                "Weekly status summaries"
+              ]
+            },
+            {
+              icon: <Utensils className="w-6 h-6 text-[#04253e]" />,
+              title: "Hospitality",
+              items: [
+                "Shift scheduling + staff notifications",
+                "Weekly sales reports to your inbox",
+                "Auto-reply to reservation requests"
+              ]
+            },
+            {
+              icon: <ShoppingCart className="w-6 h-6 text-[#04253e]" />,
+              title: "Ecommerce",
+              items: [
+                "Order → invoice → delivery chain",
+                "Abandoned cart follow-ups",
+                "Daily revenue tracking"
+              ]
+            },
+            {
+              icon: <Brush className="w-6 h-6 text-[#04253e]" />,
+              title: "Creative Agencies",
+              items: [
+                "Intake form → project brief creation",
+                "Approval workflows for drafts",
+                "Client status reports auto-generated"
+              ]
+            }
+          ].map(({ icon, title, items }, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-xl shadow-md hover:shadow-lg transition hover:-translate-y-1 p-6 text-left max-w-md mx-auto"
+            >
+              <div className="bg-[#04253e]/10 p-3 rounded-full inline-flex mb-4">
+                {icon}
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-[#04253e]">{title}</h3>
+              <ul className="space-y-2 text-sm text-[#04253e]/90 leading-relaxed">
+                {items.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <Check className="w-4 h-4 mt-1 text-green-600" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <p className="text-center text-sm mt-12 opacity-70">
+        <p className="text-center text-sm mt-12 text-[#04253e]/70">
           Not listed? No problem — we tailor solutions to any industry.
         </p>
       </section>
