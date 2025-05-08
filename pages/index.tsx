@@ -25,9 +25,9 @@ export default function Home() {
         className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden bg-[#fff0d5]"
         id="hero"
       >
-        
+
         {/* SVG Background */}
-        <div className="absolute top-0 right-[-200px] z-0 pointer-events-none">
+        <div className="absolute top-0 right-[-50px] z-0 pointer-events-none">
           <img
             src="/assets/illustrations/server-animate.svg"
             alt="Animated Background"
