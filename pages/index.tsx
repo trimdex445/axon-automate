@@ -22,49 +22,48 @@ const Lottie = dynamic(() => import("lottie-react"), {
   ssr: false,
 });
 
-import animationData from "../public/assets/lotties/Bluedots.json";
+import animationData from "../public/assets/lotties/Bluedots2.json";
 
 export default function Home() {
   return (
     <Layout>
       {/* Hero */}
-      <section
-        className="relative min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden bg-[#fdf6ee]"
-        id="hero"
-      >
-        {/* Lottie Background */}
-        <div className="absolute inset-0 z-0 bg-transparent pointer-events-none">
-          <Lottie
-            animationData={animationData}
-            loop
-            autoplay
-            style={{
-              width: "100%",
-              height: "100%",
-              background: "transparent",
-            }}
-          />
-        </div>
+        <section
+          className="relative min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden bg-[#fdf6ee]"
+          id="hero"
+        >
+          {/* Lottie Background */}
+          <div className="absolute top-0 left-0 w-full h-auto aspect-[16/9] z-0 bg-transparent pointer-events-none">
+              <Lottie
+                animationData={animationData}
+                loop
+                autoplay
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+              />
+            </div>
 
+            {/* Hero text */}
+            <div className="px-6 md:px-12 z-10 w-full md:w-1/2">
+              <h1 className="text-5xl font-bold mb-6">
+                We turn inefficient processes into seamless automated workflows.
+              </h1>
+              <p className="text-lg opacity-80 mb-6">
+                Axon Automate builds custom AI and workflow automation solutions tailored for small businesses and solo operators.
+              </p>
+              <a
+                href="#why"
+                className="inline-block bg-[#04253e] text-[#fff0d5] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+              >
+                Learn How
+              </a>
+            </div>
 
-        {/* Hero text */}
-        <div className="px-6 md:px-12 z-10 w-full md:w-1/2">
-          <h1 className="text-5xl font-bold mb-6">
-            We turn inefficient processes into seamless automated workflows.
-          </h1>
-          <p className="text-lg opacity-80 mb-6">
-            Axon Automate builds custom AI and workflow automation solutions tailored for small businesses and solo operators.
-          </p>
-          <a
-            href="#why"
-            className="inline-block bg-[#04253e] text-[#fff0d5] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
-          >
-            Learn How
-          </a>
-        </div>
+          <div className="hidden md:block w-1/2 h-full" />
+  </section>
 
-        <div className="hidden md:block w-1/2 h-full" />
-      </section>
       {/* Value Prop Trio */}
       <section className="py-28 bg-[#fff0d5]" id="why">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">

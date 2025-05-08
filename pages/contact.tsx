@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout';
 import { useState } from 'react';
+import { CheckCircle, Lock, MailCheck, Sparkles } from 'lucide-react';
 
 export default function QuotePage() {
   const [submitted, setSubmitted] = useState(false);
@@ -7,32 +8,51 @@ export default function QuotePage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
-    // Handle form submission logic here
+    // Add form submission logic here
   };
 
   return (
     <Layout>
       <section className="py-20 px-6 bg-[#fff0d5] min-h-screen">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-          {/* Left intro content */}
-          <div className="text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#04253e] leading-tight mb-4">
-              Let's build your<br />perfect automation
-            </h1>
-            <p className="text-lg text-[#04253e] opacity-80 max-w-md">
+          
+          {/* Left Panel - Card Style */}
+          <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-md max-w-md mx-auto md:mx-0">
+            <div className="text-sm uppercase text-[#04253e] font-semibold tracking-wide mb-3 flex items-center gap-2">
+              <Sparkles className="w-4 h-4" /> Smart Setup
+            </div>
+
+            <h2 className="text-3xl font-extrabold text-[#04253e] mb-4 leading-snug">
+              Let's build your<br />
+              <span className="text-[#0B0C10]">perfect automation</span>
+            </h2>
+
+            <p className="text-base text-[#04253e] opacity-80 mb-6">
               Tell us what you need and we’ll create a tailored solution — no jargon, just results.
             </p>
-            <div className="text-sm text-gray-700 mt-8 space-y-1">
-              <p>✅ You won’t be charged anything yet</p>
-              <p>🔒 Your details are confidential</p>
-              <p>📬 We’ll respond within 1 business day</p>
-            </div>
+
+            <ul className="space-y-3 text-sm text-[#04253e]">
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-green-600" />
+                <span>You won’t be charged anything yet</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Lock className="w-4 h-4 text-yellow-600" />
+                <span>Your details are confidential</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <MailCheck className="w-4 h-4 text-blue-600" />
+                <span>We’ll respond within 1 business day</span>
+              </li>
+            </ul>
           </div>
 
-          {/* Form */}
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          {/* Right Panel - Form */}
+          <div className="bg-white rounded-xl shadow-lg p-8 w-full">
             {!submitted ? (
               <form onSubmit={handleSubmit} className="space-y-6">
+                <h3 className="text-xl font-bold text-[#04253e] mb-2">Quick Quote Request</h3>
+
                 <div>
                   <label className="block text-sm font-medium text-[#04253e] mb-1">Name</label>
                   <input
