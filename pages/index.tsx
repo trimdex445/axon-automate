@@ -65,69 +65,66 @@ export default function Home() {
 
         <div className="hidden md:block w-1/2 h-full" />
       </section>
-
       {/* Value Prop Trio */}
-      <section className="py-24 bg-[#fff0d5]" id="why">
-        <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
-          <h2 className="text-4xl font-bold mb-16 text-[#04253e]">How We Help</h2>
+      <section className="py-28 bg-[#fff0d5]" id="why">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
+          <h2 className="text-5xl font-bold mb-20 text-[#04253e]">How We Help</h2>
 
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-3 gap-16">
             {/* 1. Automate Real Work */}
             <div className="group transition-transform hover:scale-105 duration-300 ease-in-out">
-              <div className="h-44 mb-6 flex items-center justify-center">
+              <div className="h-60 mb-8 flex items-center justify-center">
                 <img
                   src="/assets/illustrations/automation.svg"
                   alt="Automate Work"
                   className="h-full object-contain"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#04253e]">
+              <h3 className="text-2xl font-semibold mb-3 text-[#04253e]">
                 Automate Real Work
               </h3>
-              <p className="text-sm text-gray-700 opacity-80">
-                We streamline actual tasks — not just alerts. From dispatching to
-                auto-replies.
+              <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
+                We streamline actual tasks — not just alerts. From dispatching to auto-replies.
               </p>
             </div>
 
             {/* 2. Seamless Integration */}
             <div className="group transition-transform hover:scale-105 duration-300 ease-in-out">
-              <div className="h-44 mb-6 flex items-center justify-center">
+              <div className="h-60 mb-8 flex items-center justify-center">
                 <img
                   src="/assets/illustrations/tools.svg"
                   alt="Integration"
                   className="h-full object-contain"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#04253e]">
+              <h3 className="text-2xl font-semibold mb-3 text-[#04253e]">
                 Seamless Integration
               </h3>
-              <p className="text-sm text-gray-700 opacity-80">
-                Gmail, Airtable, Xero, Notion and more — connected and working
-                together.
+              <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
+                Gmail, Airtable, Xero, Notion and more — connected and working together.
               </p>
             </div>
 
             {/* 3. Human + AI Harmony */}
             <div className="group transition-transform hover:scale-105 duration-300 ease-in-out">
-              <div className="h-44 mb-6 flex items-center justify-center">
+              <div className="h-60 mb-8 flex items-center justify-center">
                 <img
                   src="/assets/illustrations/teamwork.svg"
                   alt="Human AI"
                   className="h-full object-contain"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#04253e]">
+              <h3 className="text-2xl font-semibold mb-3 text-[#04253e]">
                 Human + AI Harmony
               </h3>
-              <p className="text-sm text-gray-700 opacity-80">
-                We blend automation with human workflows — so nothing gets lost in
-                translation.
+              <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
+                We blend automation with human workflows — so nothing gets lost in translation.
               </p>
             </div>
           </div>
         </div>
       </section>
+
 
       <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#04253e] py-16 overflow-hidden text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-[#fff0d5] mb-8">
