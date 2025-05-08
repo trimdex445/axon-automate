@@ -25,18 +25,15 @@ export default function Home() {
         className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden bg-[#fff0d5]"
         id="hero"
       >
-
-        {/* SVG Pic */}
-        <div className="px-6 md:pl-12 md:pr-48 z-10 absolute top-0 right-0 z-0 pointer-events-none flex items-center justify-center">
+        
+        {/* SVG Background */}
+        <div className="absolute top-0 right-[-200px] z-0 pointer-events-none">
           <img
             src="/assets/illustrations/server-animate.svg"
             alt="Animated Background"
             className="w-[600px] h-auto"
           />
         </div>
-
-
-
 
         {/* Hero text */}
         <div className="px-6 md:px-12 z-10 w-full md:w-1/2">
