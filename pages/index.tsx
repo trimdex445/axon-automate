@@ -33,17 +33,18 @@ export default function Home() {
           id="hero"
         >
           {/* Lottie Background */}
-          <div className="absolute top-0 left-0 w-full h-auto aspect-[16/9] z-0 bg-transparent pointer-events-none">
-              <Lottie
-                animationData={animationData}
-                loop
-                autoplay
-                style={{
-                  width: "100%",
-                  height: "100%",
-                }}
-              />
-            </div>
+          <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
+            <Lottie
+              animationData={animationData}
+              loop
+              autoplay
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            />
+          </div>
 
             {/* Hero text */}
             <div className="px-6 md:px-12 z-10 w-full md:w-1/2">
