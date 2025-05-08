@@ -29,7 +29,7 @@ export default function Home() {
     <Layout>
       {/* Hero */}
         <section
-          className="relative min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden bg-[#fdf6ee]"
+          className="relative min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden bg-[#fff0d5]"
           id="hero"
         >
           {/* Lottie Background */}
