@@ -27,13 +27,14 @@ export default function Home() {
       >
 
         {/* SVG Pic */}
-        <div className="absolute top-0 left-0 z-0 pointer-events-none">
+        <div className="px-6 md:pl-12 md:pr-48 z-10 absolute top-0 right-0 z-0 pointer-events-none flex items-center justify-center">
           <img
             src="/assets/illustrations/server-animate.svg"
             alt="Animated Background"
-            className="w-[300px] md:w-[600px] h-auto" // ⬅️ Adjust width as needed
+            className="w-[600px] h-auto"
           />
         </div>
+
 
 
 
