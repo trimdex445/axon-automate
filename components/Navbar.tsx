@@ -1,28 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
-    <nav
-      className={`sticky top-0 z-50 bg-[#04253e] text-[#fff0d5] border-b border-[#1f2d3d] backdrop-blur-md shadow-sm transition-all duration-300 ${
-        scrolled ? 'py-2 shadow-md' : 'py-4'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-16 flex justify-between items-center transition-all duration-300">
+    <nav className="sticky top-0 z-50 bg-[#04253e] text-[#fff0d5] border-b border-[#1f2d3d] backdrop-blur-md shadow-md h-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-16 flex justify-between items-center h-full">
         {/* Logo + Brand */}
-        <Link href="/" className="flex items-center gap-3">
-          <div className={`relative ${scrolled ? 'w-8 h-8' : 'w-10 h-10'} transition-all duration-300`}>
+        <Link href="/" className="flex items-center gap-3 h-full">
+          <div className="relative h-full aspect-square">
             <Image
               src="/assets/bg/axonicon.png"
               alt="Axon Icon"
@@ -30,7 +15,7 @@ export default function Navbar() {
               className="object-contain invert"
             />
           </div>
-          <span className={`font-bold tracking-tight transition-all duration-300 ${scrolled ? 'text-xl' : 'text-2xl md:text-3xl'}`}>
+          <span className="font-bold tracking-tight text-2xl md:text-3xl">
             Axon Automate
           </span>
         </Link>

@@ -22,27 +22,25 @@ export default function Home() {
     <Layout>
       {/* Hero */}
       <section
-        className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden bg-[#fff0d5]"
+        className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-between bg-[#fff0d5] px-6 md:px-16 py-16"
         id="hero"
       >
-
-        {/* SVG Background */}
-        <div className="absolute top-0 right-[-25px] z-0 pointer-events-none">
-          <img
-            src="/assets/illustrations/server-animate.svg"
-            alt="Animated Background"
-            className="w-[600px] h-auto"
-          />
-        </div>
-
-        {/* Hero text */}
-        <div className="px-6 md:px-12 z-10 w-full md:w-1/2">
-          <h1 className="text-5xl font-bold mb-6">
-            We turn inefficient processes into seamless automated workflows.
+        {/* Left - Text Content */}
+        <div className="z-10 w-full md:w-1/2 mb-10 md:mb-0">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[#04253e]">
+            Turn busywork<br />
+            into <span className="text-[#fbbf24]">smart automation</span>.
           </h1>
-          <p className="text-lg opacity-80 mb-6">
-            Axon Automate builds custom AI and workflow automation solutions tailored for small businesses and solo operators.
+
+          <p className="italic font-serif text-lg md:text-xl text-[#04253e] mb-4">
+            Our mantra is to engage genuinely and offer value.
           </p>
+
+          <p className="text-lg md:text-xl text-[#04253e] opacity-80 mb-8">
+            We build clever AI workflows that eliminate repetitive tasks — tailor-made
+            for solo operators and small businesses ready to scale.
+          </p>
+
           <a
             href="#why"
             className="inline-block bg-[#04253e] text-[#fff0d5] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
@@ -51,8 +49,16 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="hidden md:block w-1/2 h-full" />
+        {/* Right - Animated SVG Image */}
+        <div className="w-full md:w-1/2 flex justify-center">
+          <img
+            src="/assets/illustrations/server-animate.svg"
+            alt="Automated Workflow Illustration"
+            className="w-[600px] h-auto"
+          />
+        </div>
       </section>
+
 
 
       {/* Value Prop Trio */}
