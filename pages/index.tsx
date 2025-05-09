@@ -22,21 +22,21 @@ export default function Home() {
     <Layout>
       {/* Hero */}
       <section
-        className="relative w-full pt-10 md:pt-16 pb-16 flex flex-col md:flex-row items-center justify-between bg-[#fff0d5] px-6 md:px-16"
+        className="relative w-full h-[90vh] flex flex-col md:flex-row items-center justify-between bg-[#fff0d5] px-6 md:px-20"
         id="hero"
       >
-        {/* Left - Text Content */}
-        <div className="z-10 w-full md:w-1/2 mb-10 md:mb-0">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[#04253e]">
+        {/* Left - Text */}
+        <div className="z-10 w-full md:w-1/2 flex flex-col justify-center h-full">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-[#04253e] tracking-tight">
             Turn busywork<br />
             into <span className="text-[#fbbf24]">smart automation</span>.
           </h1>
 
-          <p className="italic font-serif text-lg md:text-xl text-[#04253e] mb-4">
+          <p className="italic text-xl md:text-2xl text-[#04253e] font-serif mb-4">
             Our mantra is to engage genuinely and offer value.
           </p>
 
-          <p className="text-lg md:text-xl text-[#04253e] opacity-80 mb-8">
+          <p className="text-lg md:text-xl text-[#04253e] opacity-80 mb-8 max-w-xl">
             We build clever AI workflows that eliminate repetitive tasks — tailor-made
             for solo operators and small businesses ready to scale.
           </p>
@@ -49,15 +49,16 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Right - Animated SVG Image */}
-        <div className="w-full md:w-1/2 flex justify-center">
+        {/* Right - Animated SVG */}
+        <div className="w-full md:w-1/2 h-full flex items-center justify-center overflow-hidden">
           <img
             src="/assets/illustrations/server-animate.svg"
             alt="Automated Workflow Illustration"
-            className="w-[600px] h-auto"
+            className="w-[90%] md:w-[600px] max-w-[650px] h-auto object-contain"
           />
         </div>
       </section>
+
 
 
 
