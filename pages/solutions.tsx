@@ -161,29 +161,24 @@ export default function SolutionsPage() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
             >
-              {solutions.map(({ icon: Icon, title, description, tag }, idx) => (
+              {solutions.map(({ icon: Icon, title, description }, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: idx * 0.05 }}
-                  className={`relative bg-white p-6 rounded-xl border ${borderColors[selectedIndustry]} hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out`}
                   onClick={() => setSelectedCard({ title, description })}
+                  className="bg-white border border-[#e5d8b8] hover:shadow-xl hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out rounded-xl p-6 text-left cursor-pointer h-full flex flex-col justify-between min-h-[260px]"
                 >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="bg-[#edf2f7] text-[#04253e] w-10 h-10 flex items-center justify-center rounded-full">
+                  <div>
+                    <div className="mb-3 bg-[#edf2f7] text-[#04253e] w-10 h-10 flex items-center justify-center rounded-full">
                       <Icon className="w-5 h-5" />
                     </div>
-                    {tag && (
-                      <span className="text-xs font-semibold bg-[#04253e] text-white px-2 py-0.5 rounded-md">
-                        {tag}
-                      </span>
-                    )}
+                    <h4 className="text-lg font-semibold text-[#04253e] mb-1">{title}</h4>
+                    <p className="text-sm text-gray-700 leading-relaxed">{description}</p>
                   </div>
-                  <h4 className="text-md font-bold text-[#04253e] mb-2 leading-snug uppercase">{title}</h4>
-                  <p className="text-sm text-gray-700 leading-relaxed">{description}</p>
                 </motion.div>
               ))}
             </motion.div>
