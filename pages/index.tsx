@@ -109,7 +109,7 @@ export default function Home() {
             <div className="bg-white rounded-xl shadow-md p-10 transition-transform hover:scale-105 duration-300 ease-in-out h-full flex flex-col justify-between">
               <div className="h-60 mb-8 flex items-center justify-center">
                 <img
-                  src="/assets/illustrations/harmony.svg"
+                  src="/assets/illustrations/teamwork.svg"
                   alt="Human AI Harmony"
                   className="h-full object-contain"
                 />
