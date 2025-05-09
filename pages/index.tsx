@@ -66,11 +66,14 @@ export default function Home() {
       {/* Value Prop Trio */}
       <section className="py-36 bg-[#fff0d5]" id="why">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-24 text-[#04253e] tracking-tight">
-            <span className="text-[#64bc91]">How </span>
-            <span className="text-[#f4b942]">We </span>
-            <span className="text-[#4472f3]">Help</span>
-          </h2>
+          <div className="mb-24">
+            <h2 className="text-5xl md:text-6xl font-extrabold text-[#04253e] tracking-tight mb-4">
+              <span className="text-[#04253e]">How </span>
+              <span className="text-[#04253e]">We </span>
+              <span className="text-[#04253e]">Help</span>
+            </h2>
+            <div className="w-24 h-1 bg-[#04253e] mx-auto rounded"></div>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-10">
             {/* 1. Automate Real Work */}
