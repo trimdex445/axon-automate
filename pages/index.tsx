@@ -22,7 +22,7 @@ export default function Home() {
     <Layout>
       {/* Hero */}
       <section
-        className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-between bg-[#fff0d5] px-6 md:px-16 py-16"
+        className="relative w-full pt-10 md:pt-16 pb-16 flex flex-col md:flex-row items-center justify-between bg-[#fff0d5] px-6 md:px-16"
         id="hero"
       >
         {/* Left - Text Content */}
@@ -62,64 +62,68 @@ export default function Home() {
 
 
       {/* Value Prop Trio */}
-  <section className="py-28 bg-[#fff0d5]" id="why">
-    <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
-      <h2 className="text-5xl font-bold mb-20 text-[#04253e]">How We Help</h2>
+      <section className="py-36 bg-[#fff0d5]" id="why">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-24 text-[#04253e] tracking-tight">
+            <span className="text-[#64bc91]">How </span>
+            <span className="text-[#f4b942]">We </span>
+            <span className="text-[#4472f3]">Help</span>
+          </h2>
 
-      <div className="grid md:grid-cols-3 gap-8">
-        {/* 1. Automate Real Work */}
-        <div className="bg-white rounded-xl shadow-md p-8 transition-transform hover:scale-105 duration-300 ease-in-out">
-          <div className="h-60 mb-8 flex items-center justify-center">
-            <img
-              src="/assets/illustrations/automation.svg"
-              alt="Automate Work"
-              className="h-full object-contain"
-            />
-          </div>
-          <h3 className="text-2xl font-semibold mb-3 text-[#04253e]">
-            Automate Real Work
-          </h3>
-          <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
-            We streamline actual tasks — not just alerts. From dispatching to auto-replies.
-          </p>
-        </div>
+          <div className="grid md:grid-cols-3 gap-10">
+            {/* 1. Automate Real Work */}
+            <div className="bg-white rounded-xl shadow-md p-10 transition-transform hover:scale-105 duration-300 ease-in-out h-full flex flex-col justify-between">
+              <div className="h-60 mb-8 flex items-center justify-center">
+                <img
+                  src="/assets/illustrations/automation.svg"
+                  alt="Automate Work"
+                  className="h-full object-contain"
+                />
+              </div>
+              <h3 className="text-2xl font-semibold mb-3 text-[#64bc91]">
+                Automate Real Work
+              </h3>
+              <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
+                We streamline actual tasks — not just alerts. From dispatching to auto-replies.
+              </p>
+            </div>
 
-        {/* 2. Seamless Integration */}
-        <div className="bg-white rounded-xl shadow-md p-8 transition-transform hover:scale-105 duration-300 ease-in-out">
-          <div className="h-60 mb-8 flex items-center justify-center">
-            <img
-              src="/assets/illustrations/tools.svg"
-              alt="Integration"
-              className="h-full object-contain"
-            />
-          </div>
-          <h3 className="text-2xl font-semibold mb-3 text-[#04253e]">
-            Seamless Integration
-          </h3>
-          <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
-            Gmail, Airtable, Xero, Notion and more — connected and working together.
-          </p>
-        </div>
+            {/* 2. Seamless Integration */}
+            <div className="bg-white rounded-xl shadow-md p-10 transition-transform hover:scale-105 duration-300 ease-in-out h-full flex flex-col justify-between">
+              <div className="h-60 mb-8 flex items-center justify-center">
+                <img
+                  src="/assets/illustrations/tools.svg"
+                  alt="Integration"
+                  className="h-full object-contain"
+                />
+              </div>
+              <h3 className="text-2xl font-semibold mb-3 text-[#f4b942]">
+                Seamless Integration
+              </h3>
+              <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
+                Gmail, Airtable, Xero, Notion and more — connected and working together.
+              </p>
+            </div>
 
-        {/* 3. Human + AI Harmony */}
-        <div className="bg-white rounded-xl shadow-md p-8 transition-transform hover:scale-105 duration-300 ease-in-out">
-          <div className="h-60 mb-8 flex items-center justify-center">
-            <img
-              src="/assets/illustrations/teamwork.svg"
-              alt="Human AI"
-              className="h-full object-contain"
-            />
+            {/* 3. Human + AI Harmony */}
+            <div className="bg-white rounded-xl shadow-md p-10 transition-transform hover:scale-105 duration-300 ease-in-out h-full flex flex-col justify-between">
+              <div className="h-60 mb-8 flex items-center justify-center">
+                <img
+                  src="/assets/illustrations/harmony.svg"
+                  alt="Human AI Harmony"
+                  className="h-full object-contain"
+                />
+              </div>
+              <h3 className="text-2xl font-semibold mb-3 text-[#4472f3]">
+                Human + AI Harmony
+              </h3>
+              <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
+                We blend automation with human workflows — so nothing gets lost in translation.
+              </p>
+            </div>
           </div>
-          <h3 className="text-2xl font-semibold mb-3 text-[#04253e]">
-            Human + AI Harmony
-          </h3>
-          <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
-            We blend automation with human workflows — so nothing gets lost in translation.
-          </p>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
 
 
@@ -179,7 +183,7 @@ export default function Home() {
           From lawn care to law firms — if your business has a repeatable process, we can probably automate it. Here's a taste:
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {[
             {
               icon: <Wrench className="w-6 h-6 text-[#04253e]" />,
@@ -238,20 +242,22 @@ export default function Home() {
           ].map(({ icon, title, items }, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl shadow-md hover:shadow-lg transition hover:-translate-y-1 p-6 text-left max-w-md mx-auto"
+              className="bg-white border border-[#e5d8b8] hover:shadow-xl hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out rounded-xl p-6 text-left h-full flex flex-col justify-between min-h-[290px]"
             >
-              <div className="bg-[#04253e]/10 p-3 rounded-full inline-flex mb-4">
-                {icon}
+              <div>
+                <div className="mb-4 bg-[#edf2f7] text-[#04253e] w-10 h-10 flex items-center justify-center rounded-full">
+                  {icon}
+                </div>
+                <h3 className="text-lg font-semibold text-[#04253e] mb-4">{title}</h3>
+                <ul className="space-y-2 text-sm text-[#04253e]/90 leading-relaxed">
+                  {items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <Check className="w-4 h-4 mt-1 text-green-600" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-[#04253e]">{title}</h3>
-              <ul className="space-y-2 text-sm text-[#04253e]/90 leading-relaxed">
-                {items.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <Check className="w-4 h-4 mt-1 text-green-600" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           ))}
         </div>
@@ -260,6 +266,7 @@ export default function Home() {
           Not listed? No problem — we tailor solutions to any industry.
         </p>
       </section>
+
 
 
       {/* CTA */}
