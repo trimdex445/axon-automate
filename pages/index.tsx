@@ -22,13 +22,13 @@ export default function Home() {
     <Layout>
       {/* Hero */}
       <section
-        className="relative w-full h-[90vh] flex flex-col md:flex-row items-center justify-between bg-[#fff0d5] px-6 md:px-20"
+        className="relative w-full h-[calc(100vh-5rem)] flex flex-col md:flex-row items-center justify-between bg-[#fff0d5] px-6 md:px-20"
         id="hero"
       >
         {/* Left - Text */}
         <div className="z-10 w-full md:w-1/2 flex flex-col justify-center h-full">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-[#04253e] tracking-tight">
-            Turn busywork<br />
+            Turn <span className="text-[#04253e]">busywork</span><br />
             into <span className="text-[#fbbf24]">smart automation</span>.
           </h1>
 
@@ -43,7 +43,7 @@ export default function Home() {
 
           <a
             href="#why"
-            className="inline-block bg-[#04253e] text-[#fff0d5] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+            className="inline-block bg-[#04253e] text-[#fff0d5] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition w-full sm:w-auto text-center"
           >
             Learn How
           </a>
@@ -58,6 +58,7 @@ export default function Home() {
           />
         </div>
       </section>
+
 
 
 
@@ -262,29 +263,26 @@ export default function Home() {
             </div>
           ))}
         </div>
-
-        <p className="text-center text-sm mt-12 text-[#04253e]/70">
-          Not listed? No problem — we tailor solutions to any industry.
-        </p>
       </section>
-
-
 
       {/* CTA */}
-      <section className="py-28 text-center">
-        <h2 className="text-4xl font-bold mb-6">
-          Ready to automate your workflow?
-        </h2>
-        <p className="text-lg opacity-80 mb-6">
-          Get started with a tailored quote.
-        </p>
-        <a
-          href="/contact"
-          className="inline-block bg-[#04253e] text-[#fff0d5] px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition"
-        >
-          Request a Quote
-        </a>
+      <section className="py-32 bg-[#fff0d5] text-center px-6 md:px-0">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#04253e] mb-6">
+            Ready to automate your workflow?
+          </h2>
+          <p className="text-lg text-[#04253e]/80 mb-8">
+            Not listed? No problem — we tailor solutions to any industry. Let’s make your work simpler, smarter, and stress-free.
+          </p>
+          <a
+            href="/contact"
+            className="inline-block bg-[#04253e] text-[#fff0d5] px-8 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition"
+          >
+            Request a Quote
+          </a>
+        </div>
       </section>
+
     </Layout>
   );
 }

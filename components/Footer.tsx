@@ -8,7 +8,7 @@ export default function Footer() {
 
         {/* Branding */}
         <div>
-          <h3 className="text-xl font-semibold mb-3">Axon Automate</h3>
+          <h3 className="text-xl font-semibold mb-3 text-[#fbbf24]">Axon Automate</h3>
           <p className="opacity-80 leading-relaxed max-w-xs">
             Workflow automation for small teams. <br />Powered by AI, made to scale.
           </p>
@@ -16,20 +16,20 @@ export default function Footer() {
 
         {/* Explore */}
         <div>
-          <h4 className="uppercase font-semibold mb-3 text-xs tracking-widest">Explore</h4>
-          <ul className="space-y-2 opacity-90">
-            <li><Link href="/" className="hover:underline">Home</Link></li>
-            <li><Link href="/solutions" className="hover:underline">Solutions</Link></li>
-            <li><Link href="/pricing" className="hover:underline">Pricing</Link></li>
-            <li><Link href="/contact" className="hover:underline">Contact</Link></li>
-            <li><Link href="/privacy" className="hover:underline">Privacy Policy</Link></li>
-            <li><Link href="/terms" className="hover:underline">Terms of Service</Link></li>
+          <h4 className="uppercase font-semibold mb-3 text-xs tracking-widest text-[#64bc91]">Explore</h4>
+          <ul className="space-y-2">
+            <li><Link href="/" className="hover:text-[#64bc91]">Home</Link></li>
+            <li><Link href="/solutions" className="hover:text-[#64bc91]">Solutions</Link></li>
+            <li><Link href="/pricing" className="hover:text-[#64bc91]">Pricing</Link></li>
+            <li><Link href="/contact" className="hover:text-[#64bc91]">Contact</Link></li>
+            <li><Link href="/privacy" className="hover:text-[#64bc91]">Privacy Policy</Link></li>
+            <li><Link href="/terms" className="hover:text-[#64bc91]">Terms of Service</Link></li>
           </ul>
         </div>
 
         {/* Contact */}
         <div>
-          <h4 className="uppercase font-semibold mb-3 text-xs tracking-widest">Contact</h4>
+          <h4 className="uppercase font-semibold mb-3 text-xs tracking-widest text-[#f4b942]">Contact</h4>
           <ul className="space-y-2 opacity-90">
             <li>Email: hello@axonautomate.com</li>
             <li>Based in Sydney, Australia</li>
@@ -38,13 +38,13 @@ export default function Footer() {
 
         {/* Follow */}
         <div>
-          <h4 className="uppercase font-semibold mb-3 text-xs tracking-widest">Follow</h4>
+          <h4 className="uppercase font-semibold mb-3 text-xs tracking-widest text-[#4472f3]">Follow</h4>
           <div className="flex space-x-4 items-center">
             <a
-              href="https://www.linkedin.com/company/axonautomate" // update your actual LinkedIn URL
+              href="https://www.linkedin.com/company/axonautomate"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#0e76a8] transition"
+              className="hover:text-[#4472f3] transition"
             >
               <Linkedin className="w-6 h-6" />
             </a>
