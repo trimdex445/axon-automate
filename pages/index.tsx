@@ -80,7 +80,7 @@ export default function Home() {
             <div className="bg-white rounded-xl shadow-md p-10 transition-transform hover:scale-105 duration-300 ease-in-out h-full flex flex-col justify-between">
               <div className="h-60 mb-8 flex items-center justify-center">
                 <img
-                  src="/assets/illustrations/automation.svg"
+                  src="/assets/illustrations/performance-overview-animate.svg"
                   alt="Automate Work"
                   className="h-full object-contain"
                 />
@@ -97,7 +97,7 @@ export default function Home() {
             <div className="bg-white rounded-xl shadow-md p-10 transition-transform hover:scale-105 duration-300 ease-in-out h-full flex flex-col justify-between">
               <div className="h-60 mb-8 flex items-center justify-center">
                 <img
-                  src="/assets/illustrations/tools.svg"
+                  src="/assets/illustrations/cloud-hosting-animate.svg"
                   alt="Integration"
                   className="h-full object-contain"
                 />
@@ -114,7 +114,7 @@ export default function Home() {
             <div className="bg-white rounded-xl shadow-md p-10 transition-transform hover:scale-105 duration-300 ease-in-out h-full flex flex-col justify-between">
               <div className="h-60 mb-8 flex items-center justify-center">
                 <img
-                  src="/assets/illustrations/teamwork.svg"
+                  src="/assets/illustrations/data-analysis-automate.svg"
                   alt="Human AI Harmony"
                   className="h-full object-contain"
                 />
