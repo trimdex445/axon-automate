@@ -31,7 +31,7 @@ export default function Footer() {
         <div>
           <h4 className="uppercase font-semibold mb-3 text-xs tracking-widest text-[#f4b942]">Contact</h4>
           <ul className="space-y-2 opacity-90">
-            <li>Email: hello@axonautomate.com</li>
+            <li>Email: sales@axonautomate.com</li>
             <li>Based in Sydney, Australia</li>
           </ul>
         </div>
