@@ -13,7 +13,10 @@ export default function QuotePage() {
 
   return (
     <Layout>
-      <section className="py-20 px-6 bg-[#fff0d5] min-h-screen">
+      <section
+        className="py-20 px-6 min-h-screen bg-[#fff0d5] bg-no-repeat bg-cover bg-center"
+        style={{ backgroundImage: "url('/assets/illustrations/stacked-steps-haikei.svg')" }}
+      >
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
           
           {/* Left Panel - Card Style */}
