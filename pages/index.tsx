@@ -22,7 +22,7 @@ export default function Home() {
     <Layout>
       {/* Hero */}
       <section
-        className="relative w-full h-[calc(80vh-5rem)] flex flex-col md:flex-row items-center justify-between bg-[#fff0d5] px-6 md:px-20"
+        className="relative w-full h-[calc(65vh-5rem)] flex flex-col md:flex-row items-center justify-between bg-[#fff0d5] px-6 md:px-20"
         id="hero"
       >
         {/* Left - Text */}
@@ -269,7 +269,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-[#fff0d5] text-center px-6 md:px-0">
+      <section className="py-14 bg-[#fff0d5] text-center px-6 md:px-0">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-extrabold text-[#04253e] mb-6">
             Ready to automate your workflow?
