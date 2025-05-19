@@ -180,19 +180,18 @@ export default function Home() {
 
 
   {/* Industries + CTA Section with Left SVG Background */}
-      <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#fff0d5] overflow-hidden z-0 min-h-[2000px]">
-        {/* Decorative SVG pinned left */}
-        <img
-          src="/assets/illustrations/layered-waves-haikei-longest.svg"
-          alt="Left decorative waves"
-          className="absolute top-0 left-0 h-full w-auto z-0 pointer-events-none"
-          style={{ minHeight: '100%' }}
-        />
-
-        {/* Content wrapper above SVG */}
-        <div className="relative z-10">
+      <section
+        className="relative w-full bg-[#fff0d5] overflow-hidden z-0"
+        style={{
+          backgroundImage: "url('/assets/illustrations/layered-waves-haikei-long.svg')",
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'left top',
+          backgroundSize: 'contain',
+        }}
+      >
+        <div className="relative z-10 px-6 md:px-16 py-28">
           {/* Industries */}
-          <section id="industries" className="py-28">
+          <section id="industries">
             <h2 className="text-5xl font-bold text-center text-[#04253e] mb-6">
               Industries We Automate
             </h2>
@@ -281,7 +280,7 @@ export default function Home() {
           </section>
 
           {/* CTA */}
-          <section className="py-14 text-center px-6 md:px-0">
+          <section className="pt-24 text-center">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#04253e] mb-6">
                 Ready to automate your workflow?
