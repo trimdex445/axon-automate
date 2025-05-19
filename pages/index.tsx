@@ -285,9 +285,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#04253e] mb-6">
                 Ready to automate your workflow?
               </h2>
-              <p className="text-lg text-[#04253e]/80 mb-8">
-                Not listed? No problem — we tailor solutions to any industry. Let’s make your work simpler, smarter, and stress-free.
-              </p>
+              {/* Removed extra paragraph */}
               <a
                 href="/contact"
                 className="inline-block bg-[#04253e] text-[#fff0d5] px-8 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition"
