@@ -183,7 +183,7 @@ export default function Home() {
       <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#fff0d5] overflow-hidden z-0">
         {/* SVG absolutely fills section */}
         <img
-          src="/assets/illustrations/layered-waves-haikei-long-fixed.svg"
+          src="/assets/illustrations/layered-waves-haikei-longer.svg"
           alt="Decorative Waves"
           className="absolute top-0 left-0 w-auto h-full min-h-full z-0 pointer-events-none object-fill"
         />
