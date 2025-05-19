@@ -180,7 +180,7 @@ export default function Home() {
 
 
   {/* Industries + CTA Section with Left SVG Background */}
-      <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#fff0d5] overflow-hidden z-0">
+      <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#fff0d5] pb-40 overflow-hidden z-0">
         {/* Decorative SVG pinned left */}
         <img
           src="/assets/illustrations/layered-waves-haikei-longest.svg"
