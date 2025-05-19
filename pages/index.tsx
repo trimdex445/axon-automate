@@ -185,7 +185,8 @@ export default function Home() {
         <img
           src="/assets/illustrations/layered-waves-haikei-long.svg"
           alt="Decorative Waves"
-          className="absolute inset-0 w-auto h-full z-0 pointer-events-none object-cover"
+          className="absolute top-0 left-0 h-full w-auto z-0 pointer-events-none"
+          style={{ height: '100%', minHeight: '100%', objectFit: 'fill' }}
         />
 
         {/* Content above the SVG */}
