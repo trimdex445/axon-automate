@@ -180,13 +180,10 @@ export default function Home() {
 
 
   {/* Industries + CTA Section with Left SVG Background */}
-      <section className="relative bg-[#fff0d5] overflow-hidden z-0">
-        {/* SVG Decoration on Left */}
-        <img
-          src="/assets/illustrations/layered-waves-haikei.svg"
-          alt="decorative waves"
-          className="absolute left-0 top-0 h-full w-auto opacity-60 z-0 pointer-events-none"
-        />
+      <section
+        className="relative bg-[#fff0d5] overflow-hidden z-0 bg-no-repeat bg-left-top bg-cover"
+        style={{ backgroundImage: "url('/assets/illustrations/layered-waves-haikei.svg')" }}
+      >
 
         {/* Content Wrapper */}
         <div className="relative z-10">
