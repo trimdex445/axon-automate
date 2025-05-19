@@ -1,19 +1,15 @@
 // lib/firebase.ts
-import { initializeApp, getApps } from "firebase/app";
-import { getFirestore, collection, doc, setDoc } from "firebase/firestore";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
-// Firebase config using environment variables
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  apiKey: "AIzaSyBeVyQCU_koMu4QalkbbGT-fpLQHZWKPhU",
+  authDomain: "axonsite-f4967.firebaseapp.com",
+  projectId: "axonsite-f4967",
+  storageBucket: "axonsite-f4967.firebasestorage.app",
+  messagingSenderId: "99932691250",
+  appId: "1:99932691250:web:c3515b6162518c79d1152b",
 };
 
-// Prevent re-initializing on hot reloads
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
-const db = getFirestore(app);
-
-export { db, collection, doc, setDoc };
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);

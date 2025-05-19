@@ -1,5 +1,6 @@
 // lib/submitQuote.ts
-import { db, collection, doc, setDoc } from "@/lib/firebase";
+import { db } from "@/lib/firebase";
+import { collection, doc, setDoc } from "firebase/firestore";
 
 export const submitQuote = async (data: {
   name: string;
@@ -9,12 +10,11 @@ export const submitQuote = async (data: {
 }) => {
   const { name, company } = data;
 
-  // Build document ID prefix (cleaned and lowercased)
   const prefix = (company || name || "anon").replace(/\s+/g, "-").toLowerCase();
   const uniqueId = `${prefix}-${Date.now()}`;
 
   try {
-    await setDoc(doc(collection(db, "leads"), uniqueId), {
+    await setDoc(doc(collection(db, "quoteRequests"), uniqueId), {
       ...data,
       timestamp: new Date().toISOString(),
     });
