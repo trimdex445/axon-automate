@@ -181,8 +181,8 @@ export default function Home() {
 
   {/* Industries + CTA Section with Left SVG Background */}
       <section
-        className="relative bg-[#fff0d5] overflow-hidden z-0 bg-no-repeat bg-left-top bg-cover"
-        style={{ backgroundImage: "url('/assets/illustrations/layered-waves-haikei.svg')" }}
+        className="relative bg-[#fff0d5] overflow-hidden z-0 bg-no-repeat bg-left-top bg-contain md:bg-cover"
+        style={{ backgroundImage: "url('/assets/illustrations/layered-waves-haikei-long.svg')" }}
       >
 
         {/* Content Wrapper */}
