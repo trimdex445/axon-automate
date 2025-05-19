@@ -3,7 +3,7 @@ import { Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#fff0d5] text-[#04253e] pt-16 pb-10">
+    <footer className="bg-[#04253e] text-[#04253e] pt-16 pb-10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 text-sm">
 
         {/* Branding */}

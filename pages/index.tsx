@@ -282,7 +282,7 @@ export default function Home() {
           {/* CTA */}
           <section className="pt-24 text-center">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-[#04253e] mb-6">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-[#04253e] mb-6 whitespace-nowrap">
                 Ready to automate your workflow?
               </h2>
               {/* Removed extra paragraph */}
