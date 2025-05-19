@@ -181,15 +181,15 @@ export default function Home() {
 
   {/* Industries + CTA Section with Left SVG Background */}
       <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#fff0d5] overflow-hidden z-0">
-        {/* Left-pinned SVG stretched to fill the section */}
+        {/* Full-height, left-aligned decorative SVG */}
         <img
-          src="/assets/illustrations/layered-waves-haikei.svg"
+          src="/assets/illustrations/layered-waves-haikei-long.svg"
           alt="Decorative Waves"
-          className="absolute inset-0 h-full w-auto object-cover z-0 pointer-events-none"
+          className="absolute inset-0 w-auto h-full z-0 pointer-events-none object-cover"
         />
 
-        {/* Content wrapper above SVG */}
-        <div className="relative z-10 px-6 md:px-16 py-28">
+        {/* Content above the SVG */}
+        <div className="relative z-10 px-6 md:px-16 py-28 pb-24">
           {/* Industries */}
           <section id="industries">
             <h2 className="text-5xl font-bold text-center text-[#04253e] mb-6">
