@@ -180,12 +180,13 @@ export default function Home() {
 
 
   {/* Industries + CTA Section with Left SVG Background */}
-      <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#fff0d5] pb-40 overflow-hidden z-0">
+      <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#fff0d5] overflow-hidden z-0 min-h-[2000px]">
         {/* Decorative SVG pinned left */}
         <img
           src="/assets/illustrations/layered-waves-haikei-longest.svg"
           alt="Left decorative waves"
           className="absolute top-0 left-0 h-full w-auto z-0 pointer-events-none"
+          style={{ minHeight: '100%' }}
         />
 
         {/* Content wrapper above SVG */}
