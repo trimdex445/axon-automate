@@ -5,7 +5,25 @@ import Link from 'next/link';
 export default function PricingPage() {
   return (
     <Layout>
-      <section className="bg-[#fff0d5] py-12 px-4">
+      {/* highlighter-start */}
+      {/* Fixed Full-Viewport SVG Background for this page */}
+      {/* This div is now fixed to the viewport, acts as the furthest back layer (z-0) */}
+      {/* It has the base background color, and the SVG image is overlaid with opacity. */}
+      <div className="fixed inset-0 -mx-[50vw] left-1/2 w-screen pointer-events-none z-0 bg-[#fff0d5]">
+        <img
+          src="/assets/illustrations/circle-scatter-haikei.svg" // Your SVG for the circles
+          alt="Decorative Scatter"
+          className="w-full h-full object-cover opacity-30" // SVG covers this div, with opacity
+        />
+      </div>
+      {/* highlighter-end */}
+
+      {/* Main content section for the pricing page */}
+      {/* It needs `position: relative` and `z-index > 0` (e.g., z-10) to sit on top of the fixed background. */}
+      {/* The original bg-[#fff0d5] is removed from here as it's now part of the fixed background div above. */}
+      {/* highlighter-start */}
+      <section className="relative z-10 py-12 px-4"> {/* Added relative and z-10 */}
+      {/* highlighter-end */}
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-5xl font-extrabold text-[#04253e] mb-4 tracking-tight">Pricing Options</h2>
           <p className="text-lg text-[#04253e] max-w-2xl mx-auto font-medium mb-12">
@@ -22,7 +40,6 @@ export default function PricingPage() {
                 </div>
                 <div className="text-2xl font-bold text-[#04253e] mb-1">NZD $150–$300</div>
                 <div className="text-sm text-gray-500 mb-6">One-off mini automations</div>
-
                 <ul className="text-sm text-gray-700 space-y-2 text-left">
                   <li className="flex items-center"><Check className="text-green-500 mr-2" /> Single input → single output</li>
                   <li className="flex items-center"><Check className="text-green-500 mr-2" /> Form-to-email / sheet syncs</li>
@@ -33,10 +50,10 @@ export default function PricingPage() {
                   <li className="flex items-center"><X className="text-red-500 mr-2" /> Strategy consultation</li>
                 </ul>
               </div>
-              <Link href="/contact">
-                <button className="mt-6 bg-[#04253e] text-white py-2 px-4 rounded-md hover:bg-[#021722] transition-all w-full">
+              <Link href="/contact" legacyBehavior>
+                <a className="block mt-6 bg-[#04253e] text-white text-center py-2 px-4 rounded-md hover:bg-[#021722] transition-all w-full">
                   Get Started
-                </button>
+                </a>
               </Link>
             </div>
 
@@ -52,7 +69,6 @@ export default function PricingPage() {
                 </div>
                 <div className="text-2xl font-bold text-[#04253e] mb-1">NZD $1,000–$5,000</div>
                 <div className="text-sm text-gray-500 mb-6">Multi-system & logic-rich workflows</div>
-
                 <ul className="text-sm text-gray-700 space-y-2 text-left">
                   <li className="flex items-center"><Check className="text-green-500 mr-2" /> Multi-system integrations</li>
                   <li className="flex items-center"><Check className="text-green-500 mr-2" /> OAuth logins / DB syncing</li>
@@ -63,10 +79,10 @@ export default function PricingPage() {
                   <li className="flex items-center"><X className="text-red-500 mr-2" /> Long-term advisory</li>
                 </ul>
               </div>
-              <Link href="/contact">
-                <button className="mt-6 bg-[#04253e] text-white py-2 px-4 rounded-md hover:bg-[#021722] transition-all w-full">
+              <Link href="/contact" legacyBehavior>
+                <a className="block mt-6 bg-[#04253e] text-white text-center py-2 px-4 rounded-md hover:bg-[#021722] transition-all w-full">
                   Book Consultation
-                </button>
+                </a>
               </Link>
             </div>
 
@@ -79,7 +95,6 @@ export default function PricingPage() {
                 </div>
                 <div className="text-lg font-bold text-[#04253e] mb-1">Contact for Pricing</div>
                 <div className="text-sm text-gray-500 mb-6">Full rebuild & strategy-led delivery</div>
-
                 <ul className="text-sm text-gray-700 space-y-2 text-left">
                   <li className="flex items-center"><Check className="text-green-500 mr-2" /> Automation consulting</li>
                   <li className="flex items-center"><Check className="text-green-500 mr-2" /> DB design & normalisation</li>
@@ -90,10 +105,10 @@ export default function PricingPage() {
                   <li className="flex items-center"><Check className="text-green-500 mr-2" /> Ongoing support & training</li>
                 </ul>
               </div>
-              <Link href="/contact">
-                <button className="mt-6 bg-yellow-500 text-black py-2 px-4 rounded-md hover:bg-yellow-600 transition-all w-full">
+              <Link href="/contact" legacyBehavior>
+                <a className="block mt-6 bg-yellow-500 text-black text-center py-2 px-4 rounded-md hover:bg-yellow-600 transition-all w-full">
                   Contact Us
-                </button>
+                </a>
               </Link>
             </div>
           </div>
