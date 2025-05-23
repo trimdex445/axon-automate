@@ -179,17 +179,16 @@ export default function Home() {
 
 
 
-      <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#fff0d5] overflow-hidden z-0 min-h-screen">
+      <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#fff0d5] overflow-hidden z-0 min-h-screen flex flex-col justify-between">
         {/* SVG absolutely fills section */}
         <img
           src="/assets/illustrations/layered-waves-haikei-long-FINAL.svg"
           alt="Decorative Waves"
-          className="absolute bottom-0 left-0 w-full h-auto min-h-full z-0 pointer-events-none object-cover"
-          style={{ objectPosition: 'bottom' }}
+          className="absolute inset-0 w-auto h-full z-0 pointer-events-none"
         />
 
         {/* Content wrapper above SVG */}
-        <div className="relative z-10 px-6 md:px-16 py-28">
+        <div className="relative z-10 px-6 md:px-16 py-28 flex flex-col justify-start">
           {/* Industries */}
           <section id="industries">
             <h2 className="text-5xl font-bold text-center text-[#04253e] mb-6">
@@ -293,7 +292,9 @@ export default function Home() {
               </a>
             </div>
           </section>
-          <div className="h-32" />
+
+          {/* Force section to push flush with footer */}
+          <div className="flex-grow" />
         </div>
       </section>
     </Layout>
