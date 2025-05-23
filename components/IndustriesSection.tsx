@@ -3,12 +3,12 @@ import { Wrench, HeartPulse, FileText, Utensils, ShoppingCart, Brush, Check } fr
 export default function IndustriesSection() {
   return (
     <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#fff0d5] overflow-hidden z-0">
-      {/* SVG Background anchored to bottom */}
+      {/* SVG Background pinned bottom, stretch width */}
       <img
         src="/assets/illustrations/new-waves.svg"
         alt="Decorative Waves"
-        className="absolute bottom-0 left-0 h-full w-auto z-0 pointer-events-none"
-        style={{ maxHeight: '100%', objectFit: 'cover' }}
+        className="absolute bottom-0 left-0 w-full h-auto z-0 pointer-events-none"
+        style={{ objectFit: 'cover', objectPosition: 'bottom' }}
       />
 
       {/* Content Wrapper */}
