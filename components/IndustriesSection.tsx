@@ -2,7 +2,7 @@ import { Wrench, HeartPulse, FileText, Utensils, ShoppingCart, Brush, Check } fr
 
 export default function IndustriesSection() {
   return (
-    <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#fff0d5] overflow-hidden z-0 flex flex-col min-h-screen">
+    <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#fff0d5] overflow-hidden z-0">
       {/* SVG Background anchored to bottom */}
       <img
         src="/assets/illustrations/layered-waves-haikei-long-FINAL.svg"
@@ -12,7 +12,7 @@ export default function IndustriesSection() {
       />
 
       {/* Content Wrapper */}
-      <div className="relative z-10 px-6 md:px-16 pt-28 pb-20 flex flex-col justify-start flex-grow">
+      <div className="relative z-10 px-6 md:px-16 pt-28 pb-40">
         {/* Industries Section */}
         <section id="industries">
           <h2 className="text-5xl font-bold text-center text-[#04253e] mb-6">
