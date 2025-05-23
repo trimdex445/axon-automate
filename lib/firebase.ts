@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBeVyQCU_koMu4QalkbbGT-fpLQHZWKPhU",
-  authDomain: "axonsite-f4967.firebaseapp.com",
-  projectId: "axonsite-f4967",
-  storageBucket: "axonsite-f4967.firebasestorage.app",
-  messagingSenderId: "99932691250",
-  appId: "1:99932691250:web:c3515b6162518c79d1152b",
+  apiKey: "AIzaSyAP3Orpc4hShU7vt1nuKG4edOKExMeEecI",
+  authDomain: "axonn8n.firebaseapp.com",
+  projectId: "axonn8n",
+  storageBucket: "axonn8n.firebasestorage.app",
+  messagingSenderId: "787605047308",
+  appId: "1:787605047308:web:bf598d495146a61543c629",
 };
 
 const app = initializeApp(firebaseConfig);

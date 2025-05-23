@@ -179,7 +179,6 @@ export default function Home() {
 
 
 
-  {/* Industries + CTA Section with Left SVG Background */}
       <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#fff0d5] overflow-hidden z-0">
         {/* SVG absolutely fills section */}
         <img
@@ -189,7 +188,7 @@ export default function Home() {
         />
 
         {/* Content wrapper above SVG */}
-        <div className="relative z-10 px-6 md:px-16 py-28 pb-0">
+        <div className="relative z-10 px-6 md:px-16 py-28">
           {/* Industries */}
           <section id="industries">
             <h2 className="text-5xl font-bold text-center text-[#04253e] mb-6">
@@ -276,6 +275,21 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+          </section>
+
+          {/* CTA Section */}
+          <section className="pt-20 text-center">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-4xl font-extrabold text-[#04253e] mb-6 whitespace-nowrap">
+                Ready to automate your workflow?
+              </h2>
+              <a
+                href="/contact"
+                className="inline-block bg-[#04253e] text-[#fff0d5] px-8 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition"
+              >
+                Request a Quote
+              </a>
             </div>
           </section>
         </div>
