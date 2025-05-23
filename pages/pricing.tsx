@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout';
 import { Check, X, Crown, Sparkles, Settings } from 'lucide-react';
+import Link from 'next/link';
 
 export default function PricingPage() {
   return (
@@ -32,9 +33,11 @@ export default function PricingPage() {
                   <li className="flex items-center"><X className="text-red-500 mr-2" /> Strategy consultation</li>
                 </ul>
               </div>
-              <button className="mt-6 bg-[#04253e] text-white py-2 px-4 rounded-md hover:bg-[#021722] transition-all">
-                Get Started
-              </button>
+              <Link href="/contact">
+                <button className="mt-6 bg-[#04253e] text-white py-2 px-4 rounded-md hover:bg-[#021722] transition-all w-full">
+                  Get Started
+                </button>
+              </Link>
             </div>
 
             {/* End-to-End Automations */}
@@ -60,9 +63,11 @@ export default function PricingPage() {
                   <li className="flex items-center"><X className="text-red-500 mr-2" /> Long-term advisory</li>
                 </ul>
               </div>
-              <button className="mt-6 bg-[#04253e] text-white py-2 px-4 rounded-md hover:bg-[#021722] transition-all">
-                Book Consultation
-              </button>
+              <Link href="/contact">
+                <button className="mt-6 bg-[#04253e] text-white py-2 px-4 rounded-md hover:bg-[#021722] transition-all w-full">
+                  Book Consultation
+                </button>
+              </Link>
             </div>
 
             {/* Business Systems Redesign */}
@@ -85,88 +90,59 @@ export default function PricingPage() {
                   <li className="flex items-center"><Check className="text-green-500 mr-2" /> Ongoing support & training</li>
                 </ul>
               </div>
-              <button className="mt-6 bg-yellow-500 text-black py-2 px-4 rounded-md hover:bg-yellow-600 transition-all">
-                Contact Us
-              </button>
+              <Link href="/contact">
+                <button className="mt-6 bg-yellow-500 text-black py-2 px-4 rounded-md hover:bg-yellow-600 transition-all w-full">
+                  Contact Us
+                </button>
+              </Link>
             </div>
           </div>
         </div>
-                {/* FAQ Section */}
+
+        {/* FAQ Section */}
         <div className="max-w-4xl mx-auto mt-24 px-4">
           <h3 className="text-3xl font-bold text-center text-[#04253e] mb-8">Frequently Asked Questions</h3>
           <div className="space-y-6">
-            <details className="bg-white p-8 rounded-2xl shadow-sm group border border-gray-200">
-              <summary className="cursor-pointer text-lg font-medium text-[#04253e] flex justify-between items-center">
-                <span>How long does an automation build take?</span>
-                <span className="text-xl transform group-open:rotate-180 transition-transform">⌄</span>
-              </summary>
-              <p className="mt-3 text-sm text-gray-600">
-                Most small automations take 2–5 days. Full builds can take 1–3 weeks depending on complexity.
-              </p>
-            </details>
-
-            <details className="bg-white p-8 rounded-2xl shadow-sm group border border-gray-200">
-              <summary className="cursor-pointer text-lg font-medium text-[#04253e] flex justify-between items-center">
-                <span>What tools or platforms can you automate?</span>
-                <span className="text-xl transform group-open:rotate-180 transition-transform">⌄</span>
-              </summary>
-              <p className="mt-3 text-sm text-gray-600">
-                We can work with almost any modern tool including Google Workspace, Airtable, CRMs, databases, APIs, and form platforms.
-              </p>
-            </details>
-
-            <details className="bg-white p-8 rounded-2xl shadow-sm group border border-gray-200">
-              <summary className="cursor-pointer text-lg font-medium text-[#04253e] flex justify-between items-center">
-                <span>Do you offer support after delivery?</span>
-                <span className="text-xl transform group-open:rotate-180 transition-transform">⌄</span>
-              </summary>
-              <p className="mt-3 text-sm text-gray-600">
-                Yes — every automation includes 14 days of support. Ongoing plans are available if you need regular tweaks or monitoring.
-              </p>
-            </details>
-
-            <details className="bg-white p-8 rounded-2xl shadow-sm group border border-gray-200">
-              <summary className="cursor-pointer text-lg font-medium text-[#04253e] flex justify-between items-center">
-                <span>I’m not sure what plan I need — what should I do?</span>
-                <span className="text-xl transform group-open:rotate-180 transition-transform">⌄</span>
-              </summary>
-              <p className="mt-3 text-sm text-gray-600">
-                Reach out through our quote form — we’ll guide you based on your business, workflows, and team needs. No pressure or obligations.
-              </p>
-            </details>
-
-            <details className="bg-white p-8 rounded-2xl shadow-sm group border border-gray-200">
-              <summary className="cursor-pointer text-lg font-medium text-[#04253e] flex justify-between items-center">
-                <span>Are there monthly costs for servers, APIs, or hosting?</span>
-                <span className="text-xl transform group-open:rotate-180 transition-transform">⌄</span>
-              </summary>
-              <p className="mt-3 text-sm text-gray-600">
-                Some automations require ongoing infrastructure (like API credits, cloud servers, or database hosting). These costs vary based on usage and are always discussed upfront. Many one-off builds can run entirely free with no monthly fees.
-              </p>
-            </details>
-
-            <details className="bg-white p-8 rounded-2xl shadow-sm group border border-gray-200">
-              <summary className="cursor-pointer text-lg font-medium text-[#04253e] flex justify-between items-center">
-                <span>Do I pay before or after the automation is built?</span>
-                <span className="text-xl transform group-open:rotate-180 transition-transform">⌄</span>
-              </summary>
-              <p className="mt-3 text-sm text-gray-600">
-                We build a working test version first, and you only pay once you're happy with the results. No hidden surprises — just transparency and confidence.
-              </p>
-            </details>
-
-            <details className="bg-white p-8 rounded-2xl shadow-sm group border border-gray-200">
-              <summary className="cursor-pointer text-lg font-medium text-[#04253e] flex justify-between items-center">
-                <span>What if something breaks after delivery?</span>
-                <span className="text-xl transform group-open:rotate-180 transition-transform">⌄</span>
-              </summary>
-              <p className="mt-3 text-sm text-gray-600">
-                Every build includes a free 1-week follow-up check-in. If anything breaks or needs tweaking, we’ll fix it at no extra cost.
-              </p>
-            </details>
+            {[
+              {
+                question: "How long does an automation build take?",
+                answer: "Most small automations take 2–5 days. Full builds can take 1–3 weeks depending on complexity.",
+              },
+              {
+                question: "What tools or platforms can you automate?",
+                answer: "We can work with almost any modern tool including Google Workspace, Airtable, CRMs, databases, APIs, and form platforms.",
+              },
+              {
+                question: "Do you offer support after delivery?",
+                answer: "Yes — every automation includes 14 days of support. Ongoing plans are available if you need regular tweaks or monitoring.",
+              },
+              {
+                question: "I’m not sure what plan I need — what should I do?",
+                answer: "Reach out through our quote form — we’ll guide you based on your business, workflows, and team needs. No pressure or obligations.",
+              },
+              {
+                question: "Are there monthly costs for servers, APIs, or hosting?",
+                answer: "Some automations require ongoing infrastructure (like API credits, cloud servers, or database hosting). These costs vary based on usage and are always discussed upfront. Many one-off builds can run entirely free with no monthly fees.",
+              },
+              {
+                question: "Do I pay before or after the automation is built?",
+                answer: "We build a working test version first, and you only pay once you're happy with the results. No hidden surprises — just transparency and confidence.",
+              },
+              {
+                question: "What if something breaks after delivery?",
+                answer: "Every build includes a free 1-week follow-up check-in. If anything breaks or needs tweaking, we’ll fix it at no extra cost.",
+              },
+            ].map((faq, i) => (
+              <details key={i} className="bg-white p-8 rounded-2xl shadow-sm group border border-gray-200">
+                <summary className="cursor-pointer text-lg font-medium text-[#04253e] flex justify-between items-center">
+                  <span>{faq.question}</span>
+                  <span className="text-xl transform group-open:rotate-180 transition-transform">⌄</span>
+                </summary>
+                <p className="mt-3 text-sm text-gray-600">{faq.answer}</p>
+              </details>
+            ))}
           </div>
         </div>
-
       </section>
     </Layout>
   );

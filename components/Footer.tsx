@@ -35,21 +35,6 @@ export default function Footer() {
             <li>Based in Sydney, Australia</li>
           </ul>
         </div>
-
-        {/* Follow */}
-        <div>
-          <h4 className="uppercase font-semibold mb-3 text-xs tracking-widest text-[#4472f3]">Follow</h4>
-          <div className="flex space-x-4 items-center">
-            <a
-              href="https://www.linkedin.com/company/axonautomate"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#4472f3] transition"
-            >
-              <Linkedin className="w-6 h-6" />
-            </a>
-          </div>
-        </div>
       </div>
 
       <div className="text-center text-xs mt-12 opacity-50">
