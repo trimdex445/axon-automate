@@ -23,11 +23,11 @@ export default function Home() {
     <Layout>
       {/* Hero */}
       <section
-        className="relative w-full h-[calc(65vh-5rem)] flex flex-col md:flex-row items-center justify-between bg-[#fff0d5] px-6 md:px-20"
+        className="relative w-screen h-[calc(65vh-5rem)] flex flex-col md:flex-row items-center justify-between bg-[#fff0d5] px-6 md:px-20"
         id="hero"
       >
         {/* Left - Text */}
-        <div className="z-10 w-full md:w-1/2 flex flex-col justify-center h-full">
+        <div className="z-10 w-screen md:w-1/2 flex flex-col justify-center h-full">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-[#04253e] tracking-tight">
             Turn <span className="text-[#04253e]">busywork</span><br />
             into <span className="text-[#fbbf24]">smart automation</span>.
@@ -44,14 +44,14 @@ export default function Home() {
 
           <a
             href="#why"
-            className="inline-block bg-[#04253e] text-[#fff0d5] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition w-full sm:w-auto text-center"
+            className="inline-block bg-[#04253e] text-[#fff0d5] px-6 py-4 text-md rounded-lg font-semibold hover:opacity-90 transition w-auto self-center text-center"
           >
             Learn How
           </a>
         </div>
 
         {/* Right - Animated SVG */}
-        <div className="w-full md:w-1/2 h-full flex items-center justify-center overflow-hidden">
+        <div className="w-screen md:w-1/2 h-full flex items-center justify-center overflow-hidden">
           <img
             src="/assets/illustrations/server-animate.svg"
             alt="Automated Workflow Illustration"
@@ -143,7 +143,7 @@ export default function Home() {
         <div className="pointer-events-none absolute top-0 right-0 w-24 h-full z-10 bg-gradient-to-l from-[#04253e] to-transparent" />
 
         {/* Row 1 - L to R */}
-        <div className="overflow-hidden w-full h-20 relative">
+        <div className="overflow-hidden w-screen h-20 relative">
           <div className="flex gap-6 animate-marquee absolute left-0 top-0 w-max">
             {[...icons, ...icons].map((icon: string, index: number) => (
               <div key={`row1-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md flex items-center justify-center">
@@ -151,7 +151,7 @@ export default function Home() {
                   src={`/assets/icons/${icon}`}
                   width={32}
                   height={32}
-                  className="object-contain max-h-full max-w-full"
+                  className="object-contain max-h-full max-w-screen"
                   alt={`integration-${index}`}
                 />
               </div>
@@ -160,7 +160,7 @@ export default function Home() {
         </div>
 
         {/* Row 2 - R to L */}
-        <div className="overflow-hidden w-full h-20 relative mt-6">
+        <div className="overflow-hidden w-screen h-20 relative mt-6">
           <div className="flex gap-6 animate-marquee-reverse absolute left-0 top-0 w-max">
             {[...icons, ...icons].map((icon: string, index: number) => (
               <div key={`row2-${index}`} className="min-w-[56px] h-14 p-3 bg-[#fff0d5] rounded-xl shadow-md flex items-center justify-center">
@@ -168,7 +168,7 @@ export default function Home() {
                   src={`/assets/icons/${icon}`}
                   width={32}
                   height={32}
-                  className="object-contain max-h-full max-w-full"
+                  className="object-contain max-h-full max-w-screen"
                   alt={`integration-${index}`}
                 />
               </div>

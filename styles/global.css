@@ -33,3 +33,7 @@ body {
 .animate-marquee-reverse {
   animation: marquee-reverse 120s linear infinite;
 }
+
+html, body {
+  overflow-x: hidden;
+}
