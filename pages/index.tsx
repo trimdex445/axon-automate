@@ -23,31 +23,40 @@ export default function Home() {
     <Layout>
       {/* Hero */}
       <section
-        className="relative w-screen h-[calc(65vh-5rem)] flex flex-col md:flex-row items-center justify-between bg-[#fff0d5] px-6 md:px-20"
+        className="relative w-screen h-[calc(65vh-5rem)] flex flex-col md:flex-row items-center justify-between bg-[#fff0d5] px-6 md:px-20 pt-20"
         id="hero"
       >
-        {/* Left - Text */}
-        <div className="z-10 w-screen md:w-1/2 flex flex-col justify-center h-full">
+        {/* Left - Text (Hero Section) */}
+        <div className="z-10 w-full md:w-1/2 flex flex-col justify-center h-full">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-[#04253e] tracking-tight">
             Turn <span className="text-[#04253e]">busywork</span><br />
             into <span className="text-[#fbbf24]">smart automation</span>.
           </h1>
 
-          <p className="italic text-xl md:text-2xl text-[#04253e] font-serif mb-4">
-            Our mantra is to engage genuinely and offer value.
-          </p>
+          {/* NEW: Wrapper for the text block and button */}
+          <div className="w-full max-w-xl flex flex-col"> {/* This div takes max-width of text block */}
+                                                        {/* It is w-full to align with left edge like h1, up to max-w-xl */}
+                                                        {/* Add `mx-auto` here IF this whole block should be centered in md:w-1/2 parent */}
+                                                        {/* For now, assuming left alignment of this block is fine. */}
+            <p className="italic text-xl md:text-2xl text-[#04253e] font-serif mb-4">
+              Our mantra is to engage genuinely and offer value.
+            </p>
+            <p className="text-lg md:text-xl text-[#04253e] opacity-80 mb-8"> {/* max-w-xl is now on parent div */}
+              We build clever AI workflows that eliminate repetitive tasks — tailor-made
+              for solo operators and small businesses ready to scale.
+            </p>
 
-          <p className="text-lg md:text-xl text-[#04253e] opacity-80 mb-8 max-w-xl">
-            We build clever AI workflows that eliminate repetitive tasks — tailor-made
-            for solo operators and small businesses ready to scale.
-          </p>
-
-          <a
-            href="#why"
-            className="inline-block bg-[#04253e] text-[#fff0d5] px-6 py-4 text-md rounded-lg font-semibold hover:opacity-90 transition w-auto self-center text-center"
-          >
-            Learn How
-          </a>
+            {/* Button - centered within the new max-w-xl div */}
+            <div className="flex justify-center w-full"> {/* This inner div ensures the button is centered */}
+              <a
+                href="#why"
+                className="inline-block bg-[#04253e] text-[#fff0d5] px-6 py-4 text-lg rounded-lg font-semibold hover:opacity-90 transition w-auto text-center"
+                // `self-center` removed as its new parent handles centering via `flex justify-center`
+              >
+                Learn How
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Right - Animated SVG */}
