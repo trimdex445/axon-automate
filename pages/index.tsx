@@ -179,12 +179,13 @@ export default function Home() {
 
 
 
-      <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#fff0d5] overflow-hidden z-0">
+      <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-[#fff0d5] overflow-hidden z-0 min-h-screen">
         {/* SVG absolutely fills section */}
         <img
           src="/assets/illustrations/layered-waves-haikei-long-FINAL.svg"
           alt="Decorative Waves"
-          className="absolute inset-0 w-auto h-full z-0 pointer-events-none"
+          className="absolute bottom-0 left-0 w-full h-auto min-h-full z-0 pointer-events-none object-cover"
+          style={{ objectPosition: 'bottom' }}
         />
 
         {/* Content wrapper above SVG */}
