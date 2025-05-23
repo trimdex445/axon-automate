@@ -50,7 +50,7 @@ const allSolutions: Record<string, { icon: any; title: string; description: stri
 export default function SolutionsPage() {
   const [selectedIndustry, setSelectedIndustry] = useState('General');
   const [selectedCard, setSelectedCard] = useState<null | { title: string; description: string }>(null);
-  const solutions = allSolutions[selectedIndustry];
+  const solutions = allSolutions[selectedIndustry] ?? [];
 
   return (
     <Layout>
