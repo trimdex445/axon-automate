@@ -292,6 +292,7 @@ export default function Home() {
               </a>
             </div>
           </section>
+          <div className="h-32" />
         </div>
       </section>
     </Layout>
