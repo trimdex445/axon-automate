@@ -91,12 +91,14 @@ export default function SolutionsPage() {
   return (
     <Layout>
       <section className="relative py-12 px-4 bg-[#fff0d5] overflow-hidden">
-        {/* Background SVG */}
-        <img
-          src="/assets/illustrations/polygon-scatter-haikei-full.svg"
-          alt="Decorative Scatter"
-          className="absolute top-0 left-0 w-full h-full object-cover opacity-30 pointer-events-none"
-        />
+        {/* Full-width SVG background */}
+        <div className="absolute inset-0 -mx-[50vw] left-1/2 w-screen pointer-events-none z-0">
+          <img
+            src="/assets/illustrations/polygon-scatter-haikei-full.svg"
+            alt="Decorative Scatter"
+            className="w-full h-full object-cover opacity-30"
+          />
+        </div>
 
         <div className="relative z-10 max-w-6xl mx-auto text-center">
           <h1 className="text-5xl font-extrabold text-[#04253e] mb-4 tracking-tight">Types of Solutions</h1>
@@ -183,27 +185,11 @@ export default function SolutionsPage() {
         {/* Modal */}
         <Transition show={!!selectedCard} as={Fragment}>
           <Dialog onClose={() => setSelectedCard(null)} className="relative z-50">
-            <Transition.Child
-              as={Fragment}
-              enter="transition-opacity duration-200"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="transition-opacity duration-200"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
+            <Transition.Child as={Fragment} enter="transition-opacity duration-200" enterFrom="opacity-0" enterTo="opacity-100" leave="transition-opacity duration-200" leaveFrom="opacity-100" leaveTo="opacity-0">
               <div className="fixed inset-0 bg-black bg-opacity-30" />
             </Transition.Child>
             <div className="fixed inset-0 flex items-center justify-center p-4">
-              <Transition.Child
-                as={Fragment}
-                enter="transition-transform duration-200"
-                enterFrom="scale-95 opacity-0"
-                enterTo="scale-100 opacity-100"
-                leave="transition-transform duration-200"
-                leaveFrom="scale-100 opacity-100"
-                leaveTo="scale-95 opacity-0"
-              >
+              <Transition.Child as={Fragment} enter="transition-transform duration-200" enterFrom="scale-95 opacity-0" enterTo="scale-100 opacity-100" leave="transition-transform duration-200" leaveFrom="scale-100 opacity-100" leaveTo="scale-95 opacity-0">
                 <Dialog.Panel className="bg-white rounded-xl max-w-md w-full shadow-xl relative p-6">
                   <button onClick={() => setSelectedCard(null)} className="absolute top-3 right-3 text-gray-400 hover:text-gray-600">
                     <X className="w-5 h-5" />
