@@ -11,7 +11,7 @@ export default function PricingPage() {
       {/* It has the base background color, and the SVG image is overlaid with opacity. */}
       <div className="fixed inset-0 -mx-[50vw] left-1/2 w-screen pointer-events-none z-0 bg-[#fff0d5]">
         <img
-          src="/assets/illustrations/circle-scatter-haikei.svg" // Your SVG for the circles
+          src="/assets/illustrations/blob-scatter-haikei.svg" // Your SVG for the circles
           alt="Decorative Scatter"
           className="w-full h-full object-cover opacity-30" // SVG covers this div, with opacity
         />
