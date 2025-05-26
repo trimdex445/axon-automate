@@ -137,7 +137,7 @@ export default function PricingPage() {
               },
               {
                 question: "Are there monthly costs for servers, APIs, or hosting?",
-                answer: "Some automations require ongoing infrastructure (like API credits, cloud servers, or database hosting). These costs vary based on usage and are always discussed upfront. Many one-off builds can run entirely free with no monthly fees.",
+                answer: "Some automations require ongoing infrastructure (like API credits, cloud servers, or database hosting). These costs vary based on usage and are always discussed upfront. Some one-off builds can run entirely free with no monthly fees.",
               },
               {
                 question: "Do I pay before or after the automation is built?",
@@ -145,7 +145,7 @@ export default function PricingPage() {
               },
               {
                 question: "What if something breaks after delivery?",
-                answer: "Every build includes a free 1-week follow-up check-in. If anything breaks or needs tweaking, we’ll fix it at no extra cost.",
+                answer: "Every build includes a free 4-week follow-up check-in. If anything breaks or needs tweaking, we’ll fix it at no extra cost.",
               },
             ].map((faq, i) => (
               <details key={i} className="bg-white p-8 rounded-2xl shadow-sm group border border-gray-200">
