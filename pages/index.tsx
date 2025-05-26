@@ -23,7 +23,7 @@ export default function Home() {
     <Layout>
       {/* Hero */}
       <section
-        className="relative w-screen h-[calc(65vh-5rem)] flex flex-col md:flex-row items-center justify-between bg-[#fff0d5] px-6 md:px-20 pt-20"
+        className="relative w-screen h-[calc(65vh-5rem)] flex flex-col md:flex-row items-center justify-between bg-[#fff0d5] px-6 md:px-20 pt-12"
         id="hero"
       >
         {/* Left - Text (Hero Section) */}
