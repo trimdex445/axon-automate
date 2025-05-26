@@ -32,6 +32,17 @@ export default function TermsOfService() {
         <p className="mb-6">These terms are governed by the laws of New South Wales, Australia. Disputes are resolved in Sydney courts.</p>
 
         <p className="mt-12">For questions, please email <strong>info@axon-automate.com</strong>.</p>
+        <h2 className="text-2xl font-semibold mt-8 mb-4">8. Data Breaches</h2>
+        
+        <p className="mb-6">
+        In the event of a data breach involving any systems used by Axon Automate or third-party services we rely on 
+        (such as OpenAI, Firebase, Airtable, or Google), we will notify affected clients within 72 hours of becoming aware of the incident.
+        </p>
+        <p className="mb-6">
+        Axon Automate is not liable for damages arising from breaches originating from third-party platforms outside our direct control. 
+        Clients are responsible for securing access to their own platforms, connected tools, and any sensitive data stored or shared 
+        via those integrations.
+        </p>
       </div>
     </Layout>
   );
