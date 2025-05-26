@@ -120,40 +120,35 @@ export default function PricingPage() {
           <div className="space-y-6">
             {[
               {
-                question: "How long does it take to build an automation?",
-                answer: "Small automations like form-to-email or sheet syncing usually take 2–5 days. Larger builds involving APIs and multiple systems may take 1–3 weeks.",
+                question: "How long does an automation build take?",
+                answer: "Most small automations take 2–5 days. Full builds can take 1–3 weeks depending on complexity.",
               },
               {
-                question: "Which tools or platforms can you automate?",
-                answer: "We work with Google Workspace, Airtable, CRMs, databases, email tools, form builders, and most APIs — if it has data, we can automate it.",
+                question: "What tools or platforms can you automate?",
+                answer: "We can work with almost any modern tool including Google Workspace, Airtable, CRMs, databases, APIs, and form platforms.",
               },
               {
                 question: "Do you offer support after delivery?",
-                answer: "Yes. All one-off builds include 30 days of free bug fixes and follow-ups. Ongoing support is available for clients with hosting or subscription plans.",
+                answer: "Yes — every automation includes 14 days of support. Ongoing plans are available if you need regular tweaks or monitoring.",
               },
               {
-                question: "Not sure which plan I need — what should I do?",
-                answer: "No problem. Use our quote form to explain your workflow. We'll recommend the best option with no pressure or salesy upsell.",
+                question: "I’m not sure what plan I need — what should I do?",
+                answer: "Reach out through our quote form — we’ll guide you based on your business, workflows, and team needs. No pressure or obligations.",
               },
               {
-                question: "Will I have ongoing monthly costs?",
-                answer: "Only if your automation needs things like paid APIs, servers, or databases. We’ll always tell you upfront. Many builds run entirely free once delivered.",
+                question: "Are there monthly costs for servers, APIs, or hosting?",
+                answer: "Some automations require ongoing infrastructure (like API credits, cloud servers, or database hosting). These costs vary based on usage and are always discussed upfront. Many one-off builds can run entirely free with no monthly fees.",
               },
               {
-                question: "When do I pay?",
-                answer: "We usually create a working test version first. You only pay once you’re happy and ready to go live. For larger projects, we may request a 25% deposit.",
+                question: "Do I pay before or after the automation is built?",
+                answer: "We build a working test version first, and you only pay once you're happy with the results. No hidden surprises — just transparency and confidence.",
               },
               {
-                question: "What if something breaks after launch?",
-                answer: "We check in after 1 week and offer free fixes within the 30-day post-delivery period. We’re here to make sure it runs smoothly.",
+                question: "What if something breaks after delivery?",
+                answer: "Every build includes a free 1-week follow-up check-in. If anything breaks or needs tweaking, we’ll fix it at no extra cost.",
               },
             ].map((faq, i) => (
-              <details
-                key={i}
-                className={`p-8 rounded-2xl shadow-sm border transition-all ${
-                  i % 2 === 0 ? 'bg-white border-gray-200' : 'bg-[#fefae0] border-yellow-200'
-                } group`}
-              >
+              <details key={i} className="bg-white p-8 rounded-2xl shadow-sm group border border-gray-200">
                 <summary className="cursor-pointer text-lg font-medium text-[#04253e] flex justify-between items-center">
                   <span>{faq.question}</span>
                   <span className="text-xl transform group-open:rotate-180 transition-transform">⌄</span>
