@@ -3,27 +3,56 @@ import { Check, X, Crown, Sparkles, Settings } from 'lucide-react';
 import Link from 'next/link';
 
 export default function PricingPage() {
+  const features = [
+    { label: 'Single input → single output', tiers: ['Simple', 'EndToEnd', 'Redesign'] },
+    { label: 'Form-to-email / sheet syncs', tiers: ['Simple', 'EndToEnd', 'Redesign'] },
+    { label: 'Triggered follow-ups', tiers: ['Simple', 'EndToEnd', 'Redesign'] },
+    { label: 'Basic data formatting', tiers: ['Simple', 'EndToEnd', 'Redesign'] },
+    { label: 'API integrations', tiers: ['EndToEnd', 'Redesign'] },
+    { label: 'OAuth flows', tiers: ['EndToEnd', 'Redesign'] },
+    { label: 'Strategy consultation', tiers: ['Redesign'] },
+    { label: 'Multi-system integrations', tiers: ['EndToEnd', 'Redesign'] },
+    { label: 'OAuth logins / DB syncing', tiers: ['EndToEnd', 'Redesign'] },
+    { label: 'Email parsing / routing', tiers: ['EndToEnd', 'Redesign'] },
+    { label: 'Embedded dashboards', tiers: ['EndToEnd', 'Redesign'] },
+    { label: 'Multi-step pipelines', tiers: ['EndToEnd', 'Redesign'] },
+    { label: 'Business architecture redesign', tiers: ['Redesign'] },
+    { label: 'Long-term advisory', tiers: ['Redesign'] },
+    { label: 'Automation consulting', tiers: ['Redesign'] },
+    { label: 'DB design & normalisation', tiers: ['Redesign'] },
+    { label: 'Visibility audit & strategy', tiers: ['Redesign'] },
+    { label: 'Optimisation roadmap', tiers: ['Redesign'] },
+    { label: 'Digital stack rebuild', tiers: ['Redesign'] },
+    { label: 'Custom APIs / backend', tiers: ['Redesign'] },
+    { label: 'Ongoing support & training', tiers: ['Redesign'] },
+  ];
+
+  const renderFeatureList = (tier: string) => (
+    <ul className="text-sm text-gray-700 space-y-2 text-left">
+      {features.map(({ label, tiers }, idx) => {
+        const included = tiers.includes(tier);
+        const Icon = included ? Check : X;
+        const iconClass = included ? 'text-green-500' : 'text-red-500';
+        return (
+          <li key={idx} className="flex items-center">
+            <Icon className={`${iconClass} mr-2`} /> {label}
+          </li>
+        );
+      })}
+    </ul>
+  );
+
   return (
     <Layout>
-      {/* highlighter-start */}
-      {/* Fixed Full-Viewport SVG Background for this page */}
-      {/* This div is now fixed to the viewport, acts as the furthest back layer (z-0) */}
-      {/* It has the base background color, and the SVG image is overlaid with opacity. */}
       <div className="fixed inset-0 -mx-[50vw] left-1/2 w-screen pointer-events-none z-0 bg-[#fff0d5]">
         <img
-          src="/assets/illustrations/blurry-gradient-haikei.svg" // Your SVG for the circles
+          src="/assets/illustrations/blurry-gradient-haikei.svg"
           alt="Decorative Scatter"
-          className="w-full h-full object-cover opacity-30" // SVG covers this div, with opacity
+          className="w-full h-full object-cover opacity-30"
         />
       </div>
-      {/* highlighter-end */}
 
-      {/* Main content section for the pricing page */}
-      {/* It needs `position: relative` and `z-index > 0` (e.g., z-10) to sit on top of the fixed background. */}
-      {/* The original bg-[#fff0d5] is removed from here as it's now part of the fixed background div above. */}
-      {/* highlighter-start */}
-      <section className="relative z-10 py-12 px-4"> {/* Added relative and z-10 */}
-      {/* highlighter-end */}
+      <section className="relative z-10 py-12 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-5xl font-extrabold text-[#04253e] mb-4 tracking-tight">Pricing Options</h2>
           <p className="text-lg text-[#04253e] max-w-2xl mx-auto font-medium mb-12">
@@ -40,15 +69,7 @@ export default function PricingPage() {
                 </div>
                 <div className="text-2xl font-bold text-[#04253e] mb-1">NZD $150–$300</div>
                 <div className="text-sm text-gray-500 mb-6">One-off mini automations</div>
-                <ul className="text-sm text-gray-700 space-y-2 text-left">
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> Single input → single output</li>
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> Form-to-email / sheet syncs</li>
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> Triggered follow-ups</li>
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> Basic data formatting</li>
-                  <li className="flex items-center"><X className="text-red-500 mr-2" /> API integrations</li>
-                  <li className="flex items-center"><X className="text-red-500 mr-2" /> OAuth flows</li>
-                  <li className="flex items-center"><X className="text-red-500 mr-2" /> Strategy consultation</li>
-                </ul>
+                {renderFeatureList('Simple')}
               </div>
               <Link href="/contact" legacyBehavior>
                 <a className="block mt-6 bg-[#04253e] text-white text-center py-2 px-4 rounded-md hover:bg-[#021722] transition-all w-full">
@@ -69,15 +90,7 @@ export default function PricingPage() {
                 </div>
                 <div className="text-2xl font-bold text-[#04253e] mb-1">NZD $1,000–$5,000</div>
                 <div className="text-sm text-gray-500 mb-6">Multi-system & logic-rich workflows</div>
-                <ul className="text-sm text-gray-700 space-y-2 text-left">
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> Multi-system integrations</li>
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> OAuth logins / DB syncing</li>
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> Email parsing / routing</li>
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> Embedded dashboards</li>
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> Multi-step pipelines</li>
-                  <li className="flex items-center"><X className="text-red-500 mr-2" /> Business architecture redesign</li>
-                  <li className="flex items-center"><X className="text-red-500 mr-2" /> Long-term advisory</li>
-                </ul>
+                {renderFeatureList('EndToEnd')}
               </div>
               <Link href="/contact" legacyBehavior>
                 <a className="block mt-6 bg-[#04253e] text-white text-center py-2 px-4 rounded-md hover:bg-[#021722] transition-all w-full">
@@ -95,15 +108,7 @@ export default function PricingPage() {
                 </div>
                 <div className="text-lg font-bold text-[#04253e] mb-1">Contact for Pricing</div>
                 <div className="text-sm text-gray-500 mb-6">Full rebuild & strategy-led delivery</div>
-                <ul className="text-sm text-gray-700 space-y-2 text-left">
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> Automation consulting</li>
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> DB design & normalisation</li>
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> Visibility audit & strategy</li>
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> Optimisation roadmap</li>
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> Digital stack rebuild</li>
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> Custom APIs / backend</li>
-                  <li className="flex items-center"><Check className="text-green-500 mr-2" /> Ongoing support & training</li>
-                </ul>
+                {renderFeatureList('Redesign')}
               </div>
               <Link href="/contact" legacyBehavior>
                 <a className="block mt-6 bg-yellow-500 text-black text-center py-2 px-4 rounded-md hover:bg-yellow-600 transition-all w-full">
@@ -111,51 +116,6 @@ export default function PricingPage() {
                 </a>
               </Link>
             </div>
-          </div>
-        </div>
-
-        {/* FAQ Section */}
-        <div className="max-w-4xl mx-auto mt-24 px-4">
-          <h3 className="text-3xl font-bold text-center text-[#04253e] mb-8">Frequently Asked Questions</h3>
-          <div className="space-y-6">
-            {[
-              {
-                question: "How long does an automation build take?",
-                answer: "Most small automations take 2–5 days. Full builds can take 1–3 weeks depending on complexity.",
-              },
-              {
-                question: "What tools or platforms can you automate?",
-                answer: "We can work with almost any modern tool including Google Workspace, Airtable, CRMs, databases, APIs, and form platforms.",
-              },
-              {
-                question: "Do you offer support after delivery?",
-                answer: "Yes — every automation includes 14 days of support. Ongoing plans are available if you need regular tweaks or monitoring.",
-              },
-              {
-                question: "I’m not sure what plan I need — what should I do?",
-                answer: "Reach out through our quote form — we’ll guide you based on your business, workflows, and team needs. No pressure or obligations.",
-              },
-              {
-                question: "Are there monthly costs for servers, APIs, or hosting?",
-                answer: "Some automations require ongoing infrastructure (like API credits, cloud servers, or database hosting). These costs vary based on usage and are always discussed upfront. Some one-off builds can run entirely free with no monthly fees.",
-              },
-              {
-                question: "Do I pay before or after the automation is built?",
-                answer: "We build a working test version first, and you only pay once you're happy with the results. No hidden surprises — just transparency and confidence.",
-              },
-              {
-                question: "What if something breaks after delivery?",
-                answer: "Every build includes a free 4-week follow-up check-in. If anything breaks or needs tweaking, we’ll fix it at no extra cost.",
-              },
-            ].map((faq, i) => (
-              <details key={i} className="bg-white p-8 rounded-2xl shadow-sm group border border-gray-200">
-                <summary className="cursor-pointer text-lg font-medium text-[#04253e] flex justify-between items-center">
-                  <span>{faq.question}</span>
-                  <span className="text-xl transform group-open:rotate-180 transition-transform">⌄</span>
-                </summary>
-                <p className="mt-3 text-sm text-gray-600">{faq.answer}</p>
-              </details>
-            ))}
           </div>
         </div>
       </section>
