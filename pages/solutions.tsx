@@ -79,14 +79,13 @@ export default function SolutionsPage() {
 
   return (
     <Layout>
-      <section className="relative py-12 px-4 bg-[#fff0d5] overflow-hidden">
-        <div className="absolute inset-0 w-full pointer-events-none z-0">
-          <img
-            src="/assets/illustrations/polygon-scatter-haikei-full.svg"
-            alt="Decorative Scatter"
-            className="w-full h-full object-cover opacity-30"
-          />
-        </div>
+      <section className="relative py-12 px-0 bg-[#fff0d5] overflow-hidden w-full">
+        {/* Full-width SVG background */}
+        <img
+          src="/assets/illustrations/polygon-scatter-haikei-full.svg"
+          alt="Decorative Scatter"
+          className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
+        />
 
         <div className="relative z-10 max-w-6xl mx-auto text-center">
           <h1 className="text-5xl font-extrabold text-[#04253e] mb-4 tracking-tight">Types of Solutions</h1>
