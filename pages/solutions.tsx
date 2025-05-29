@@ -92,7 +92,7 @@ export default function SolutionsPage() {
     <Layout>
       <section className="relative py-12 px-4 bg-[#fff0d5] overflow-hidden">
         {/* Full-width SVG background */}
-        <div className="absolute inset-0 -mx-[50vw] left-1/2 w-screen pointer-events-none z-0">
+        <div className="absolute inset-0 w-full pointer-events-none z-0">
           <img
             src="/assets/illustrations/polygon-scatter-haikei-full.svg"
             alt="Decorative Scatter"
