@@ -2,10 +2,22 @@ import Layout from '@/components/Layout';
 import { Check, X, Crown, Sparkles, Settings } from 'lucide-react';
 import Link from 'next/link';
 
+const features = [
+  { label: 'Single input → single output', tiers: ['simple', 'endtoend', 'redesign'] },
+  { label: 'Form-to-email / sheet syncs', tiers: ['simple', 'endtoend', 'redesign'] },
+  { label: 'Triggered follow-ups', tiers: ['simple', 'endtoend', 'redesign'] },
+  { label: 'Basic data formatting', tiers: ['simple', 'endtoend', 'redesign'] },
+  { label: 'Multi-system integrations', tiers: ['endtoend', 'redesign'] },
+  { label: 'OAuth logins / DB syncing', tiers: ['endtoend', 'redesign'] },
+  { label: 'Email parsing / routing', tiers: ['endtoend', 'redesign'] },
+  { label: 'Embedded dashboards', tiers: ['endtoend', 'redesign'] },
+  { label: 'Automation consulting', tiers: ['redesign'] },
+  { label: 'Custom APIs / backend', tiers: ['redesign'] },
+];
+
 export default function PricingPage() {
   return (
     <Layout>
-      {/* Fixed background SVG */}
       <div className="fixed inset-0 -mx-[50vw] left-1/2 w-screen pointer-events-none z-0 bg-[#fff0d5]">
         <img
           src="/assets/illustrations/blurry-gradient-haikei.svg"
@@ -23,7 +35,7 @@ export default function PricingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Simple Automations */}
-            <div className="relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm flex flex-col justify-between hover:scale-[1.03] transition-transform duration-300">
+            <div className="relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm flex flex-col justify-between transition-transform duration-300 ease-in-out hover:scale-[1.03]">
               <div>
                 <div className="text-xs uppercase tracking-widest text-gray-500 mb-2 flex justify-center items-center">
                   <Sparkles className="w-4 h-4 mr-2" />
@@ -32,15 +44,16 @@ export default function PricingPage() {
                 <div className="text-2xl font-bold text-[#04253e] mb-1">NZD $150–$300</div>
                 <div className="text-sm text-gray-500 mb-6">One-off mini automations</div>
                 <ul className="text-sm text-gray-700 space-y-2 text-left">
-                  <li><Check className="text-green-500 inline mr-2" /> Single input → single output</li>
-                  <li><Check className="text-green-500 inline mr-2" /> Form-to-email / sheet syncs</li>
-                  <li><Check className="text-green-500 inline mr-2" /> Triggered follow-ups</li>
-                  <li><Check className="text-green-500 inline mr-2" /> Basic data formatting</li>
-                  <li><X className="text-red-500 inline mr-2" /> API integrations</li>
-                  <li><X className="text-red-500 inline mr-2" /> OAuth flows</li>
-                  <li><X className="text-red-500 inline mr-2" /> Strategy consultation</li>
-                  <li><X className="text-red-500 inline mr-2" /> Multi-system integrations</li>
-                  <li><X className="text-red-500 inline mr-2" /> Embedded dashboards</li>
+                  {features.map((f, i) => (
+                    <li key={i} className="flex items-center">
+                      {f.tiers.includes('simple') ? (
+                        <Check className="text-green-500 mr-2" />
+                      ) : (
+                        <X className="text-red-500 mr-2" />
+                      )}
+                      {f.label}
+                    </li>
+                  ))}
                 </ul>
               </div>
               <Link href="/contact" legacyBehavior>
@@ -51,7 +64,7 @@ export default function PricingPage() {
             </div>
 
             {/* End-to-End Automations */}
-            <div className="relative bg-white border-2 border-[#04253e] rounded-2xl p-8 shadow-lg flex flex-col justify-between hover:scale-[1.03] transition-transform duration-300">
+            <div className="relative bg-white border-2 border-[#04253e] rounded-2xl p-8 shadow-lg flex flex-col justify-between transition-transform duration-300 ease-in-out hover:scale-[1.03]">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#04253e] text-white text-xs px-3 py-1 rounded-full uppercase tracking-wide font-semibold">
                 Most popular
               </div>
@@ -63,14 +76,16 @@ export default function PricingPage() {
                 <div className="text-2xl font-bold text-[#04253e] mb-1">NZD $1,000–$5,000</div>
                 <div className="text-sm text-gray-500 mb-6">Multi-system & logic-rich workflows</div>
                 <ul className="text-sm text-gray-700 space-y-2 text-left">
-                  <li><Check className="text-green-500 inline mr-2" /> Single input → single output</li>
-                  <li><Check className="text-green-500 inline mr-2" /> Triggered follow-ups</li>
-                  <li><Check className="text-green-500 inline mr-2" /> API integrations</li>
-                  <li><Check className="text-green-500 inline mr-2" /> OAuth flows</li>
-                  <li><Check className="text-green-500 inline mr-2" /> Multi-system integrations</li>
-                  <li><Check className="text-green-500 inline mr-2" /> Embedded dashboards</li>
-                  <li><X className="text-red-500 inline mr-2" /> Strategy consultation</li>
-                  <li><X className="text-red-500 inline mr-2" /> Digital stack rebuild</li>
+                  {features.map((f, i) => (
+                    <li key={i} className="flex items-center">
+                      {f.tiers.includes('endtoend') ? (
+                        <Check className="text-green-500 mr-2" />
+                      ) : (
+                        <X className="text-red-500 mr-2" />
+                      )}
+                      {f.label}
+                    </li>
+                  ))}
                 </ul>
               </div>
               <Link href="/contact" legacyBehavior>
@@ -81,7 +96,7 @@ export default function PricingPage() {
             </div>
 
             {/* Business Systems Redesign */}
-            <div className="relative bg-white border border-yellow-400 rounded-2xl p-8 shadow-md flex flex-col justify-between hover:scale-[1.03] transition-transform duration-300">
+            <div className="relative bg-white border border-yellow-400 rounded-2xl p-8 shadow-md flex flex-col justify-between transition-transform duration-300 ease-in-out hover:scale-[1.03]">
               <div>
                 <div className="text-xs uppercase tracking-widest text-yellow-600 mb-2 flex justify-center items-center font-semibold">
                   <Crown className="w-4 h-4 mr-2" />
@@ -90,12 +105,16 @@ export default function PricingPage() {
                 <div className="text-lg font-bold text-[#04253e] mb-1">Contact for Pricing</div>
                 <div className="text-sm text-gray-500 mb-6">Full rebuild & strategy-led delivery</div>
                 <ul className="text-sm text-gray-700 space-y-2 text-left">
-                  <li><Check className="text-green-500 inline mr-2" /> API integrations</li>
-                  <li><Check className="text-green-500 inline mr-2" /> OAuth flows</li>
-                  <li><Check className="text-green-500 inline mr-2" /> Strategy consultation</li>
-                  <li><Check className="text-green-500 inline mr-2" /> Multi-system integrations</li>
-                  <li><Check className="text-green-500 inline mr-2" /> Embedded dashboards</li>
-                  <li><Check className="text-green-500 inline mr-2" /> Digital stack rebuild</li>
+                  {features.map((f, i) => (
+                    <li key={i} className="flex items-center">
+                      {f.tiers.includes('redesign') ? (
+                        <Check className="text-green-500 mr-2" />
+                      ) : (
+                        <X className="text-red-500 mr-2" />
+                      )}
+                      {f.label}
+                    </li>
+                  ))}
                 </ul>
               </div>
               <Link href="/contact" legacyBehavior>
@@ -106,6 +125,7 @@ export default function PricingPage() {
             </div>
           </div>
         </div>
+
         {/* FAQ Section */}
         <div className="max-w-4xl mx-auto mt-24 px-4">
           <h3 className="text-3xl font-bold text-center text-[#04253e] mb-8">Frequently Asked Questions</h3>
@@ -129,7 +149,7 @@ export default function PricingPage() {
               },
               {
                 question: "Are there monthly costs for servers, APIs, or hosting?",
-                answer: "Some automations require ongoing infrastructure (like API credits, cloud servers, or database hosting). These costs vary based on usage and are always discussed upfront. Many one-off builds can run entirely free with no monthly fees.",
+                answer: "Some automations require ongoing infrastructure (like API credits, cloud servers, or database hosting). These costs vary based on usage and are always discussed upfront. Some one-off builds can run entirely free with no monthly fees.",
               },
               {
                 question: "Do I pay before or after the automation is built?",
