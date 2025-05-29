@@ -35,54 +35,43 @@ const industryTabs = [
 
 const allSolutions: Record<string, { icon: any; title: string; description: string; tag?: string }[]> = {
   General: [
-    { icon: CalendarClock, title: 'Smart Job Dispatching', description: 'Automatically assign jobs based on staff availability or location. Send notifications to staff and update Sheets instantly.', tag: 'Core Flow' },
-    { icon: ClipboardList, title: 'Form-to-System Sync', description: 'Turn form submissions into CRM entries, invoices, or bookings with no manual data entry.', tag: 'Form Automation' },
-    { icon: FileText, title: 'Live Quote Generators', description: 'Clients enter job info → we generate and email them an estimate instantly based on your pricing logic.', tag: 'Popular' },
-    { icon: MailCheck, title: 'Email Sorting & Response Bots', description: 'Automatically tag, archive, or reply to inbound emails based on intent and client status.', tag: 'AI-Enhanced' },
-    { icon: UsersRound, title: 'Lead Capture & Pipeline Sync', description: 'Auto-save leads from your site, tag them by type, and track status in your CRM or Sheets.', tag: 'CRM Flow' },
-    { icon: Settings2, title: 'Tool-to-Tool Integrations', description: 'Connect platforms that don’t normally sync — Airtable → Xero, Gmail → Notion, or Calendly → Sheets.', tag: 'Systems Sync' },
+    { icon: MailCheck, title: 'Inbox Manager', description: 'Auto-classify and reply to common emails' },
+    { icon: FileText, title: 'Form Filler', description: 'Auto-fill PDFs and upload to client folders' },
+    { icon: CalendarClock, title: 'Auto Booking', description: 'Book meetings when someone fills a form' },
+    { icon: ClipboardList, title: 'Client Tracker', description: 'Update status and send reminders' },
   ],
   'Health & Wellness': [
-    { icon: UsersRound, title: 'New Client Onboarding', description: 'Collect new client info via forms, store it securely, and trigger onboarding emails automatically.', tag: 'Welcome Flow' },
-    { icon: CalendarClock, title: 'Class Reminder Notifications', description: 'Send SMS or email reminders to clients about upcoming appointments or classes automatically.', tag: 'SMS Sync' },
-    { icon: FileText, title: 'Payment Tracking + Receipts', description: 'Track payments and auto-send professional PDF receipts without lifting a finger.', tag: 'Billing' },
-    { icon: AlertCircle, title: 'Late Cancellation Responses', description: 'Automatically follow up with late/no-shows using templated email flows and penalty logic.', tag: 'Retention' },
-    { icon: ClipboardList, title: 'Client History Sync', description: 'Log key notes across systems to keep all client records up to date.', tag: 'Health Logs' },
-    { icon: Bot, title: 'Wellness Package Builders', description: 'Let clients build their own plan and receive auto-invoicing, reminders, and scheduling.', tag: 'Custom Plans' },
+    { icon: UsersRound, title: 'Client Onboarding', description: 'Auto-send intro material and book first consult' },
+    { icon: MailCheck, title: 'Reminder System', description: 'Send email or SMS reminders for appointments' },
+    { icon: Activity, title: 'Progress Tracker', description: 'Log client progress and auto-update dashboards' },
+    { icon: FileText, title: 'Form Automation', description: 'Fill in SOAP notes and store with date/tag' },
   ],
   'Legal & Finance': [
-    { icon: FileText, title: 'Auto-Fill Contracts', description: 'Generate pre-filled contracts or letters from structured forms and send for signature.', tag: 'Document Flow' },
-    { icon: ClipboardList, title: 'Case File Task Tracking', description: 'Trigger task lists for each new case or project and assign automatically.', tag: 'Workflow' },
-    { icon: Activity, title: 'Weekly Client Updates', description: 'Send automated weekly status reports to clients summarising progress and updates.', tag: 'Reporting' },
-    { icon: MailCheck, title: 'Email Filing System', description: 'Sort and archive emails into client folders automatically based on content and tags.', tag: 'Inbox Sync' },
-    { icon: CalendarClock, title: 'Hearing & Deadline Reminders', description: 'Sync court hearing dates or deadlines to shared calendars and send countdown reminders.', tag: 'Deadlines' },
-    { icon: Bot, title: 'Compliance Automations', description: 'Trigger compliance checklists or alerts based on matter type or client data.', tag: 'Alerts' },
+    { icon: FileText, title: 'Doc Generator', description: 'Create contracts from templates and e-sign' },
+    { icon: Settings2, title: 'Client Portal', description: 'Auto-create Airtable record and Notion page per client' },
+    { icon: MailCheck, title: 'Follow-Up Bot', description: 'Email clients with missing info or expired docs' },
+    { icon: ClipboardList, title: 'Task Reporter', description: 'Log tasks completed for compliance' },
   ],
   Hospitality: [
-    { icon: CalendarClock, title: 'Shift Scheduling Automation', description: 'Staff submit availability and get their schedules automatically via text/email.', tag: 'Staff Flow' },
-    { icon: MailCheck, title: 'Booking Confirmation Flows', description: 'Auto-reply to online reservations with confirmation, links, and calendar invites.', tag: 'Booking Bot' },
-    { icon: ShoppingCart, title: 'Inventory + Supplier Ordering', description: 'Monitor inventory levels and automatically reorder regular supplies when low.', tag: 'Stock Sync' },
-    { icon: UsersRound, title: 'Staff Onboarding Bot', description: 'New hires receive documents, links, and checklist automatically.', tag: 'Team Setup' },
-    { icon: Bot, title: 'Review Requests', description: 'Guests receive a review follow-up email after dining or staying at your venue.', tag: 'Feedback' },
-    { icon: FileText, title: 'Menu & Pricing Syncs', description: 'Update a Google Sheet to instantly refresh all menus/POS pricing displays.', tag: 'POS Sync' },
+    { icon: CalendarClock, title: 'Roster Bot', description: 'Auto-suggest rosters from availability sheets' },
+    { icon: AlertCircle, title: 'Incident Logger', description: 'Staff log issues which are categorised for review' },
+    { icon: ClipboardList, title: 'Inventory Tracker', description: 'Track stock levels and reorder automatically' },
+    { icon: FileText, title: 'Staff Onboarder', description: 'Auto-send forms, guides, and training videos' },
   ],
   Ecommerce: [
-    { icon: ShoppingCart, title: 'Order to Invoice + Shipping', description: 'Auto-generate and send invoice, packing slip and shipping instructions for each order.', tag: 'Logistics' },
-    { icon: AlertCircle, title: 'Abandoned Cart Bot', description: 'Send reminders for incomplete carts with time-sensitive offers or prompts.', tag: 'Recovery' },
-    { icon: Activity, title: 'Daily Sales Reports', description: 'Get a daily email summary of your orders, revenue and top-selling items.', tag: 'Reports' },
-    { icon: Settings2, title: 'System Sync Flows', description: 'Push data from your storefront → Airtable, Notion, QuickBooks, or Sheets.', tag: 'Data Flow' },
-    { icon: ClipboardList, title: 'Product Review Requests', description: 'Automatically follow up with recent buyers to collect product reviews.', tag: 'Social Proof' },
-    { icon: Bot, title: 'Customer Support Automations', description: 'Pre-scan inbound messages and route to team or auto-respond based on patterns.', tag: 'Support Bot' },
+    { icon: ShoppingCart, title: 'Abandoned Cart Bot', description: 'Follow up with offers to complete checkout' },
+    { icon: MailCheck, title: 'Return Handler', description: 'Auto-respond to return/refund emails' },
+    { icon: ClipboardList, title: 'Supplier Sync', description: 'Sync new inventory across Notion + Shopify' },
+    { icon: BarChart3, title: 'Sales Tracker', description: 'Live dashboard showing sales + SKU performance' },
   ],
   'Creative Agencies': [
-    { icon: ClipboardList, title: 'Intake to Brief Generator', description: 'Turn client intake into a structured brief, notify your team, and create a new folder.', tag: 'Core Flow' },
-    { icon: CheckSquare, title: 'Approval Chains', description: 'Route assets through client/team approval stages automatically.', tag: 'Collab' },
-    { icon: MailCheck, title: 'Client Comms Scheduler', description: 'Ensure clients get an email every X days with progress or updates, even if nothing moved.', tag: 'Client Ready' },
-    { icon: Bot, title: 'Feedback Tracker', description: 'When a revision is received, trigger a follow-up task and mark the original as updated.', tag: 'Smart Task' },
-    { icon: FileText, title: 'Auto-Invoice per Milestone', description: 'Send an invoice when key project phases are reached or signed off.', tag: 'Auto Billing' },
-    { icon: CalendarClock, title: 'Weekly Content Calendar Sync', description: 'Auto-push campaign deadlines or content calendars to everyone’s Google Cal.', tag: 'Schedule Sync' },
+    { icon: Sparkles, title: 'Proposal Builder', description: 'Generate visual client proposals from form data' },
+    { icon: CalendarClock, title: 'Booking Bot', description: 'Schedule shoots with reminders + briefs' },
+    { icon: Plug, title: 'Multi-Tool Sync', description: 'Sync tasks, messages, and files across apps' },
+    { icon: Bot, title: 'Client AI Assistant', description: 'Answer client FAQs using past project data' },
   ],
 };
+
 export default function SolutionsPage() {
   const [selectedIndustry, setSelectedIndustry] = useState('General');
   const [selectedCard, setSelectedCard] = useState<null | { title: string; description: string }>(null);
@@ -91,7 +80,6 @@ export default function SolutionsPage() {
   return (
     <Layout>
       <section className="relative py-12 px-4 bg-[#fff0d5] overflow-hidden">
-        {/* Full-width SVG background */}
         <div className="absolute inset-0 w-full pointer-events-none z-0">
           <img
             src="/assets/illustrations/polygon-scatter-haikei-full.svg"
@@ -194,12 +182,8 @@ export default function SolutionsPage() {
                   <button onClick={() => setSelectedCard(null)} className="absolute top-3 right-3 text-gray-400 hover:text-gray-600">
                     <X className="w-5 h-5" />
                   </button>
-                  <Dialog.Title className="text-xl font-semibold text-[#04253e] mb-2">
-                    {selectedCard?.title}
-                  </Dialog.Title>
-                  <Dialog.Description className="text-sm text-gray-700">
-                    {selectedCard?.description}
-                  </Dialog.Description>
+                  <Dialog.Title className="text-xl font-semibold text-[#04253e] mb-2">{selectedCard?.title}</Dialog.Title>
+                  <Dialog.Description className="text-sm text-gray-700">{selectedCard?.description}</Dialog.Description>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
