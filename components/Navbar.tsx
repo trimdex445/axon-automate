@@ -3,13 +3,13 @@ import Image from 'next/image'
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 bg-[#04253e] text-[#fff0d5] border-b border-[#1f2d3d] backdrop-blur-md shadow-md h-20">
+    <nav className="sticky top-0 z-50 bg-[#0b223d] text-[#fff0d5] border-b border-[#1f2d3d] backdrop-blur-md shadow-md h-20">
       <div className="max-w-7xl mx-auto px-6 md:px-16 flex justify-between items-center h-full">
         {/* Logo + Brand */}
         <Link href="/" className="flex items-center gap-3 h-full">
           <div className="relative h-full aspect-square">
             <Image
-              src="/assets/bg/axonicon.png"
+              src="/assets/Logo/logo.webp"
               alt="Axon Icon"
               fill
               className="object-contain invert"
