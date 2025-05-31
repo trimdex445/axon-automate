@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <Head>
         <title>Axon Automate</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/assets/Logo/logo.png" type="image/webp" />
+        <link rel="icon" href="/assets/Logo/mini-logo.png" type="image/webp" />
       </Head>
       {/* This div correctly structures the page for a sticky footer if content is short */}
       <div className="min-h-screen bg-axon-background text-axon-text flex flex-col">
