@@ -19,7 +19,7 @@ export default function IndustriesSection() {
             Industries We Automate
           </h2>
           <p className="text-center text-lg text-[#04253e]/80 mb-16 max-w-2xl mx-auto">
-            From lawn care to law firms — if your business has a repeatable process, we can probably automate it. Here's a taste:
+            From lawn care to law firms, if your business has a repeatable process we can automate it.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -50,14 +50,14 @@ export default function IndustriesSection() {
             }, {
               icon: <ShoppingCart className="w-6 h-6 text-[#04253e]" />, title: "Ecommerce", items: [
                 "Order → invoice → delivery chain",
-                "Abandoned cart follow-ups",
+                "End to end inventory tracking system",
                 "Daily revenue tracking"
               ]
             }, {
               icon: <Brush className="w-6 h-6 text-[#04253e]" />, title: "Creative Agencies", items: [
                 "Intake form → project brief creation",
                 "Approval workflows for drafts",
-                "Client status reports auto-generated"
+                "Auto generate client status reports"
               ]
             }].map(({ icon, title, items }, idx) => (
               <div

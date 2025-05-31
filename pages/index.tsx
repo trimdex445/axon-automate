@@ -116,7 +116,7 @@ export default function Home() {
                 Seamless Integration
               </h3>
               <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
-                Google Drive, Airtable, Xero, Slack, AI integrations and more all in one product.
+                Google Drive, Airtable, Xero, Slack, AI integrations all in one product.
               </p>
             </div>
 
