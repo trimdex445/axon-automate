@@ -65,7 +65,7 @@ export default function QuotePage() {
           <div className="bg-white rounded-xl shadow-lg p-8 w-full">
             {!submitted ? (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <h3 className="text-xl font-bold text-[#04253e] mb-2">Quick Quote Request</h3>
+                <h3 className="text-xl font-bold text-[#04253e] mb-2">Chat with us</h3>
 
                 <div>
                   <label className="block text-sm font-medium text-[#04253e] mb-1">Name</label>
