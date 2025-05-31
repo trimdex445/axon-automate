@@ -12,7 +12,7 @@ export default function Navbar() {
               src="/assets/Logo/logo.webp"
               alt="Axon Icon"
               fill
-              className="object-contain invert"
+              className="object-contain"
             />
           </div>
           <span className="font-bold tracking-tight text-2xl md:text-3xl">
