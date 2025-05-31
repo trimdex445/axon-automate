@@ -88,19 +88,19 @@ export default function SolutionsPage() {
         />
 
         <div className="relative z-10 max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl font-extrabold text-[#04253e] mb-4 tracking-tight">Types of Solutions</h1>
+          <h1 className="text-5xl font-extrabold text-[#04253e] mb-4 tracking-tight">Our Tools</h1>
           <p className="text-lg text-[#04253e] max-w-2xl mx-auto font-medium mb-12">
-            We design solutions that combine AI agents, custom workflows, dashboards, and app integrations.
+            We design solutions that combine AI agents, custom workflows, dashboards, and a plethora of app integrations.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-20">
             {[
-              { icon: Brain, title: 'Agents', description: 'AI bots that reply, sort messages, and act on logic or data' },
-              { icon: Repeat, title: 'Workflows', description: 'Step-by-step task automations triggered by events or forms' },
+              { icon: Brain, title: 'Agents', description: 'AI bots that can reply, sort messages, and act on premade logic or data to suit your needs' },
+              { icon: Repeat, title: 'Workflows', description: 'Step-by-step task automations triggered by events or new data' },
               { icon: Send, title: 'Automations', description: 'Trigger emails, texts, or status updates automatically' },
               { icon: Plug, title: 'Integrations', description: 'Connect tools like Airtable, Gmail, Xero, Notion, and more' },
               { icon: BarChart3, title: 'Dashboards', description: 'Auto-generated reports and real-time views of key metrics' },
-              { icon: Sparkles, title: 'AI Tools', description: 'Use GPT to classify, summarise, and auto-reply based on input' },
+              { icon: Sparkles, title: 'AI Tools', description: 'Use LLMs to classify, summarise, and auto-reply based on your use case' },
             ].map(({ icon: Icon, title, description }, idx) => (
               <motion.div
                 key={idx}
@@ -119,9 +119,9 @@ export default function SolutionsPage() {
             ))}
           </div>
 
-          <h2 className="text-4xl font-extrabold text-[#04253e] mb-6">By Industry Use Case</h2>
+          <h2 className="text-4xl font-extrabold text-[#04253e] mb-6">Industry Use Cases</h2>
           <p className="text-[#04253e] text-md font-medium mb-10">
-            Explore common automations we've built across industries — or use them as a starting point.
+            Explore common automations across industries — or use them as a starting point to design your own.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-8">
