@@ -29,8 +29,8 @@ export default function Home() {
         {/* Left - Text (Hero Section) */}
         <div className="z-10 w-full md:w-1/2 flex flex-col justify-center h-full">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-[#04253e] tracking-tight">
-            <span className="text-[#04253e]">Automate</span><br />
-            So you can spend more time doing what<span className="text-[#fbbf24]">matters</span>.
+            <span className="text-[#04253e]">Automate</span><span className="text-[#fbbf24]">.</span><br />
+            So you can spend more time doing what <span className="text-[#fbbf24]">matters</span>.
           </h1>
 
           {/* NEW: Wrapper for the text block and button */}
@@ -99,7 +99,7 @@ export default function Home() {
                 Automate Real Work
               </h3>
               <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
-                We streamline actual tasks — not just alerts. From dispatching to auto-replies.
+                We streamline actual tasks. From dispatching to auto-replies and beyond.
               </p>
             </div>
 
@@ -116,7 +116,7 @@ export default function Home() {
                 Seamless Integration
               </h3>
               <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
-                Gmail, Airtable, Xero, Notion and more — connected and working together.
+                Google Drive, Airtable, Xero, Slack, AI integrations and more all in one product.
               </p>
             </div>
 
@@ -130,10 +130,10 @@ export default function Home() {
                 />
               </div>
               <h3 className="text-2xl font-semibold mb-3 text-[#4472f3]">
-                Human + AI Harmony
+                Limitless Scalability
               </h3>
               <p className="text-base text-[#04253e] opacity-80 leading-relaxed max-w-sm mx-auto">
-                We blend automation with human workflows — so nothing gets lost in translation.
+                Your work dictates the scale of automation, adjustable on your terms.
               </p>
             </div>
           </div>
