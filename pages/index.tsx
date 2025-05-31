@@ -29,8 +29,8 @@ export default function Home() {
         {/* Left - Text (Hero Section) */}
         <div className="z-10 w-full md:w-1/2 flex flex-col justify-center h-full">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-[#04253e] tracking-tight">
-            Turn <span className="text-[#04253e]">busywork</span><br />
-            into <span className="text-[#fbbf24]">smart automation</span>.
+            <span className="text-[#04253e]">Automate</span><br />
+            So you can spend more time doing what<span className="text-[#fbbf24]">matters</span>.
           </h1>
 
           {/* NEW: Wrapper for the text block and button */}
@@ -42,7 +42,7 @@ export default function Home() {
               Our mantra is to engage genuinely and offer value.
             </p>
             <p className="text-lg md:text-xl text-[#04253e] opacity-80 mb-8"> {/* max-w-xl is now on parent div */}
-              We build clever AI workflows that eliminate repetitive tasks — tailor-made
+              We build clever AI workflows that eliminate repetitive tasks. Tailor-made
               for solo operators and small businesses ready to scale.
             </p>
 
