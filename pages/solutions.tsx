@@ -121,7 +121,7 @@ export default function SolutionsPage() {
 
           <h2 className="text-4xl font-extrabold text-[#04253e] mb-6">Industry Use Cases</h2>
           <p className="text-[#04253e] text-md font-medium mb-10">
-            Explore common automations across industries — or use them as a starting point to design your own.
+            Explore common automations across industries, or use them as a starting point to design your own.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-8">
