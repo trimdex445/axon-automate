@@ -41,8 +41,8 @@ export default function PricingPage() {
                   <Sparkles className="w-4 h-4 mr-2" />
                   Simple Automations
                 </div>
-                <div className="text-2xl font-bold text-[#04253e] mb-1">NZD $150–$300</div>
-                <div className="text-sm text-gray-500 mb-6">One-off mini automations</div>
+                <div className="text-2xl font-bold text-[#04253e] mb-1">AUD $150–$300</div>
+                <div className="text-sm text-gray-500 mb-6">One-off smart automations</div>
                 <ul className="text-sm text-gray-700 space-y-2 text-left">
                   {features.map((f, i) => (
                     <li key={i} className="flex items-center">
@@ -73,7 +73,7 @@ export default function PricingPage() {
                   <Settings className="w-4 h-4 mr-2" />
                   End-to-End Automations
                 </div>
-                <div className="text-2xl font-bold text-[#04253e] mb-1">NZD $1,000–$5,000</div>
+                <div className="text-2xl font-bold text-[#04253e] mb-1">AUD $1,000–$5,000</div>
                 <div className="text-sm text-gray-500 mb-6">Multi-system & logic-rich workflows</div>
                 <ul className="text-sm text-gray-700 space-y-2 text-left">
                   {features.map((f, i) => (
@@ -103,7 +103,7 @@ export default function PricingPage() {
                   Business Systems Redesign
                 </div>
                 <div className="text-lg font-bold text-[#04253e] mb-1">Contact for Pricing</div>
-                <div className="text-sm text-gray-500 mb-6">Full rebuild & strategy-led delivery</div>
+                <div className="text-sm text-gray-500 mb-6">Custom automation architecture strategy and complete system redesign</div>
                 <ul className="text-sm text-gray-700 space-y-2 text-left">
                   {features.map((f, i) => (
                     <li key={i} className="flex items-center">
@@ -133,31 +133,31 @@ export default function PricingPage() {
             {[
               {
                 question: "How long does an automation build take?",
-                answer: "Most small automations take 2–5 days. Full builds can take 1–3 weeks depending on complexity.",
+                answer: "Most small automations take up to a week. Full builds can take up to a month depending on complexity.",
               },
               {
                 question: "What tools or platforms can you automate?",
-                answer: "We can work with almost any modern tool including Google Workspace, Airtable, CRMs, databases, APIs, and form platforms.",
+                answer: "We can work with any tool including Google Workspace, Airtable, CRMs, databases, APIs, and webhook integrations.",
               },
               {
                 question: "Do you offer support after delivery?",
-                answer: "Yes — every automation includes 14 days of support. Ongoing plans are available if you need regular tweaks or monitoring.",
+                answer: "Yes, every automation includes 14 days of post deployment support. Ongoing plans are available for regular tweaks or monitoring.",
               },
               {
-                question: "I’m not sure what plan I need — what should I do?",
-                answer: "Reach out through our quote form — we’ll guide you based on your business, workflows, and team needs. No pressure or obligations.",
+                question: "I’m not sure what plan I need, how do I decide?",
+                answer: "Reach out through our quote form, we’ll guide you based on your business, workflows, and team's needs",
               },
               {
                 question: "Are there monthly costs for servers, APIs, or hosting?",
-                answer: "Some automations require ongoing infrastructure (like API credits, cloud servers, or database hosting). These costs vary based on usage and are always discussed upfront. Some one-off builds can run entirely free with no monthly fees.",
+                answer: "Some automations require ongoing infrastructure (like API credits, cloud servers, or database hosting). These costs vary based on usage and are always discussed upfront. Some one-off builds can run entirely free with no recurring fees.",
               },
               {
                 question: "Do I pay before or after the automation is built?",
-                answer: "We build a working test version first, and you only pay once you're happy with the results. No hidden surprises — just transparency and confidence.",
+                answer: "We'll build a Minimum Viable Product design, and you only pay when you want to proceed. No hidden surprises, just transparency and confidence.",
               },
               {
                 question: "What if something breaks after delivery?",
-                answer: "Every build includes a free 4-week follow-up check-in. If anything breaks or needs tweaking, we’ll fix it at no extra cost.",
+                answer: "Every build includes a free 4-week follow-up check-in. If anything breaks from the original automation, we’ll fix it at no extra cost.",
               },
             ].map((faq, i) => (
               <details key={i} className="bg-white p-8 rounded-2xl shadow-sm group border border-gray-200">
